@@ -147,6 +147,28 @@
 .read-more-btn:hover {
   background-color: #2563eb;
 }
+.meta-info {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  /* color:darkslategrey; */
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.category-pill {
+  background-color: gainsboro; /* light gray */
+  color: #111827;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.blog-date {
+  color: #4B5563;
+  margin-left: 10px;
+}
+
 
 /* Responsive Design */
 @media (max-width: 1200px) {

@@ -2,6 +2,8 @@ const BlogData = [
     {
       id: 1,
       title: "🚨 Samsung MagicINFO 9 Server RCE Vulnerability: What You Need to Know",
+      author: "Admin",
+      date: "May 12, 2025",
       image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*lzN5q23JYhysmQS-_ulDHw.jpeg",
       content: `
         <p>In the ever-evolving landscape of cybersecurity, a new remote code execution (RCE) vulnerability has surfaced — this time impacting Samsung’s MagicINFO 9 digital signage software. This critical flaw (CVE-2024–4323) is now actively being exploited in the wild, raising alarms for organizations using MagicINFO to manage digital displays across retail, education, and corporate environments.</p>
@@ -59,6 +61,8 @@ const BlogData = [
     {
   id: 2,
   title: "OttoKit WordPress Plugin Vulnerability (CVE-2025–27007): Attackers Adding Admin Accounts on WordPress Sites",
+  author: "Admin",
+      date: "May 11, 2025",
   image: require("../../../assests/Images/Blogs/blog-2-image.png"), 
   content: `
     <h2>What Happened?</h2>
@@ -126,6 +130,8 @@ const BlogData = [
 {
   id: 3,
   title: "Craft CMS Zero-Day Exploit Chain Leads to RCE and Data Theft",
+  author: "Admin",
+      date: "May 10, 2025",
   image: require("../../../assests/Images/Blogs/blog-3-image.png"), 
   content: `
     <h2>Introduction</h2>
@@ -176,6 +182,8 @@ const BlogData = [
 {
   id: 4,
   title: "Remote Desktop Puzzle: The Overlooked RDP Vulnerability That Could Expose Your Entire Network",
+  author: "Admin",
+      date: "May 9, 2025",
   image: require("../../../assests/Images/Blogs/blog-4-image.png"),
   content: `
     <h2>Overlooked RDP Vulnerability</h2>
@@ -227,6 +235,8 @@ const BlogData = [
 {
   id: 5,
   title: "🚨CVE-2025–32817: Critical SonicWall Privilege Escalation Flaw — Why Businesses Need Proactive Cybersecurity Now",
+  author: "Admin",
+      date: "May 9, 2025",
   image: require("../../../assests/Images/Blogs/blog-5-image.png"), 
   content: `
     <h2>Understanding CVE-2025–32817</h2>
@@ -279,6 +289,8 @@ const BlogData = [
 {
   id: 6,
   title: "SAP NetWeaver Zero-Day Vulnerability CVE-2025–31324: A Critical Threat to Enterprise Systems",
+  author: "Admin",
+      date: "May 8, 2025",
   image: require("../../../assests/Images/Blogs/blog-6-image.png"),
   content: `
     <h2>400+ SAP NetWeaver Devices Vulnerable</h2>
@@ -316,6 +328,8 @@ const BlogData = [
 {
   id: 7,
   title: "Akira Ransomware Hits Hitachi Vantara: What It Means for Your Business",
+  author: "Admin",
+      date: "May 7, 2025",
   image: require("../../../assests/Images/Blogs/blog-7-image.png"),
   content: `
     <h2>Hitachi Vantara’s Ransomware Breach</h2>
@@ -372,6 +386,8 @@ const BlogData = [
 {
   id: 8,
   title: "Apple’s Zero-Day Exploits: What They Mean for You & How Infoziant Can Keep You Safe",
+  author: "Admin",
+      date: "May 6, 2025",
   image: require("../../../assests/Images/Blogs/blog-8-image.png"), 
   content: `
     <h2>Stay Ahead of Zero-Day Threats with Infoziant</h2>
@@ -424,7 +440,10 @@ const BlogData = [
 {
   id: 9,
   title: "Cookie-Bite Attack: Why Your Organization Needs a Proactive SOC Like Infoziant",
+  author: "Admin",
+      date: "May 5, 2025",
   image: require("../../../assests/Images/Blogs/blog-9-image.png"), 
+
   content: `
     <h2>Stop Cookie-Bite Attacks Before They Start</h2>
     <p>A new cyber threat dubbed the “Cookie-Bite” attack has once again exposed the vulnerabilities in cloud-based authentication systems. Demonstrated by researchers at Varonis, this proof-of-concept uses a malicious Chrome extension to steal session cookies from Microsoft 365 and Azure Entra ID, effectively bypassing Multi-Factor Authentication (MFA) and granting persistent access to applications like Outlook and Teams.</p>
@@ -467,6 +486,8 @@ const BlogData = [
 {
   id: 10,
   title: "Centre Stack RCE Exploited as Zero-Day: A Critical Lesson in Proactive Cybersecurity",
+  author: "Admin",
+      date: "May 4, 2025",
   image: require("../../../assests/Images/Blogs/blog-10-image.png"), 
   content: `
     <h2>Infoziant Defends Your Digital Fortress</h2>
@@ -557,6 +578,8 @@ const BlogData = [
 {
   id: 11,
   title: "Critical SSH Vulnerability in Erlang/OTP: Why Immediate Action Matters",
+  author: "Admin",
+      date: "May 3, 2025",
   image: require("../../../assests/Images/Blogs/blog-11-image.png"), 
   content: `
     <p>A recent high-severity vulnerability (CVE-2024–31084) in Erlang/OTP’s SSH module has rocked the cybersecurity world, allowing attackers to achieve remote code execution (RCE) before authentication. Even more alarming — it’s surprisingly easy to exploit.</p>
@@ -605,6 +628,8 @@ const BlogData = [
 {
   id: 12,
   title: "Landmark Admin Data Breach Exposes 1.6 million: A Stark Reminder Why Cybersecurity Cannot Be Optional",
+  author: "Admin",
+      date: "May 2, 2025",
   image: require("../../../assests/Images/Blogs/blog-12-image.png"), 
   content: `
     <h2>Landmark Breach Reveals the Cost</h2>
@@ -658,6 +683,8 @@ const BlogData = [
 {
   id: 13,
   title: "Critical WordPress Plugin Vulnerabilities: Why Infoziant’s VAPT & SIEM Services Are Essential for Your Business",
+  author: "Admin",
+      date: "May 1, 2025",
   image: require("../../../assests/Images/Blogs/blog-13-image.png"), 
   content: `
     <p>In April 2025, a critical vulnerability (CVE-2025–3102) was discovered in the OttoKit (formerly SureTriggers) WordPress plugin. This flaw allowed attackers to bypass authentication mechanisms, granting unauthorized access to WordPress sites. Exploitation began within hours after public disclosure, underscoring the urgency for robust security.</p>
@@ -719,6 +746,8 @@ const BlogData = [
 {
   id: 14,
   title: "Microsoft’s April 2025 Patch Tuesday Fixes Exploited Zero-Day & 134 Flaws — Is Your Business Truly Secure?",
+  author: "Admin",
+      date: "Apr 30, 2025",
   image: require("../../../assests/Images/Blogs/blog-14-image.png"),
   content: `
     <p>On April 9, 2025, Microsoft released its monthly Patch Tuesday update, addressing a staggering 134 security vulnerabilities, including one zero-day vulnerability actively exploited in the wild (CVE-2025–29824). While applying these patches is crucial, this update shines a spotlight on a deeper issue:</p>
@@ -775,6 +804,8 @@ const BlogData = [
 {
   id: 15,
   title: "Fortinet Urges Immediate Forti Switch Upgrades to Address Critical Admin Password Vulnerability",
+  author: "Admin",
+      date: "Apr 29, 2025",
   image: require("../../../assests/Images/Blogs/blog-15-image.png"), 
   content: `
     <p>Fortinet, a prominent player in the network security arena, has recently rolled out critical security updates for its Forti Switch product line. These updates aim to rectify a significant vulnerability that could allow unauthorized attackers to alter administrator passwords without proper authentication. This flaw, identified as CVE-2024–48887, has been assigned a CVSS (Common Vulnerability Scoring System) score of 9.3 out of 10, indicating its high severity.</p>
@@ -814,6 +845,8 @@ const BlogData = [
 {
   id: 16,
   title: "CVE-2025–30065: Critical RCE Flaw in Apache Parquet",
+  author: "Admin",
+      date: "Apr 28, 2025",
   image: require("../../../assests/Images/Blogs/blog-16-image.png"), 
   content: `
     <p>On April 1st, 2025, Apache disclosed a maximum-severity Remote Code Execution (RCE) vulnerability in its Parquet library — a core component widely integrated into big data platforms like Hadoop, Spark, and major cloud providers.</p>
@@ -876,6 +909,8 @@ const BlogData = [
 {
   id: 17,
   title: "Protect Your Codebase: Preventing Secret Leaks with Proactive Security Measures",
+  author: "Admin",
+      date: "Apr 27, 2025",
   image: require("../../../assests/Images/Blogs/blog-17-image.png"), 
   content: `
     <p>In an era where a single leaked API key can lead to massive data breaches, safeguarding your codebase is more critical than ever.</p>
@@ -941,6 +976,8 @@ const BlogData = [
 {
   id: 18,
   title: "Accelerate Threat Response with Automated SOC Workflows Powered by Wazuh",
+  author: "Admin",
+      date: "Apr 26, 2025",
   image: require("../../../assests/Images/Blogs/blog-18-image.png"),
   content: `
     <p>In today’s fast-evolving cybersecurity landscape, traditional manual threat detection and response methods are no longer sufficient to combat sophisticated attacks. Security Operations Centers (SOCs) must embrace automation to enhance efficiency, minimize response times, and reduce human errors. Wazuh, an open-source security platform, empowers organizations by automating SOC workflows, transforming how security incidents are managed and mitigated.</p>
@@ -999,6 +1036,8 @@ const BlogData = [
 {
   id: 19,
   title: "Zero Trust Architecture: A Paradigm Shift in Cybersecurity",
+  author: "Admin",
+      date: "Apr 25, 2025",
   image: require("../../../assests/Images/Blogs/blog-19-image.png"),
   content: `
     <p>Traditional cybersecurity models assumed that anything inside an organization’s network could be trusted. However, with the increasing sophistication of cyber threats, rise in remote work, and widespread cloud adoption, this perimeter-based approach is no longer effective. Enter <strong>Zero Trust Architecture (ZTA)</strong>—a revolutionary model that operates on the principle of “never trust, always verify.”</p>
@@ -1057,6 +1096,8 @@ const BlogData = [
 {
   id: 20,
   title: "Why Cyber Security is Crucial for Your Business",
+  author: "Admin",
+      date: "Apr 24, 2025",
   image: require("../../../assests/Images/Blogs/blog-20-image.png"),
   content: `
     <p>In today’s digital age, businesses face constant threats from cybercriminals. These cyber attacks can have severe consequences, leading to financial losses, reputational damage, and disruption of operations. While cybercrime is a significant concern, many businesses still don’t fully understand why cybersecurity is vital for their success. Let’s explore the importance of cyber security, common risks, and practical measures to safeguard your business.</p>
@@ -1107,6 +1148,8 @@ const BlogData = [
 {
   id: 21,
   title: "VAPT in Cyber Security: Strengthening Your Defense Against Cyber Threats",
+  author: "Admin",
+      date: "Apr 23, 2025",
   image: require("../../../assests/Images/Blogs/blog-21-image.png"), 
   content: `
     <h2>VAPT in Cyber Security: Strengthening Your Defense Against Cyber Threats</h2>

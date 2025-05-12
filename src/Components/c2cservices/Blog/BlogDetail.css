@@ -30,7 +30,15 @@
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
   font-weight: bold;
+  border-left: 4px solid #3b82f6; 
+  padding-left: 12px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-style: italic; 
+  background-color: #f0f8ff; 
 }
+
+
 
 .blog-content h2 {
   font-size: 1.5rem;
