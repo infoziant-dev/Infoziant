@@ -97,7 +97,7 @@ export default function HomeBanner() {
 
         return newIndex;
       });
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
