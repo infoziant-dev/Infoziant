@@ -19,7 +19,7 @@ import Products from './Components/products/Product';
 import Edutech_Platform from './Components/c2cservices/Edutech';
 import Blog from './Components/c2cservices/Blog/Blog';
 import LLM from "./Components/AI/LLM/LLM.jsx";
-
+import JotformEmbed from './Components/JotformEmbed';
 
 // CSS imports
 import './Components/css/Awards.css';
@@ -58,8 +58,11 @@ const App = () => {
   return (
     <Router>
        <ScrollToTop />
+
       <Loader fetchData={fetchData}>
       <Header />
+      <JotformEmbed />
+      
       <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<About/>} />
