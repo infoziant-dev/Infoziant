@@ -40,7 +40,7 @@ const services = [
       "Zero Defect Policy"
     ],
     icon: <MonitorSmartphone size={32} color="#4ee4e4" />,
-    link: "/services/web-app-development",
+    link: "/services/webapp",
     image: Images2
   },
   {
