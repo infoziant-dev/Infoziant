@@ -84,18 +84,18 @@ const App = () => {
       <Route path="/services/coe" element={<COE />} />
       <Route path="/services/edutech" element={<Edutech_Platform/>} />
       <Route path="/services/codechef" element={<CodeChef/>} />
-      <Route path="/services/tech-talent" element={<Talent/>} />
+      <Route path="/services/techtalent" element={<Talent/>} />
       <Route path="/services/cybersecurity" element={<Layout />} />
-      <Route path="/services/web-app-development" element={<WebandApp />} />
+      <Route path="/services/webapp" element={<WebandApp />} />
       <Route path="/services/testing" element={<Testing />} />
       <Route path="/blogs" element={<Blog />} /> 
       <Route path="/blogs/:id" element={<BlogDetail />} />   
-      <Route path="/services/cybersecurity/vapt" element={<Vapt />} />
-      <Route path="/services/cybersecurity/vapt/network-infrastructure" element={<NetworkInfrastructure />}/>
-      <Route path="/services/cybersecurity/vapt/web-and-mobile-app" element={<WebAndMobile />}/>
-      <Route path="/services/cybersecurity/vapt/cloud-infrastructure" element={<CloudInfrastructure />}/>
-      <Route path="/services/cybersecurity/vapt/api-vapt" element={<ApiVapt />}/>
-      <Route path="/services/cybersecurity/vapt/siem" element={<Siem />}/>
+      <Route path="/services/vapt" element={<Vapt />} />
+      <Route path="/services/network" element={<NetworkInfrastructure />}/>
+      <Route path="/services/websecure" element={<WebAndMobile />}/>
+      <Route path="/services/cloud" element={<CloudInfrastructure />}/>
+      <Route path="/services/apivapt" element={<ApiVapt />}/>
+      <Route path="/services/siem" element={<Siem />}/>
       <Route path="/services/llm" element={<LLM />}/>
       <Route path="/services/genai" element={<GenAI />}/>
 

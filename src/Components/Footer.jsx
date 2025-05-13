@@ -107,7 +107,7 @@ export default function Footer() {
                             <Link to="/services/cybersecurity">Cybersecurity Services</Link>
                           </li>
                           <li className="hover:text-teal-400 font-semibold">
-                            <Link to="/services/cybersecurity/vapt">VAPT Services</Link>
+                            <Link to="/services/vapt">VAPT Services</Link>
                           </li>
                         </ul>
                       )}
@@ -139,13 +139,13 @@ export default function Footer() {
 
                     {/* Other tech services */}
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/services/web-app-development">Web & App Development</Link>
+                      <Link to="/services/webapp">Web & App Development</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
                       <Link to="/services/testing">Software Testing</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/talent-services">
+                      <Link to="/services/techtalent">
                         Tech Talent Hiring (Staffing Services)
                       </Link>
                     </li>
@@ -174,13 +174,13 @@ export default function Footer() {
                       <Link to="/services/training">Training & Upskilling</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/coe">Industry-Academia Collaboration (CoE)</Link>
+                      <Link to="/services/coe">Industry-Academia Collaboration (CoE)</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/codechef">CodeChef Training</Link>
+                      <Link to ="/services/codechef">CodeChef Training</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/edutech">Edutech Solutions</Link>
+                      <Link to="/services/edutech">Edutech Solutions</Link>
                     </li>
                   </ul>
                 )}
