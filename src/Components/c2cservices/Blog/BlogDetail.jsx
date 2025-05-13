@@ -4,8 +4,8 @@ import BlogData from "./BlogData";
 import "./BlogDetail.css";
 
 export default function BlogDetail() {
-  const { id } = useParams();
-  const blog = BlogData.find((b) => b.id === parseInt(id));
+  const { slug } = useParams();
+  const blog = BlogData.find((b) => b.slug === slug);
 
   if (!blog) return <h2>Blog not found</h2>;
 

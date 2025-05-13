@@ -17,8 +17,8 @@ import Loader from "./Components/Loader";
 import Layout from "./Components/Cyber/Layout";
 import Products from "./Components/products/Product";
 import Edutech_Platform from "./Components/c2cservices/Edutech";
-import Blog from "./Components/c2cservices/Blog/Blog";
 import LLM from "./Components/AI/LLM/LLM.jsx";
+import Blog from "./Components/c2cservices/Blog/Blog";
 import BlogDetail from "./Components/c2cservices/Blog/BlogDetail.jsx";
 
 // CSS imports
@@ -83,7 +83,7 @@ const App = () => {
           <Route path="/services/web-app-development" element={<WebandApp />} />
           <Route path="/services/testing" element={<Testing />} />
           <Route path="/blogs" element={<Blog />} />
-          <Route path="/blogs/:id" element={<BlogDetail />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
 
           <Route path="/services/cybersecurity/vapt" element={<Vapt />} />
           <Route

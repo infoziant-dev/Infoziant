@@ -1,3 +1,7 @@
+const slugify = (title) =>
+  title.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
+
 const BlogData = [
     {
       id: 1,
@@ -1217,6 +1221,10 @@ const BlogData = [
 
 
   ];
+  const slugtitle = BlogData.map(blog => ({
+  ...blog,
+  slug: slugify(blog.title),
+}));
   
-  export default BlogData;
+  export default slugtitle;
   

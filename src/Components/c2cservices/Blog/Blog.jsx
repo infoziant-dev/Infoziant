@@ -47,7 +47,7 @@ const Blog = () => {
           <div key={blog.id} className="blog-card">
             <img src={blog.image} alt={blog.title} />
             <h3>🌐{blog.title}</h3>
-            <Link to={`/blogs/${blog.id}`}>
+            <Link to={`/blogs/${blog.slug}`}>
               <button className="read-more-btn">Read More</button>
             </Link>
             <div className="meta-info">

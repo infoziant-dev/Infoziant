@@ -151,13 +151,13 @@
   display: flex;
   align-items: center;
   font-size: 0.875rem;
-  /* color:darkslategrey; */
+  
   margin-bottom: 10px;
   margin-left: 10px;
 }
 
 .category-pill {
-  background-color: gainsboro; /* light gray */
+  background-color: gainsboro;
   color: #111827;
   padding: 4px 12px;
   border-radius: 9999px;
@@ -170,7 +170,6 @@
 }
 
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .blog-container {
     grid-template-columns: repeat(3, 1fr);
