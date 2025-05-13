@@ -28,10 +28,14 @@ const DropdownContent = ({ menu, hoveredItem, setHoveredItem, closeAllMenus }) =
           >
             {item.subItems ? (
               <>
-                <button className="flex items-center gap-2 text-left text-gray-800 hover:text-blue-900 text-base">
-                  <ChevronLeft className="w-4 h-4" />
-                  {item.name}
-                </button>
+               <Link
+  to={item.path}
+  onClick={closeAllMenus}
+  className="flex items-center gap-2 text-left text-gray-800 hover:text-blue-900 text-base"
+>
+  <ChevronLeft className="w-4 h-4" />
+  {item.name}
+</Link>
                 {hoveredItem === item.name && (
                   <div
                     className="absolute right-full top-0 ml-4 w-[200px] bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-50 flex flex-col"
@@ -73,6 +77,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null); // "tech" or "edu"
+  
 
   const closeAllMenus = () => {
     setHoveredItem(null);
@@ -82,17 +87,30 @@ const Header = () => {
   };
 
   const dropdownMenu = [
+
+    {
+      title: "Cybersecurity",
+      key: "cyber",
+      items: [
+        {
+          name: "VAPT",
+          path: "/services/cybersecurity/vapt",
+          subItems: [
+            { name: "Network Infrastructure", path: "/services/cybersecurity/vapt/network-infrastructure" },
+            { name: "Web and Mobile Application", path: "/services/cybersecurity/vapt/web-and-mobile-app" },
+            { name: "Cloud Infrastructure", path: "/services/cybersecurity/vapt/cloud-infrastructure" },
+            { name: "API VAPT", path: "/services/cybersecurity/vapt/api-vapt" },
+            { name: "SIEM & Threat Intelligence", path: "/services/cybersecurity/vapt/siem" },
+          ],
+        },
+        { name: "Cybersecurity Services", path: "/services/cybersecurity" },
+        { name: "Prodcut", path: "/product" },
+      ],
+    },
     {
       title: "TechEdge",
       key: "tech",
       items: [
-        {
-          name: "Cybersecurity Services",
-          subItems: [
-            { name: "CyberSecurity Services", path: "/services/cybersecurity" },
-            { name: "VAPT Services", path: "/services/cybersecurity/vapt" },
-          ],
-        },
         {
           name: "AI&ML Services",
           subItems: [
@@ -122,7 +140,7 @@ const Header = () => {
   const navLinks = [
     { title: "Home", path: "/" },
     { title: "About", path: "/about" },
-    { title: "Product", path: "/product" },
+    // { title: "Product", path: "/product" },
     { title: "Awards", path: "/awards" },
     { title: "Blogs", path: "/blogs" },
     { title: "Contact", path: "/contact" },

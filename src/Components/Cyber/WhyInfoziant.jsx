@@ -1,16 +1,15 @@
-import "../css/WhyInfoziant.css";
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import "../css/WhyInfoziant.css";
 
 const data = [
-  { id: 1, count: '47,400', title: "Vulnerabilities Identified", content: "Our team of experts has identified over 23400 vulnerabilities and reported to organizations and helped them mitigate the security threats, potential losses." },
-  { id: 2, count: 81, title: "Rewards and Recognition", content: "Received awards and recognitions from global players for our vulnerability assessment programs which includes $11,900 reward from Apple iCloud." },
-  { id: 3, count: 51, title: "Clients Globally", content: "Identified vulnerabilities across top Fortune 200 companies and major organizations, including USA Department of Defense, Apple, Google, Facebook, Microsoft, Dell, CISCO and the WHO." },
-  { id: 4, count: 11, title: "Business Domains", content: "Our clients are from vast business backgrounds which includes, BFSI, Healthcare, E-Commerce, E-Governance, Edu-tech, Travel & Logistics, CRMS and many more." },
- 
+  { id: 1, count: '47,400', title: "Vulnerabilities Identified" },
+  { id: 2, count: 81, title: "Rewards and Recognition" },
+  { id: 3, count: 51, title: "Clients Globally" },
+  { id: 4, count: 11, title: "Business Domains" },
 ];
 
-export default function   WhyInfoziant() {
+export default function WhyInfoziant() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, threshold: 0.1 });
 
@@ -38,15 +37,16 @@ export default function   WhyInfoziant() {
 
   return (
     <motion.section
-      className="whyInfz "
+      className="whyInfz"
       ref={sectionRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={sectionAnimation}
     >
-      <h1>Why <span className="highlight">Infoziant</span></h1>
+      <h1 className="text-3xl sm:text-4xl font-bold mb-12 text-white">
+        Why <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">Infoziant</span>
+      </h1>
 
-      {/* Main Section Animation */}
       <motion.div
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
@@ -60,11 +60,14 @@ export default function   WhyInfoziant() {
             onMouseLeave={() => setHoveredIndex(null)}
             whileHover={hoverAnimation}
             variants={cardAnimation}
-            className="infoCard"
+                className="infoCard"
           >
-            <h1>{item.count}+</h1>
-            <h2>{item.title}</h2>
-            
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+              {item.count}+
+            </h1>
+            <h2 className="text-xl font-semibold text-white">
+              {item.title}
+            </h2>
           </motion.div>
         ))}
       </motion.div>
