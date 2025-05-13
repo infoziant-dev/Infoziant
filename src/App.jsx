@@ -17,8 +17,8 @@ import Loader from "./Components/Loader";
 import Layout from "./Components/Cyber/Layout";
 import Products from "./Components/products/Product";
 import Edutech_Platform from "./Components/c2cservices/Edutech";
-import LLM from "./Components/AI/LLM/LLM.jsx";
 import Blog from "./Components/c2cservices/Blog/Blog";
+import LLM from "./Components/AI/LLM/LLM.jsx";
 import BlogDetail from "./Components/c2cservices/Blog/BlogDetail.jsx";
 
 // CSS imports
@@ -26,6 +26,12 @@ import "./Components/css/Awards.css";
 import "./Components/css/BlogDetail.css";
 import "./Components/css/Blogs.css";
 import "./Components/css/ServicesList.css";
+import Blog1Detail from "./Components/c2cservices/Blog/Blog1Detail";
+import Blog2Detail from "./Components/c2cservices/Blog/Blog2Detail";
+import Blog3Detail from "./Components/c2cservices/Blog/Blog3Detail";
+import Blog4Detail from "./Components/c2cservices/Blog/Blog4Detail";
+import Blog5Detail from "./Components/c2cservices/Blog/Blog5Detail";
+import Blog6Detail from "./Components/c2cservices/Blog/Blog6Detail";
 import About from "./Components/About/About";
 import Awards from "./Components/Pages/Awards";
 import Contact from "./Components/Pages/Contact";
@@ -36,6 +42,7 @@ import CloudInfrastructure from "./Components/VAPTservices/CloudInfrastructure";
 import ApiVapt from "./Components/VAPTservices/ApiVapt";
 import Siem from "./Components/VAPTservices/Siem";
 import GenAI from "./Components/Genai/GenAI.jsx";
+import RedirectAicl from "./Components/RedirectAicl.jsx";
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
     <img
@@ -48,12 +55,11 @@ const Page = () => (
 
 const App = () => {
   const fetchData = async () => {
-    // Replace with your actual data fetching logic (e.g., API call)
-    const response = await fetch("https://api.example.com/data");
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return response.json();
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ success: true });
+      }, 1500);
+    });
   };
   return (
     <Router>
@@ -83,7 +89,7 @@ const App = () => {
           <Route path="/services/web-app-development" element={<WebandApp />} />
           <Route path="/services/testing" element={<Testing />} />
           <Route path="/blogs" element={<Blog />} />
-          <Route path="/blogs/:slug" element={<BlogDetail />} />
+          <Route path="/blogs/:id" element={<BlogDetail />} />
 
           <Route path="/services/cybersecurity/vapt" element={<Vapt />} />
           <Route
