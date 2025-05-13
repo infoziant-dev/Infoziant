@@ -26,12 +26,6 @@ import './Components/css/Awards.css';
 import './Components/css/BlogDetail.css';
 import './Components/css/Blogs.css';
 import './Components/css/ServicesList.css';
-import Blog1Detail from './Components/c2cservices/Blog/Blog1Detail';
-import Blog2Detail from './Components/c2cservices/Blog/Blog2Detail';
-import Blog3Detail from './Components/c2cservices/Blog/Blog3Detail';
-import Blog4Detail from './Components/c2cservices/Blog/Blog4Detail';
-import Blog5Detail from './Components/c2cservices/Blog/Blog5Detail';
-import Blog6Detail from './Components/c2cservices/Blog/Blog6Detail';
 import About from './Components/About/About';
 import Awards from './Components/Pages/Awards';
 import Contact from './Components/Pages/Contact';
@@ -43,6 +37,7 @@ import ApiVapt from './Components/VAPTservices/ApiVapt';
 import Siem from './Components/VAPTservices/Siem';
 import GenAI from './Components/Genai/GenAI.jsx';
 import RedirectAicl from './Components/RedirectAicl.jsx';
+import BlogDetail from './Components/c2cservices/Blog/BlogDetail.jsx';
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
     <img src="/Test.jpg" alt="Coming Soon" className="w-full h-full object-contain" />
@@ -82,12 +77,7 @@ const App = () => {
       <Route path="/services/web-app-development" element={<WebandApp />} />
       <Route path="/services/testing" element={<Testing />} />
       <Route path="/blogs" element={<Blog />} /> 
-      <Route path="/fortifying-mobile-app-security" element={<Blog1Detail />} />
-      <Route path="/why-strong-passwords-matter-and-how-to-create" element={<Blog2Detail />} />
-      <Route path="/phishing-beware-of-fake-emails-and-messages" element={<Blog3Detail />} />
-      <Route path="/strengthening-your-digital-fortress" element={<Blog4Detail />} />
-      <Route path="/elevating-security-with-firewalls" element={<Blog5Detail />} />
-      <Route path="/top-5-effective-website-security-tips-for-2024" element={<Blog6Detail />} />
+      <Route path="/blogs/:id" element={<BlogDetail />} />   
       <Route path="/services/cybersecurity/vapt" element={<Vapt />} />
       <Route path="/services/cybersecurity/vapt/network-infrastructure" element={<NetworkInfrastructure />}/>
       <Route path="/services/cybersecurity/vapt/web-and-mobile-app" element={<WebAndMobile />}/>

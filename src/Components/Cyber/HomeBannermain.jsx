@@ -15,15 +15,6 @@ import lock from "./scan/icons8-lock-14.png"
 
 export default function HomeBanner() {
 
-  const { ref: ref5, inView: inView5 } = useInView({
-    triggerOnce: false,
-    threshold: 0.2,
-  });
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
 
 
   const words = ["Digital Solutions...", "Digital Solutions...", "Digital Solutions..."];
@@ -97,7 +88,7 @@ export default function HomeBanner() {
 
         return newIndex;
       });
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
