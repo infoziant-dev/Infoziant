@@ -37,28 +37,31 @@ export default function InquiryForm() {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitConfirmation(true)
+
     if (validateForm()) {
-      const emailParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone_number: formData.phone,
-        selected_service: formData.services,
+      const emailPayload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        services: formData.services,
         message: formData.message,
+        time: new Date().toLocaleString()
       };
 
-      emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        emailParams,
-        process.env.REACT_APP_EMAILJS_USER_ID
-      )
-      .then((response) => {
-        if (response.status === 200) {
-            setSubmitConfirmation(false)
+      try {
+        const response = await fetch("https://mailer-api-production-76e4.up.railway.app/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(emailPayload)
+        });
+
+        if (response.ok) {
           setSuccessMessage("Your request has been submitted successfully!");
+
           setFormData({
             name: "",
             email: "",
@@ -66,16 +69,18 @@ export default function InquiryForm() {
             services: "",
             message: ""
           });
+
           setTimeout(() => {
             setSuccessMessage("");
           }, 5000);
+        } else {
+          console.error("API response not OK:", await response.text());
+          alert("An error occurred while submitting your request. Please try again.");
         }
-      })
-      .catch((err) => {
-        setSubmitConfirmation(false)
+      } catch (err) {
         console.error("Failed to send email. Error:", err);
         alert("An error occurred while submitting your request. Please try again.");
-      });
+      }
     }
   };
 

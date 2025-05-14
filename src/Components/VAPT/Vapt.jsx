@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import ConsultationForm from "./ConsultationForm";
+import ConsultationForm from "../Pages/ConsultationForm";
 import { Link } from "react-router-dom";
 import "./Vapt.css";
 import { motion } from "framer-motion";

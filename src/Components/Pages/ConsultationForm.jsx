@@ -1,6 +1,5 @@
 import "../css/ConsultationForm.css";
 import { useState } from "react";
-import emailjs from '@emailjs/browser';
 import { FaCircleCheck } from "react-icons/fa6";
 
 export default function ConsultationForm() {
@@ -15,11 +14,7 @@ export default function ConsultationForm() {
   const [errors, setErrors] = useState({});  // State to track form field errors
   const [successMessage, setSuccessMessage] = useState("");  // Success message state
 
-  console.log(
-    process.env.REACT_APP_EMAILJS_SERVICE_ID,
-    process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-    process.env.REACT_APP_EMAILJS_USER_ID
-  );
+
 
   // Handle input changes
   const handleChange = (e) => {
@@ -45,68 +40,75 @@ export default function ConsultationForm() {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Define email parameters for EmailJS
-      const emailParams = {
+      const emailPayload = {
         name: formData.name,
         email: formData.email,
-        phone: formData.phone, // if you need it in your template
+        phone: formData.phone,
         services: formData.services,
         message: formData.message,
-        time: new Date().toLocaleString(), // Optional: if you're using {{time}} in your template
+        time: new Date().toLocaleString()
       };
 
-      // Send email using EmailJS
-      emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        emailParams,
-        process.env.REACT_APP_EMAILJS_USER_ID
-      )
-
-        .then((response) => {
-          if (response.status === 200) {
-            // Display success message
-            setSuccessMessage("Your request has been submitted successfully!");
-
-            // Clear input fields
-            setFormData({
-              name: "",
-              email: "",
-              phone: "",
-              services: "",
-              message: ""
-            });
-
-            // Hide the success message after 5 seconds
-            setTimeout(() => {
-              setSuccessMessage("");
-            }, 5000);
-          }
-        })
-        .catch((err) => {
-          console.error("Failed to send email. Error:", err);
-          alert("An error occurred while submitting your request. Please try again.");
+      try {
+        const response = await fetch("https://mailer-api-production-76e4.up.railway.app/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(emailPayload)
         });
+
+        if (response.ok) {
+          setSuccessMessage("Your request has been submitted successfully!");
+
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            services: "",
+            message: ""
+          });
+
+          setTimeout(() => {
+            setSuccessMessage("");
+          }, 5000);
+        } else {
+          console.error("API response not OK:", await response.text());
+          alert("An error occurred while submitting your request. Please try again.");
+        }
+      } catch (err) {
+        console.error("Failed to send email. Error:", err);
+        alert("An error occurred while submitting your request. Please try again.");
+      }
     }
   };
+
 
   return (
     <div className="consultation-section">
       <div className="consultation-container">
         <h1 className="form-title">Talk to our Experts</h1>
         <p className="form-desc">
-  Have questions or need help with any of our services? Our customer support team is here to assist you anytime.
-</p>
+          Have questions or need help with any of our services? Our customer support team is here to assist you anytime.
+        </p>
 
 
         {/* Success message display */}
-        <div className="center-container">
-          {successMessage && <p className="success-message"><FaCircleCheck /> {successMessage}</p>}
+        <div className="center-container flex justify-center">
+          {successMessage && (
+            <p className="flex items-center gap-2 text-green-600 text-base font-medium">
+              <FaCircleCheck className="w-5 h-5" />
+              <span>{successMessage}</span>
+            </p>
+          )}
         </div>
+
+
 
         <form onSubmit={handleSubmit} className="consultation-form">
           <div className="form-row">
@@ -153,7 +155,7 @@ export default function ConsultationForm() {
                   required
                   className="cf-inp"
                 />
-                  
+
                 {errors.services && <p className="error-message">{errors.services}</p>}
               </div>
             </div>
