@@ -19,7 +19,7 @@ import Products from './Components/products/Product';
 import Edutech_Platform from './Components/c2cservices/Edutech';
 import Blog from './Components/c2cservices/Blog/Blog';
 import LLM from "./Components/AI/LLM/LLM.jsx";
-
+import JotformEmbed from './Components/JotformEmbed';
 
 // CSS imports
 import './Components/css/Awards.css';
@@ -38,11 +38,17 @@ import Siem from './Components/VAPTservices/Siem';
 import GenAI from './Components/Genai/GenAI.jsx';
 import RedirectAicl from './Components/RedirectAicl.jsx';
 import BlogDetail from './Components/c2cservices/Blog/BlogDetail.jsx';
-const Page = () => (
-  <div className="w-screen h-full flex items-center justify-center bg-white">
-    <img src="/Test.jpg" alt="Coming Soon" className="w-full h-full object-contain" />
-  </div>
-);
+import Redirect from './Components/Redirect.jsx';
+
+class SafeWrapper extends React.Component {
+  componentDidCatch(error) {
+    console.warn('Caught error in SafeWrapper:', error);
+  }
+  render() {
+    return this.props.children;
+  }
+}
+
 
 const App = () => {
   
@@ -58,8 +64,14 @@ const App = () => {
   return (
     <Router>
        <ScrollToTop />
+
       <Loader fetchData={fetchData}>
       <Header />
+      <SafeWrapper>
+        <JotformEmbed />
+      </SafeWrapper>
+
+      
       <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<About/>} />
@@ -72,20 +84,30 @@ const App = () => {
       <Route path="/services/coe" element={<COE />} />
       <Route path="/services/edutech" element={<Edutech_Platform/>} />
       <Route path="/services/codechef" element={<CodeChef/>} />
-      <Route path="/services/tech-talent" element={<Talent/>} />
+      <Route path="/services/techtalent" element={<Talent/>} />
       <Route path="/services/cybersecurity" element={<Layout />} />
-      <Route path="/services/web-app-development" element={<WebandApp />} />
+      <Route path="/services/webapp" element={<WebandApp />} />
       <Route path="/services/testing" element={<Testing />} />
       <Route path="/blogs" element={<Blog />} /> 
       <Route path="/blogs/:id" element={<BlogDetail />} />   
-      <Route path="/services/cybersecurity/vapt" element={<Vapt />} />
-      <Route path="/services/cybersecurity/vapt/network-infrastructure" element={<NetworkInfrastructure />}/>
-      <Route path="/services/cybersecurity/vapt/web-and-mobile-app" element={<WebAndMobile />}/>
-      <Route path="/services/cybersecurity/vapt/cloud-infrastructure" element={<CloudInfrastructure />}/>
-      <Route path="/services/cybersecurity/vapt/api-vapt" element={<ApiVapt />}/>
-      <Route path="/services/cybersecurity/vapt/siem" element={<Siem />}/>
+      <Route path="/services/vapt" element={<Vapt />} />
+      <Route path="/services/network" element={<NetworkInfrastructure />}/>
+      <Route path="/services/websecure" element={<WebAndMobile />}/>
+      <Route path="/services/cloud" element={<CloudInfrastructure />}/>
+      <Route path="/services/apivapt" element={<ApiVapt />}/>
+      <Route path="/services/siem" element={<Siem />}/>
       <Route path="/services/llm" element={<LLM />}/>
       <Route path="/services/genai" element={<GenAI />}/>
+
+      <Route path="/aiml" element={<Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633e" />} />
+      <Route path="/webdev" element={<Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef8626340" />} />
+      <Route path="/cybersec" element={<Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633f" />} />
+
+      <Route path="/aimlinternship" element={<Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8b" />} />
+      <Route path="/webdevinternship" element={<Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8d" />} />
+      <Route path="/cybersecinternship" element={<Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8c" />} />
+
+      
       <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

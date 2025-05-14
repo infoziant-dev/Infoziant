@@ -94,13 +94,13 @@ const Header = () => {
       items: [
         {
           name: "VAPT",
-          path: "/services/cybersecurity/vapt",
+          path: "/services/vapt",
           subItems: [
-            { name: "Network Infrastructure", path: "/services/cybersecurity/vapt/network-infrastructure" },
-            { name: "Web and Mobile Application", path: "/services/cybersecurity/vapt/web-and-mobile-app" },
-            { name: "Cloud Infrastructure", path: "/services/cybersecurity/vapt/cloud-infrastructure" },
-            { name: "API VAPT", path: "/services/cybersecurity/vapt/api-vapt" },
-            { name: "SIEM & Threat Intelligence", path: "/services/cybersecurity/vapt/siem" },
+            { name: "Network Infrastructure", path: "/services/network" },
+            { name: "Web and Mobile Application", path: "/services/websecure" },
+            { name: "Cloud Infrastructure", path: "/services/cloud" },
+            { name: "API VAPT", path: "/services/apivapt" },
+            { name: "SIEM & Threat Intelligence", path: "/services/siem" },
           ],
         },
         { name: "Cybersecurity Services", path: "/services/cybersecurity" },
@@ -118,9 +118,9 @@ const Header = () => {
             { name: "LLM Services", path: "/services/llm" },
           ],
         },
-        { name: "Web & App Development", path: "/services/web-app-development" },
+        { name: "Web & App Development", path: "/services/webapp" },
         { name: "Software Testing", path: "/services/testing" },
-        { name: "Tech Talent", path: "/services/tech-talent" },
+        { name: "Tech Talent", path: "/services/techtalent" },
       ],
     },
     {
