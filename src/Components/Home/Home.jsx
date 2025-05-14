@@ -10,6 +10,7 @@ import OurProducts from './OurProducts/OurProducts';
 import HallofFames from '../Pages/HallofFames';
 import HomeBanner from "../Cyber/HomeBannermain"
 import InnovativeTech from './Services1/InnovativeTech';
+import Banner from './Banner/Banner';
 
 
 
@@ -26,7 +27,7 @@ const Home = () => {
   return (
     <>
        
-        <HomeBanner />
+        <Banner />
         <InnovativeTech />
         <WhyInfoziant />
         <Partnership />
