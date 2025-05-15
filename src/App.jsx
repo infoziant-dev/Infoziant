@@ -20,7 +20,6 @@ import Edutech_Platform from './Components/c2cservices/Edutech';
 import Blog from './Components/c2cservices/Blog/Blog';
 import LLM from "./Components/AI/LLM/LLM.jsx";
 
-
 // CSS imports
 import './Components/css/Awards.css';
 import './Components/css/BlogDetail.css';
@@ -39,6 +38,7 @@ import GenAI from './Components/Genai/GenAI.jsx';
 import RedirectAicl from './Components/RedirectAicl.jsx';
 import BlogDetail from './Components/c2cservices/Blog/BlogDetail.jsx';
 import Redirect from './Components/Redirect.jsx';
+import JotformChatbot from './Components/JotformEmbed';
 
 
 
