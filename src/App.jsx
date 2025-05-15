@@ -19,7 +19,6 @@ import Products from './Components/products/Product';
 import Edutech_Platform from './Components/c2cservices/Edutech';
 import Blog from './Components/c2cservices/Blog/Blog';
 import LLM from "./Components/AI/LLM/LLM.jsx";
-import JotformEmbed from './Components/JotformEmbed';
 
 // CSS imports
 import './Components/css/Awards.css';
@@ -41,14 +40,7 @@ import BlogDetail from './Components/c2cservices/Blog/BlogDetail.jsx';
 import Redirect from './Components/Redirect.jsx';
 import JotformChatbot from './Components/JotformEmbed';
 
-class SafeWrapper extends React.Component {
-  componentDidCatch(error) {
-    console.warn('Caught error in SafeWrapper:', error);
-  }
-  render() {
-    return this.props.children;
-  }
-}
+
 
 
 const App = () => {
@@ -69,11 +61,6 @@ const App = () => {
       <Loader fetchData={fetchData}>
       <Header />
 
-
-      <JotformChatbot />
-
-
-      
       <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<About/>} />
