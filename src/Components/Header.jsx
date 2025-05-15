@@ -108,7 +108,7 @@ const Header = () => {
       ],
     },
     {
-      title: "TechEdge",
+      title: "Tech Services",
       key: "tech",
       items: [
         {
@@ -124,7 +124,7 @@ const Header = () => {
       ],
     },
     {
-      title: "EduConnect",
+      title: "Campus Connect",
       key: "edu",
       items: [
         { name: "Placement Support", path: "/services/placement" },
