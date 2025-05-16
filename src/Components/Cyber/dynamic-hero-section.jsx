@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
-
 import { CodeIllustration } from "./illustrations/code-illustration"
 import { SecurityIllustration } from "./illustrations/security-illustration"
 import { AssessmentIllustration } from "./illustrations/assessment-illustration"
@@ -12,41 +11,49 @@ import { CampusIllustration } from "./illustrations/campus-illustration"
 const services = [
   {
     id: 1,
-    title: "Development",
-    subtitle: "Next-Gen",
-    description: "Custom software solutions designed to optimize your business processes and drive innovation.",
+    head: "Software",
+    title: "businesses with",
+    subtitle: "scalable and robust",
+    last:"software solutions",
+    description: "From web to enterprise systems, we turn ideas into high-performing applications.",
     illustration: <CodeIllustration />,
     color: "from-teal-500 to-cyan-600",
   },
   {
     id: 2,
-    title: "Cybersecurity",
-    subtitle: "Advanced",
-    description: "Protection systems to safeguard your digital assets and sensitive information.",
+    head: "Cyber Security",
+    title: "organizations with",
+    subtitle: "smarter, stronger",
+    last:"digital security",
+    description: "Safeguarding data, infrastructure, and trust in an evolving threat landscape.",
     illustration: <SecurityIllustration />,
     color: "from-blue-500 to-indigo-600",
   },
   {
     id: 3,
-    title: "Assessment",
-    subtitle: "Intelligent",
-    description: "Comprehensive security audits to identify vulnerabilities and strengthen your defenses.",
+    title: "organizations with",
+    subtitle: "smarter, stronger",
+    last:"digital security",
+    description: "Safeguarding data, infrastructure, and trust in an evolving threat landscape.",
     illustration: <AssessmentIllustration />,
     color: "from-red-500 to-orange-600",
   },
   {
     id: 4,
-    title: "Testing",
-    subtitle: "Automated",
-    description: "Streamline your quality assurance with our advanced automated testing solutions.",
+
+    title: "products with",
+    subtitle: "reliable, high-quality",
+    last:"testing practices",
+    description: "Ensuring flawless performance through functional, manual, and automated testing.",
     illustration: <TestingIllustration />,
     color: "from-purple-500 to-pink-600",
   },
   {
     id: 5,
-    title: "Campus Connect",
-    subtitle: "Educational",
-    description: "Bridging the gap between academia and industry with our placement and training programs.",
+    title: "students with",
+    subtitle: "skills, training, and placement",
+    last:"support",
+    description: "Bridging the gap between education and employment with career-aligned learning.",
     illustration: <CampusIllustration />,
     color: "from-violet-500 to-indigo-600",
   },
@@ -102,12 +109,12 @@ export function DynamicHeroSection() {
         {/* Left Side - Text Content */}
         <div className="space-y-8">
           <div className={`transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"}`}>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500">
-                Transforming
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+              <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
+               Empowering
               </span>
               <br />
-              Technology with
+              {currentService.title}
               <br />
               <span className="relative">
                 <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
@@ -116,10 +123,8 @@ export function DynamicHeroSection() {
                 <br />
           
           </span> 
-              <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
-                {currentService.title}
-              </span>{" "}
-              Solutions
+              
+              {currentService.last}
             </h1>
           </div>
           <p
