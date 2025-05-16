@@ -6,11 +6,6 @@
   font-family: Arial, sans-serif;
 }
 
-.container {
-  padding: 0 15px; /* Default padding for mobile */
-  max-width: 1200px;
-  margin: 0 auto; /* Center align on desktop */
-}
 
 /* Hide tabs by default (effective on mobile) */
 .tabs {

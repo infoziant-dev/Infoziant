@@ -59,6 +59,7 @@ const Achievements = () => {
     },
   ];
 
+
   return (
     <section className="bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d] text-white py-16 px-4 text-center">
       <motion.div

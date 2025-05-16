@@ -1,0 +1,8 @@
+/* Base styles for all devices */
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+  .cls {
+    padding: 0;
+  }
+  
+}
