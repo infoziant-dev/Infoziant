@@ -587,7 +587,7 @@ font-weight: 600;
   .container{
     width: 180px;
     height: 180px;
-    margin-left: -10%;
+    margin-left: -40%;
   }
   .scanning-line{
     width: 200px;
@@ -725,9 +725,9 @@ font-weight: 600;
     padding: 2%;
   }
   .container{
-    width: 180px;
-    height: 180px;
-    margin-left: -10%;
+    width: 160px;
+    height: 160px;
+    margin-left: -40%;
   }
   .scanning-line{
     width: 200px;
