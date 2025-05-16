@@ -2,13 +2,18 @@ import { motion } from "framer-motion";
 import "../css/HomeBanner.css";
 import { TrendingUp } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import img1 from "./scan/Bannerweb.gif";
-import img2 from "./scan/Bannerai.gif";
-import img3 from "./scan/Bannertest.gif";
-import img4 from "./scan/AiBanner.gif";
-import img5 from "../../assests/Images/Cyber/scan-gif-2.gif";
+// import { useInView } from "react-intersection-observer";
+// import img1 from "./scan/Bannerweb.gif";
+// import img2 from "./scan/Bannerai.gif";
+// import img3 from "./scan/Bannertest.gif";
+// import img4 from "./scan/AiBanner.gif";
+// import img5 from "../../assests/Images/Cyber/scan-gif-2.gif";
 import lock from "./scan/icons8-lock-14.png"
+import { TestingIllustration } from "./testing-illustration";
+import { CodeIllustration } from "./code-illustration";
+import { CampusIllustration } from "./campus-illustration";
+import { AssessmentIllustration } from "./assessment-illustration";
+import { SecurityIllustration } from "./security-illustration";
 
 
 
@@ -25,7 +30,56 @@ export default function HomeBanner() {
   //   { title: "Test", icon: <BugPlay className="w-5 h-5 text-white" /> },
   //   { title: "Secure", icon: <ShieldCheck className="w-5 h-5 text-white" /> },
   // ];
-  const images = [img1, img2, img3, img5,img4];
+  const components = [
+    <TestingIllustration   />,
+    <CampusIllustration />,
+    <CodeIllustration />,
+    <AssessmentIllustration />,
+    <SecurityIllustration />,
+  ];
+
+  const services = [
+  {
+    id: 1,
+    title: "Development",
+    subtitle: "Next-Gen",
+    description: "Custom software solutions designed to optimize your business processes and drive innovation.",
+    illustration: <CodeIllustration />,
+    color: "from-teal-500 to-cyan-600",
+  },
+  {
+    id: 2,
+    title: "Cybersecurity",
+    subtitle: "Advanced",
+    description: "Protection systems to safeguard your digital assets and sensitive information.",
+    illustration: <SecurityIllustration />,
+    color: "from-blue-500 to-indigo-600",
+  },
+  {
+    id: 3,
+    title: "Assessment",
+    subtitle: "Intelligent",
+    description: "Comprehensive security audits to identify vulnerabilities and strengthen your defenses.",
+    illustration: <AssessmentIllustration />,
+    color: "from-red-500 to-orange-600",
+  },
+  {
+    id: 4,
+    title: "Testing",
+    subtitle: "Automated",
+    description: "Streamline your quality assurance with our advanced automated testing solutions.",
+    illustration: <TestingIllustration />,
+    color: "from-purple-500 to-pink-600",
+  },
+  {
+    id: 5,
+    title: "Campus Connect",
+    subtitle: "Educational",
+    description: "Bridging the gap between academia and industry with our placement and training programs.",
+    illustration: <CampusIllustration />,
+    color: "from-violet-500 to-indigo-600",
+  },
+]
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -94,6 +148,7 @@ export default function HomeBanner() {
   }, []);
 
   return (
+  
     <div className="cybarhomeBanner">
 
       <section className="homeBanner-main">
@@ -178,9 +233,9 @@ export default function HomeBanner() {
                 ease: "easeInOut",
               }}
             >
-              <div className="border-container">
+              <div className="">
                 {/* Scanning Line */}
-                <motion.div
+                {/* <motion.div
                   className={
                     scanningLine ? "scanning-line" : "hideScanningLine"
                   }
@@ -199,7 +254,7 @@ export default function HomeBanner() {
                 <div className="neon-corner top-left animate__animated animate__fadeInTopLeft animate__slow"></div>
                 <div className="neon-corner top-right animate__animated animate__fadeInTopRight animate__slow"></div>
                 <div className="neon-corner bottom-left animate__animated animate__fadeInBottomLeft animate__slow"></div>
-                <div className="neon-corner bottom-right animate__animated animate__fadeInBottomRight animate__slow"></div>
+                <div className="neon-corner bottom-right animate__animated animate__fadeInBottomRight animate__slow"></div> */}
 
                 <div className="container">
                   {/* First Box */}
@@ -224,11 +279,9 @@ export default function HomeBanner() {
                         transition={{ duration: 1 }}
                       >
                         {/* Animated Text */}
-                        <img
-                          className="scan-img"
-                          src={images[currentIndex]}
-                          alt={imgWords[currentIndex]}
-                        />
+                        <div>
+                         { services[currentIndex]?.illustration}
+                        </div>
                       </motion.div>
                     </motion.div>
                   </motion.div>
@@ -255,11 +308,6 @@ export default function HomeBanner() {
         </ul>
         
       </section>
-
-
-
-
-
 
     </div>
   );
