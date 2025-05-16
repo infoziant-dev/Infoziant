@@ -30,17 +30,19 @@ const services = [
     color: "from-blue-500 to-indigo-600",
   },
   {
-    id: 3,
-    title: "organizations with",
-    subtitle: "smarter, stronger",
-    last:"digital security",
-    description: "Safeguarding data, infrastructure, and trust in an evolving threat landscape.",
-    illustration: <AssessmentIllustration />,
-    color: "from-red-500 to-orange-600",
-  },
+  id: 3,
+  head: "Assessment",
+  title: "teams with",
+  subtitle: "clear and measurable",
+  last: "insights",
+  description: "Driving improvement through focused evaluations and feedback.",
+  illustration: <AssessmentIllustration />,
+  color: "from-red-500 to-orange-600",
+}
+
+,
   {
     id: 4,
-
     title: "products with",
     subtitle: "reliable, high-quality",
     last:"testing practices",
