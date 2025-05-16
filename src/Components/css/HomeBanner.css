@@ -250,24 +250,12 @@ font-weight: 600;
   margin-top: -3%;
 }
 
-.homeBanner-main {
-  background-color: #121212;
-  background-image: 
-    radial-gradient(rgba(35, 35, 35, 0.3) 1px, transparent 1.5px),
-    linear-gradient(45deg, rgba(0, 0, 0, 0.6) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.6) 75%, rgba(0, 0, 0, 0.6)),
-    linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.6) 75%, rgba(0, 0, 0, 0.6));
-  background-size: 20px 20px, 60px 60px, 60px 60px;
-  background-position: 0 0, 0 0, 0 0;
-  position: relative;
-  overflow: hidden;
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
-  animation: shine 10s ease-in-out infinite;
-  padding-bottom: 1%;
-}
-
-@keyframes shine {
-  0% { background-position: 0 0, 0 0, 0 0; }
-  100% { background-position: 20px 20px, 60px 60px, 60px 60px; }
+.homeBanner-main{
+  background-image: url("../../assests/info-bg.jpg");
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 1%;
 }
 
 /* Neon Corner Container */
@@ -275,7 +263,7 @@ font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 50px;
   position: relative;
   width: 250px;  /* Adjust as needed */
   height: 450px; /* Adjust as needed */
@@ -732,7 +720,7 @@ font-weight: 600;
     height: 5px;
   }
   .anm-img{
-    margin-left: 100px;
+    margin-left: 30px;
     margin-top: -8%;
     padding: 2%;
   }
@@ -774,167 +762,6 @@ font-weight: 600;
     margin-top: 100%;
   }
 
-}
-
-
-
-
-@media (max-width: 1000px) {
-  .home-ul {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .container {
-    width: 250px;
-    height: 320px;
-  }
-
-  .scanning-line {
-    width: 280px;
-  }
-}
-
-@media (max-width: 768px) {
-  .home-ul {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 3rem;
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .banner-intro {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  .typing-anm {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-
-  .anm-img {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-
-  .container {
-    width: 220px;
-    height: 280px;
-  }
-
-  .box3 {
-    min-height: 220px;
-  }
-
-  .scanning-line {
-    width: 240px;
-  }
-
-  .border-container {
-    width: 100%;
-    height: 350px;
-    padding: 10px;
-  }
-
-  /* Adjust neon corners for mobile */
-  .neon-corner {
-    width: 20px;
-    height: 20px;
-  }
-
-  .top-left {
-    left: -5%;
-  }
-
-  .top-right {
-    right: -5%;
-  }
-
-  .bottom-left {
-    left: -5%;
-  }
-
-  .bottom-right {
-    right: -5%;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-ul {
-    padding: 1rem;
-    gap: 2rem;
-  }
-
-  .banner-intro {
-    margin: 0;
-  }
-
-  .typing-anm {
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
-  }
-
-  .container {
-    width: 180px;
-    height: 240px;
-  }
-
-  .box3 {
-    min-height: 180px;
-  }
-
-  .scanning-line {
-    width: 200px;
-  }
-
-  /* Improve animation container positioning */
-  .border-container {
-    height: 300px;
-  }
-
-  /* Adjust illustration size */
-  .box3 svg {
-    width: 80%;
-    height: 80%;
-  }
-
-  /* Improve neon effect visibility */
-  .neon-corner::before,
-  .neon-corner::after {
-    box-shadow: 0 0 10px #1BFFFF, 0 0 15px #1BFFFF, 0 0 20px #00ffcc;
-  }
-}
-
-/* Add new utility classes */
-.illustration-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.progress-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-.indicator.active {
-  background-color: white;
-  transform: scale(1.2);
 }
 
 
