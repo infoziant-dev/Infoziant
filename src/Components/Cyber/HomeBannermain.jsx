@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import "../css/HomeBanner.css";
 import { TrendingUp } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -22,7 +22,7 @@ export default function HomeBanner() {
 
 
 
-  const words = ["Digital Solutions...", "Digital Solutions...", "Digital Solutions..."];
+  const words = ["Development...", "Cybersecurity...", "Digital Solutions...", "Testing...", "Campus Connect..."];
   const imgWords = ["1.CodeChef", "2.Training & Upskilling", "3.Placement & Internship", "4.Edutech ", "5.Cyber Security"];
   // const steps = [
   //   { title: "Develop", icon: <Code2 className="w-5 h-5 text-white" /> },
@@ -30,56 +30,50 @@ export default function HomeBanner() {
   //   { title: "Test", icon: <BugPlay className="w-5 h-5 text-white" /> },
   //   { title: "Secure", icon: <ShieldCheck className="w-5 h-5 text-white" /> },
   // ];
-  const components = [
-    <TestingIllustration   />,
-    <CampusIllustration />,
-    <CodeIllustration />,
-    <AssessmentIllustration />,
-    <SecurityIllustration />,
-  ];
+
 
   const services = [
-  {
-    id: 1,
-    title: "Development",
-    subtitle: "Next-Gen",
-    description: "Custom software solutions designed to optimize your business processes and drive innovation.",
-    illustration: <CodeIllustration />,
-    color: "from-teal-500 to-cyan-600",
-  },
-  {
-    id: 2,
-    title: "Cybersecurity",
-    subtitle: "Advanced",
-    description: "Protection systems to safeguard your digital assets and sensitive information.",
-    illustration: <SecurityIllustration />,
-    color: "from-blue-500 to-indigo-600",
-  },
-  {
-    id: 3,
-    title: "Assessment",
-    subtitle: "Intelligent",
-    description: "Comprehensive security audits to identify vulnerabilities and strengthen your defenses.",
-    illustration: <AssessmentIllustration />,
-    color: "from-red-500 to-orange-600",
-  },
-  {
-    id: 4,
-    title: "Testing",
-    subtitle: "Automated",
-    description: "Streamline your quality assurance with our advanced automated testing solutions.",
-    illustration: <TestingIllustration />,
-    color: "from-purple-500 to-pink-600",
-  },
-  {
-    id: 5,
-    title: "Campus Connect",
-    subtitle: "Educational",
-    description: "Bridging the gap between academia and industry with our placement and training programs.",
-    illustration: <CampusIllustration />,
-    color: "from-violet-500 to-indigo-600",
-  },
-]
+    {
+      id: 1,
+      title: "Development",
+      subtitle: "Next-Gen",
+      description: "Custom software solutions designed to optimize your business processes and drive innovation.",
+      illustration: <CodeIllustration />,
+      color: "from-teal-500 to-cyan-600",
+    },
+    {
+      id: 2,
+      title: "Cybersecurity",
+      subtitle: "Advanced",
+      description: "Protection systems to safeguard your digital assets and sensitive information.",
+      illustration: <SecurityIllustration />,
+      color: "from-blue-500 to-indigo-600",
+    },
+    {
+      id: 3,
+      title: "Assessment",
+      subtitle: "Intelligent",
+      description: "Comprehensive security audits to identify vulnerabilities and strengthen your defenses.",
+      illustration: <AssessmentIllustration />,
+      color: "from-red-500 to-orange-600",
+    },
+    {
+      id: 4,
+      title: "Testing",
+      subtitle: "Automated",
+      description: "Streamline your quality assurance with our advanced automated testing solutions.",
+      illustration: <TestingIllustration />,
+      color: "from-purple-500 to-pink-600",
+    },
+    {
+      id: 5,
+      title: "Campus Connect",
+      subtitle: "Educational",
+      description: "Bridging the gap between academia and industry with our placement and training programs.",
+      illustration: <CampusIllustration />,
+      color: "from-violet-500 to-indigo-600",
+    },
+  ]
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -98,57 +92,42 @@ export default function HomeBanner() {
 
 
   useEffect(() => {
-    const handleTyping = () => {
-      const currentWord = words[currentWordIndex];
-      const textLength = displayedText.length;
+    const currentWord = words[currentWordIndex];
+    let timeout;
 
-      if (!isDeleting && textLength === currentWord.length) {
-        setTimeout(() => setIsDeleting(true), 1000);
-        return;
-      }
+    if (!isDeleting && displayedText.length < currentWord.length) {
+      // Typing phase
+      timeout = setTimeout(() => {
+        setDisplayedText(currentWord.slice(0, displayedText.length + 1));
+      }, 200); // typing speed
+    } else if (!isDeleting && displayedText.length === currentWord.length) {
+      // Start delete after holding full word for 4s (at 6s total)
+      timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, 4000);
+    } else if (isDeleting && displayedText.length > 0) {
+      // Deleting phase (from 6s to 8s)
+      timeout = setTimeout(() => {
+        setDisplayedText(currentWord.slice(0, displayedText.length - 1));
+      }, 200); // deleting speed
+    } else if (isDeleting && displayedText.length === 0) {
+      // Switch to next word
+      setIsDeleting(false);
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }
 
-      if (isDeleting && textLength === 0) {
-        setIsDeleting(false);
-        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-        return;
-      }
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentWordIndex]);
 
-      const nextText = isDeleting
-        ? currentWord.slice(0, textLength - 1)
-        : currentWord.slice(0, textLength + 1);
-
-      setDisplayedText(nextText);
-      setTypingSpeed(isDeleting ? 100 : 150);
-    };
-
-    const typingTimeout = setTimeout(handleTyping, typingSpeed);
-
-    return () => clearTimeout(typingTimeout);
-  }, [displayedText, isDeleting, typingSpeed, currentWordIndex]);
-
-  //  image scanning
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const newIndex = (prevIndex + 1) % imgWords.length;
+    setCurrentIndex(currentWordIndex); // syncs illustration
+  }, [currentWordIndex]);
 
-        if (newIndex === 4) {
-          setScanningLine(false);
-          setProgressLoader(false);
-        } else {
-          setScanningLine(true);
-          setProgressLoader(true);
-        }
 
-        return newIndex;
-      });
-    }, 3000);
 
-    return () => clearInterval(interval);
-  }, []);
 
   return (
-  
+
     <div className="cybarhomeBanner">
 
       <section className="homeBanner-main">
@@ -272,17 +251,20 @@ export default function HomeBanner() {
                       transition={{ duration: 0.8 }}
                     >
                       {/* Third Box */}
-                      <motion.div
-                        className="box box3"
-                        initial={{ y: -150 }}
-                        animate={{ y: 0 }}
-                        transition={{ duration: 1 }}
-                      >
-                        {/* Animated Text */}
-                        <div>
-                         { services[currentIndex]?.illustration}
-                        </div>
-                      </motion.div>
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={currentIndex}
+                          className="box box3"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 1 }}
+                        >
+                          <div>
+                            {services[currentIndex]?.illustration}
+                          </div>
+                        </motion.div>
+                      </AnimatePresence>
                     </motion.div>
                   </motion.div>
                   {/* progress */}
@@ -306,7 +288,7 @@ export default function HomeBanner() {
           </li>
           {/* image animation ends */}
         </ul>
-        
+
       </section>
 
     </div>
