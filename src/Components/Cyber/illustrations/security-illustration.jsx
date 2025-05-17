@@ -68,8 +68,9 @@ export function SecurityIllustration() {
                 <Shield
                   className={`h-8 w-8 ${lockState === "locked" ? "text-green-400" : lockState === "locking" ? "text-yellow-400" : "text-blue-400"} transition-colors duration-300`}
                 />
-                <span className="ml-2 text-white font-bold">SecureGuard</span>
+                <span className="ml-2 text-white font-bold">iDAST tool</span>
               </div>
+
 
               {/* Security Scan Animation */}
               <div className="relative w-24 h-24 mb-6 flex items-center justify-center">
