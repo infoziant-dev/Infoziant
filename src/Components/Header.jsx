@@ -28,14 +28,14 @@ const DropdownContent = ({ menu, hoveredItem, setHoveredItem, closeAllMenus }) =
           >
             {item.subItems ? (
               <>
-               <Link
-  to={item.path}
-  onClick={closeAllMenus}
-  className="flex items-center gap-2 text-left text-gray-800 hover:text-blue-900 text-base"
->
-  <ChevronLeft className="w-4 h-4" />
-  {item.name}
-</Link>
+                <Link
+                  to={item.path}
+                  onClick={closeAllMenus}
+                  className="flex items-center gap-2 text-left text-gray-800 hover:text-blue-900 text-base"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  {item.name}
+                </Link>
                 {hoveredItem === item.name && (
                   <div
                     className="absolute right-full top-0 ml-4 w-[200px] bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-50 flex flex-col"
@@ -77,7 +77,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null); // "tech" or "edu"
-  
+
 
   const closeAllMenus = () => {
     setHoveredItem(null);
