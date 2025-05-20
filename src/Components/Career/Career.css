@@ -335,75 +335,85 @@
   
   /* Values Section */
   .values-section {
-    position: relative;
-    padding: 5rem 0;
-    background-image: url('../../assests/Images/info-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-  
-  .values-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0.7;
-    z-index: 1;
-  }
-  
-  .values-section .container {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .values-showcase {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .value-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  .value-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .value-icon {
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    font-size: 2rem;
-    background: linear-gradient(150deg, #15f5b9e0, #002affc4);
-    color: white;
-    border-radius: 50%;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .value-card h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #002aff;
-    margin-bottom: 1rem;
-  }
-  
-  .value-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-  }
+  position: relative;
+  padding: 5rem 2rem;
+  background-image: url('../../assests/Images/info-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.values-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.values-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.value-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.value-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.value-icon {
+  min-width: 100px;
+  min-height: 100px;
+  background: linear-gradient(150deg, #15f5b9e0, #002affc4);
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.value-content h3 {
+  font-size: 1.5rem;
+  color: #002aff;
+  margin-bottom: 0.5rem;
+}
+
+.value-content p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Optional: add vertical connector lines */
+.values-showcase::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(0, 42, 255, 0.2);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
   
   /* Join Us CTA Section */
   .join-us-section {
