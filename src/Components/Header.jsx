@@ -2,7 +2,12 @@ import React, { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, ChevronUp, ChevronLeft } from "lucide-react";
 
-const DropdownContent = ({ menu, hoveredItem, setHoveredItem, closeAllMenus }) => {
+const DropdownContent = ({
+  menu,
+  hoveredItem,
+  setHoveredItem,
+  closeAllMenus,
+}) => {
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = (itemName) => {
@@ -78,7 +83,6 @@ const Header = () => {
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null); // "tech" or "edu"
 
-
   const closeAllMenus = () => {
     setHoveredItem(null);
     setActiveDropdown(null);
@@ -87,7 +91,6 @@ const Header = () => {
   };
 
   const dropdownMenu = [
-
     {
       title: "Cybersecurity",
       key: "cyber",
@@ -143,6 +146,7 @@ const Header = () => {
   
     { title: "Awards", path: "/awards" },
     { title: "Blogs", path: "/blogs" },
+    { title: "Career", path: "/career" },
     { title: "Contact", path: "/contact" },
   ];
 
@@ -161,16 +165,19 @@ const Header = () => {
             className="relative z-50 flex flex-col justify-center items-center w-6 h-6"
           >
             <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform mb-1 ${mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform mb-1 ${
+                mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 mb-1 ${mobileMenuOpen ? "opacity-0" : ""
-                }`}
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 mb-1 ${
+                mobileMenuOpen ? "opacity-0" : ""
+              }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform ${mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform ${
+                mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
             />
           </button>
         </div>
@@ -181,8 +188,9 @@ const Header = () => {
             <Link
               key={link.title}
               to={link.path}
-              className={`hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""
-                }`}
+              className={`hover:text-blue-900 hover:underline transition ${
+                isActive(link.path) ? "text-blue-900 font-bold underline" : ""
+              }`}
             >
               {link.title}
             </Link>
@@ -192,13 +200,18 @@ const Header = () => {
             <div className="relative" key={menu.key}>
               <button
                 onClick={() =>
-                  setActiveDropdown(activeDropdown === menu.key ? null : menu.key)
+                  setActiveDropdown(
+                    activeDropdown === menu.key ? null : menu.key
+                  )
                 }
                 className="flex items-center gap-1 hover:text-blue-900"
               >
                 <span
-                  className={`${activeDropdown === menu.key ? "text-blue-900 font-bold underline" : ""
-                    }`}
+                  className={`${
+                    activeDropdown === menu.key
+                      ? "text-blue-900 font-bold underline"
+                      : ""
+                  }`}
                 >
                   {menu.title}
                 </span>
@@ -224,8 +237,9 @@ const Header = () => {
             <Link
               key={link.title}
               to={link.path}
-              className={`hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""
-                }`}
+              className={`hover:text-blue-900 hover:underline transition ${
+                isActive(link.path) ? "text-blue-900 font-bold underline" : ""
+              }`}
             >
               {link.title}
             </Link>
@@ -242,8 +256,9 @@ const Header = () => {
               key={link.title}
               to={link.path}
               onClick={closeAllMenus}
-              className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""
-                }`}
+              className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline transition ${
+                isActive(link.path) ? "text-blue-900 font-bold underline" : ""
+              }`}
             >
               {link.title}
             </Link>
@@ -253,13 +268,18 @@ const Header = () => {
             <div key={menu.key} className="relative">
               <button
                 onClick={() =>
-                  setActiveDropdown(activeDropdown === menu.key ? null : menu.key)
+                  setActiveDropdown(
+                    activeDropdown === menu.key ? null : menu.key
+                  )
                 }
                 className="block w-full text-left px-4 py-2 text-gray-800 hover:text-blue-900"
               >
                 <span
-                  className={`${activeDropdown === menu.key ? "text-blue-900 font-bold underline" : ""
-                    }`}
+                  className={`${
+                    activeDropdown === menu.key
+                      ? "text-blue-900 font-bold underline"
+                      : ""
+                  }`}
                 >
                   {menu.title}
                 </span>
@@ -311,17 +331,15 @@ const Header = () => {
             </div>
           ))}
 
-
-
-
           {/* Render the rest of the navLinks */}
           {navLinks.slice(2).map((link) => (
             <Link
               key={link.title}
               to={link.path}
               onClick={closeAllMenus}
-              className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""
-                }`}
+              className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline transition ${
+                isActive(link.path) ? "text-blue-900 font-bold underline" : ""
+              }`}
             >
               {link.title}
             </Link>
