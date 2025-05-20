@@ -1,0 +1,636 @@
+.career-page {
+ /* Career Banner Section Styling */
+  .career-banner-section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-image: url('E:\Infoziant\src\assests\Images\info-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .career-banner-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    margin-top: 30px;
+    padding: 0 20px;
+    max-width: 1200px;
+  }
+  
+  .banner-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00ffbbe0, #2600ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+  
+  .banner-content p {
+    font-size: 1.2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .learn-more-btns {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 1rem;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.9s ease;
+    cursor: pointer;
+    position: relative;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+  }
+  
+  .learn-more-btns:hover {
+    background: linear-gradient(150deg, #15f5b9d0, #002affc4);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    
+    50% {
+      transform: scale(1.05);
+    }
+    
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Who We Are Section Styling */
+  .career-who-we-are {
+    background: rgba(255, 255, 255, 0.847);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .career-who-we-are h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(270deg, #00ffbbe0, #2600ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    margin-bottom: 30px;
+  }
+  
+  .career-who-we-are p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Benefits Section Styling */
+  .career-benefits-section {
+    background: url('E:\Infoziant\src\assests\Images\info-bg.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .career-benefits-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  .career-benefits-section .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .career-benefits-section h6 {
+    color: #15f5b9d0;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .career-benefits-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(270deg, #00ffbb, #415afc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    margin-bottom: 40px;
+  }
+  
+  .benefits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .benefit-item {
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: #415afc5d solid 1px;
+  }
+  
+  .benefit-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .benefit-icon {
+    background: linear-gradient(150deg, #15f5b9e0, #002affc4);
+    color: white;
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  
+  .benefit-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #002aff;
+  }
+  
+  .benefit-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Career Opportunities Section Styling */
+  .career-opportunities-section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .career-opportunities-section h6 {
+    color: #00157c;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .career-opportunities-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(270deg, #00ffbb, #415afc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    margin-bottom: 40px;
+  }
+  
+  .opportunities-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .opportunity-item {
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+    border: #415afc5d solid 1px;
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .opportunity-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .opportunity-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #002aff;
+  }
+  
+  .opportunity-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .apply-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .apply-btn:hover {
+    background: linear-gradient(150deg, #15f5b9d0, #002affc4);
+    transform: scale(1.05);
+  }
+  
+  /* Values Section Styling */
+  .career-values-section {
+    background: url('E:\Infoziant\src\assests\Images\info-bg.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .career-values-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  .career-values-section .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .career-values-section h6 {
+    color: #15f5b9d0;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .career-values-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(270deg, #00ffbb, #415afc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    margin-bottom: 40px;
+  }
+  
+  .values-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .value-item {
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: #415afc5d solid 1px;
+  }
+  
+  .value-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .value-icon {
+    background: linear-gradient(150deg, #15f5b9e0, #002affc4);
+    color: white;
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  
+  .value-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #002aff;
+  }
+  
+  .value-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* How to Apply Section Styling */
+  .career-apply-section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .career-apply-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(270deg, #00ffbb, #415afc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    margin-bottom: 40px;
+  }
+  
+  .apply-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .step {
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+    border: #415afc5d solid 1px;
+    border-radius: 10px;
+    padding: 30px;
+    width: 220px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .step-number {
+    background: linear-gradient(150deg, #15f5b9e0, #002affc4);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+  
+  .step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #002aff;
+  }
+  
+  .step p {
+    font-size: 1rem;
+    color: #333;
+  }
+  .join-today {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background: url('E:\Infoziant\src\assests\info-bg.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.join-today::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.join-today h2,
+.join-today p,
+.join-today .show-openings-btn {
+  position: relative;
+  z-index: 2;
+}
+
+.join-today h2 {
+  margin-bottom: 20px;
+}
+
+.join-today p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.show-openings-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.show-openings-btn:hover {
+  background: linear-gradient(150deg, #15f5b9d0, #002affc4);
+  transform: scale(1.05);
+}
+
+  
+  /* Media Queries for Responsive Design */
+  
+  /* Tablet View */
+  @media (max-width: 768px) {
+    .career-banner-section {
+      height: 80vh;
+    }
+    
+    .banner-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .banner-content p {
+      font-size: 1rem;
+    }
+    
+    .career-who-we-are h2,
+    .career-benefits-section h2,
+    .career-opportunities-section h2,
+    .career-values-section h2,
+    .career-apply-section h2 {
+      font-size: 2rem;
+    }
+    
+    .benefit-item,
+    .opportunity-item,
+    .value-item,
+    .step {
+      width: 200px;
+      padding: 20px;
+    }
+    
+    .benefit-icon,
+    .value-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+    
+    .join-today p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 480px) {
+    .career-banner-section {
+      height: 90vh;
+    }
+    
+    .banner-content h1 {
+      font-size: 2rem;
+    }
+    
+    .banner-content p {
+      font-size: 0.9rem;
+    }
+    
+    .learn-more-btns {
+      padding: 8px 20px;
+      font-size: 0.9rem;
+    }
+    
+    .career-who-we-are h2,
+    .career-benefits-section h2,
+    .career-opportunities-section h2,
+    .career-values-section h2,
+    .career-apply-section h2 {
+      font-size: 1.8rem;
+    }
+    
+    .career-who-we-are p {
+      font-size: 1rem;
+    }
+    
+    .career-benefits-section h6,
+    .career-opportunities-section h6,
+    .career-values-section h6 {
+      font-size: 1rem;
+    }
+    
+    .benefit-item,
+    .opportunity-item,
+    .value-item,
+    .step {
+      width: 100%;
+      max-width: 280px;
+      padding: 20px;
+    }
+    
+    .benefit-icon,
+    .value-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
+    }
+    
+    .benefit-item h3,
+    .opportunity-item h3,
+    .value-item h3,
+    .step h3 {
+      font-size: 1.1rem;
+    }
+    
+    .benefit-item p,
+    .opportunity-item p,
+    .value-item p,
+    .step p {
+      font-size: 0.9rem;
+    }
+    
+    .apply-btn {
+      padding: 6px 15px;
+      font-size: 0.8rem;
+    }
+    
+    .join-today p {
+      font-size: 1rem;
+    }
+    
+    .show-openings-btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Extra small screens */
+  @media (max-width: 375px) {
+    .career-banner-section {
+      height: 100vh;
+    }
+    
+    .banner-content h1 {
+      font-size: 1.8rem;
+    }
+    
+    .benefit-item,
+    .opportunity-item,
+    .value-item,
+    .step {
+      width: 100%;
+      max-width: 240px;
+    }
+  }
+}
