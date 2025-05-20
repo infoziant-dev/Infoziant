@@ -3,18 +3,12 @@ import "../css/HomeBanner.css";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
-
-
-// import Services from "./Services";
-// import Footer from "./Footer";
 import WhyInfoziant from "./WhyInfoziant";
 import WhyChooseUs from "./WhyChooseUs";
 import Partnership from "./Partnership";
 import Accreditations from "../Home/Accreditations/Accreditations";
 import Portfolio from "./portfolio";
 import Services from "./Services";
-// import InquiryForm from "./InquiryForm";
-// import Awardsection from "./Awardsection";
 import TestimonialSlider from "./Testimonials";
 import Honors from "./Honors";
 import img1 from "../../assests/Images/Cyber/scan-gif-1.gif";
