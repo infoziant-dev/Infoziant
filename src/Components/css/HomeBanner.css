@@ -258,7 +258,6 @@ font-weight: 600;
     padding-bottom: 1%;
 }
 
-
 /* Neon Corner Container */
 .border-container {
   display: flex;
@@ -766,12 +765,4 @@ font-weight: 600;
 }
 
 
-}
-
-.HomeBanner-bg-back{
-  background-image: url("../../assests/info-bg.jpg");
-  background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-bottom: 1%;
 }
