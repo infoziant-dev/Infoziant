@@ -53,7 +53,7 @@ const JobDetailsCard = ({ job }) => {
               <Summary label="Salary" value={job.salaryRange} />
               <Summary label="Qualification" value={job.qualifications} />
               <Summary label="End Date" value={new Date(job.End_date).toDateString()} />
-              <Summary label="Posted By" value={job.postedBy} />
+              
               <Summary label="Posted On" value={new Date(job.datePosted).toDateString()} />
               <Summary label="Status" value={job.status} />
               <Summary label="Industry" value={job.industry} />
