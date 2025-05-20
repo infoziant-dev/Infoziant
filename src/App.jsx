@@ -40,6 +40,7 @@ import GenAI from "./Components/Genai/GenAI.jsx";
 import RedirectAicl from "./Components/RedirectAicl.jsx";
 import BlogDetail from "./Components/c2cservices/Blog/BlogDetail.jsx";
 import Redirect from "./Components/Redirect.jsx";
+import ApplyJobs from "./Components/Applyjobs/ApplyJobs.jsx";
 
 const App = () => {
   const fetchData = async () => {
@@ -124,6 +125,10 @@ const App = () => {
             element={
               <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8c" />
             }
+          />
+          <Route
+            path="/job/:title"
+            element={<ApplyJobs />}
           />
 
           <Route path="*" element={<PageNotFound />} />

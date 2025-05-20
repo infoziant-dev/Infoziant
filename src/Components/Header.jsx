@@ -143,7 +143,7 @@ const Header = () => {
   const navLinks = [
     { title: "Home", path: "/" },
     { title: "About", path: "/about" },
-    // { title: "Product", path: "/product" },
+  
     { title: "Awards", path: "/awards" },
     { title: "Blogs", path: "/blogs" },
     { title: "Career", path: "/career" },
