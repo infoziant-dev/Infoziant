@@ -19,7 +19,6 @@ import Products from './Components/products/Product';
 import Edutech_Platform from './Components/c2cservices/Edutech';
 import Blog from './Components/c2cservices/Blog/Blog';
 import LLM from "./Components/AI/LLM/LLM.jsx";
-import Careers from './Components/careers/Careers.jsx';
 
 // CSS imports
 import './Components/css/Awards.css';
@@ -68,7 +67,6 @@ const App = () => {
       <Route path="/about" element={<About/>} />
       <Route path="/product" element={<Products/>} />
       <Route path="/contact" element={<Contact/>} />
-      <Route path="/careers" element={<Careers/>} />
       <Route path="/awards" element={<Awards />} />
       <Route path="/services/placement" element={<Placement_Support/>} />
       <Route path="/services/internship" element={<Internship_Programs />} />
