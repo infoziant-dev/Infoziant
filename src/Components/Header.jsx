@@ -143,7 +143,6 @@ const Header = () => {
   
     { title: "Awards", path: "/awards" },
     { title: "Blogs", path: "/blogs" },
-    { title: "Careers", path: "/careers" },
     { title: "Contact", path: "/contact" },
   ];
 
