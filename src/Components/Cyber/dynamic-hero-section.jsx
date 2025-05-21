@@ -11,6 +11,9 @@ import { CampusIllustration } from "./illustrations/campus-illustration"
 const services = [
   {
     id: 1,
+    therla: "Powering Progress",  
+    an: "through",
+    this: "Code and Creativity",
     head: "Software Development",
     title: "businesses with",
     subtitle: "scalable and robust",
@@ -21,6 +24,9 @@ const services = [
   },
   {
     id: 2,
+    therla: "Navigating Threats ",  
+    an: "with",
+    this: " Smart Risk Strategies",
     head: "Cybersecurity",
     title: "organizations with",
     subtitle: "smarter, stronger",
@@ -31,6 +37,9 @@ const services = [
   },
   {
     id: 3,
+    therla: "Mastering Risk",  
+    an: "with",
+    this: "Next-Gen Cyber Management",
     head: "Cyber Risk Management",
     title: "teams with",
     subtitle: "clear and measurable",
@@ -43,6 +52,9 @@ const services = [
   ,
   {
     id: 4,
+    therla: "Redefining Quality",  
+    an: "through",
+    this: "Intelligent Testing Solutions",
     head: "Software Testing",
     subtitle: "reliable, high-quality",
     last: "testing practices",
@@ -52,6 +64,9 @@ const services = [
   },
   {
     id: 5,
+    therla: "Empowering Growth",  
+    an: "through",
+    this: "Career Development",
     head: "Career Development",
     subtitle: "skills, training, and placement",
     last: "support",
@@ -113,16 +128,16 @@ export function DynamicHeroSection() {
           <div className={`transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"}`}>
             <div className="text-5xl md:text-6xl font-bold leading-relaxed space-y-12">
               <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
-                Leading
+                {currentService.therla}
               </span>
               <br />
               <span className="text-gray-100 pt-8">
-                the Next Era in
+                {currentService.an}
               </span>
               <br />
               <span className="relative">
                 <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
-                  {currentService.head}
+                  {currentService.this}
                 </span>
                 <br />
               </span>
