@@ -40,7 +40,7 @@ const TypingHeroSection = () => {
     const [displayedText, setDisplayedText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
     const [isAnimating, setIsAnimating] = useState(true);
-    const staticText = "igital Solutions...";
+    const staticText = "Digital Solutions...";
     const [typedStaticText, setTypedStaticText] = useState("");
     const [isDeletingStatic, setIsDeletingStatic] = useState(false);
 
@@ -116,7 +116,7 @@ const TypingHeroSection = () => {
                         with Next-Gen
                     </span>
                     <span className="bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-500 bg-clip-text text-transparent block mt-4 pb-4">
-                        D{typedStaticText}
+                        {typedStaticText}
 
                     </span>
 

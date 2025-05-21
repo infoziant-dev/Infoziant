@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react"
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
-
+import { ArrowDown, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { CodeIllustration } from "./illustrations/code-illustration"
 import { SecurityIllustration } from "./illustrations/security-illustration"
 import { AssessmentIllustration } from "./illustrations/assessment-illustration"
@@ -12,41 +11,51 @@ import { CampusIllustration } from "./illustrations/campus-illustration"
 const services = [
   {
     id: 1,
-    title: "Development",
-    subtitle: "Next-Gen",
-    description: "Custom software solutions designed to optimize your business processes and drive innovation.",
+    head: "Software Development",
+    title: "businesses with",
+    subtitle: "scalable and robust",
+    last: "software solutions",
+    description: "From web to enterprise systems, we turn ideas into high-performing applications.",
     illustration: <CodeIllustration />,
     color: "from-teal-500 to-cyan-600",
   },
   {
     id: 2,
-    title: "Cybersecurity",
-    subtitle: "Advanced",
-    description: "Protection systems to safeguard your digital assets and sensitive information.",
+    head: "Cybersecurity",
+    title: "organizations with",
+    subtitle: "smarter, stronger",
+    last: "digital security",
+    description: "Safeguarding data, infrastructure, and trust in an evolving threat landscape.",
     illustration: <SecurityIllustration />,
     color: "from-blue-500 to-indigo-600",
   },
   {
     id: 3,
-    title: "Assessment",
-    subtitle: "Intelligent",
-    description: "Comprehensive security audits to identify vulnerabilities and strengthen your defenses.",
+    head: "Cyber Risk Management",
+    title: "teams with",
+    subtitle: "clear and measurable",
+    last: "insights",
+    description: "Driving improvement through focused evaluations and feedback.",
     illustration: <AssessmentIllustration />,
     color: "from-red-500 to-orange-600",
-  },
+  }
+
+  ,
   {
     id: 4,
-    title: "Testing",
-    subtitle: "Automated",
-    description: "Streamline your quality assurance with our advanced automated testing solutions.",
+    head: "Software Testing",
+    subtitle: "reliable, high-quality",
+    last: "testing practices",
+    description: "Ensuring flawless performance through functional, manual, and automated testing.",
     illustration: <TestingIllustration />,
     color: "from-purple-500 to-pink-600",
   },
   {
     id: 5,
-    title: "Campus Connect",
-    subtitle: "Educational",
-    description: "Bridging the gap between academia and industry with our placement and training programs.",
+    head: "Career Development",
+    subtitle: "skills, training, and placement",
+    last: "support",
+    description: "Bridging the gap between education and employment with career-aligned learning.",
     illustration: <CampusIllustration />,
     color: "from-violet-500 to-indigo-600",
   },
@@ -98,47 +107,50 @@ export function DynamicHeroSection() {
 
   return (
     <section className="container mx-auto md:py-32">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-24 items-center">
         {/* Left Side - Text Content */}
         <div className="space-y-8">
           <div className={`transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"}`}>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500">
-                Transforming
+            <div className="text-5xl md:text-6xl font-bold leading-relaxed space-y-12">
+              <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
+                Leading
               </span>
               <br />
-              Technology with
+              <span className="text-gray-100 pt-8">
+                the Next Era in
+              </span>
               <br />
               <span className="relative">
                 <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
-                  {currentService.subtitle}
+                  {currentService.head}
                 </span>
                 <br />
-          
-          </span> 
-              <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
-                {currentService.title}
-              </span>{" "}
-              Solutions
-            </h1>
+              </span>
+            </div>
           </div>
           <p
-            className={`text-gray-400 text-lg md:text-xl max-w-lg transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"}`}
+            className={`text-gray-400 text-lg md:text-xl max-w-lg transition-opacity duration-300 leading-relaxed ${fadeState === "out" ? "opacity-0" : "opacity-100"
+              }`}
           >
             {currentService.description}
           </p>
           <div
-            className={`flex flex-col sm:flex-row gap-4 transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"}`}
+            className={`flex flex-col sm:flex-row gap-4 transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"
+              }`}
           >
-            <button className={`px-4 py-2 rounded-md text-lg bg-gradient-to-r ${currentService.color} hover:opacity-90 text-white flex items-center`}>
+            <button
+              onClick={() => {
+                const section = document.getElementById("services-section");
+                if (section) section.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`px-4 py-2 rounded-md text-lg bg-gradient-to-r ${currentService.color} hover:opacity-90 text-white flex items-center`}
+            >
               Explore Solutions
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
-            <button className="px-4 py-2 rounded-md text-lg border border-gray-700 text-gray-300 hover:bg-gray-800">
-              Learn More
+              <ArrowDown className="ml-2 h-4 w-4" />
             </button>
           </div>
         </div>
+
 
         {/* Right Side - Service Illustrations */}
         <div className="relative">

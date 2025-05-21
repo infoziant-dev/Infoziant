@@ -2,7 +2,12 @@ import React, { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, ChevronUp, ChevronLeft } from "lucide-react";
 
-const DropdownContent = ({ menu, hoveredItem, setHoveredItem, closeAllMenus }) => {
+const DropdownContent = ({
+  menu,
+  hoveredItem,
+  setHoveredItem,
+  closeAllMenus,
+}) => {
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = (itemName) => {
@@ -28,14 +33,14 @@ const DropdownContent = ({ menu, hoveredItem, setHoveredItem, closeAllMenus }) =
           >
             {item.subItems ? (
               <>
-               <Link
-  to={item.path}
-  onClick={closeAllMenus}
-  className="flex items-center gap-2 text-left text-gray-800 hover:text-blue-900 text-base"
->
-  <ChevronLeft className="w-4 h-4" />
-  {item.name}
-</Link>
+                <Link
+                  to={item.path}
+                  onClick={closeAllMenus}
+                  className="flex items-center gap-2 text-left text-gray-800 hover:text-blue-900 text-base"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  {item.name}
+                </Link>
                 {hoveredItem === item.name && (
                   <div
                     className="absolute right-full top-0 ml-4 w-[200px] bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-50 flex flex-col"
@@ -77,7 +82,6 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null); // "tech" or "edu"
-  
 
   const closeAllMenus = () => {
     setHoveredItem(null);
@@ -87,7 +91,6 @@ const Header = () => {
   };
 
   const dropdownMenu = [
-
     {
       title: "Cybersecurity",
       key: "cyber",
@@ -140,9 +143,10 @@ const Header = () => {
   const navLinks = [
     { title: "Home", path: "/" },
     { title: "About", path: "/about" },
-    // { title: "Product", path: "/product" },
+  
     { title: "Awards", path: "/awards" },
     { title: "Blogs", path: "/blogs" },
+    { title: "Career", path: "/career" },
     { title: "Contact", path: "/contact" },
   ];
 
@@ -161,16 +165,19 @@ const Header = () => {
             className="relative z-50 flex flex-col justify-center items-center w-6 h-6"
           >
             <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform mb-1 ${mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform mb-1 ${
+                mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 mb-1 ${mobileMenuOpen ? "opacity-0" : ""
-                }`}
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 mb-1 ${
+                mobileMenuOpen ? "opacity-0" : ""
+              }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform ${mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform ${
+                mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
             />
           </button>
         </div>
@@ -181,8 +188,9 @@ const Header = () => {
             <Link
               key={link.title}
               to={link.path}
-              className={`hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""
-                }`}
+              className={`hover:text-blue-900 hover:underline transition ${
+                isActive(link.path) ? "text-blue-900 font-bold underline" : ""
+              }`}
             >
               {link.title}
             </Link>
@@ -192,13 +200,18 @@ const Header = () => {
             <div className="relative" key={menu.key}>
               <button
                 onClick={() =>
-                  setActiveDropdown(activeDropdown === menu.key ? null : menu.key)
+                  setActiveDropdown(
+                    activeDropdown === menu.key ? null : menu.key
+                  )
                 }
                 className="flex items-center gap-1 hover:text-blue-900"
               >
                 <span
-                  className={`${activeDropdown === menu.key ? "text-blue-900 font-bold underline" : ""
-                    }`}
+                  className={`${
+                    activeDropdown === menu.key
+                      ? "text-blue-900 font-bold underline"
+                      : ""
+                  }`}
                 >
                   {menu.title}
                 </span>
@@ -224,8 +237,9 @@ const Header = () => {
             <Link
               key={link.title}
               to={link.path}
-              className={`hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""
-                }`}
+              className={`hover:text-blue-900 hover:underline transition ${
+                isActive(link.path) ? "text-blue-900 font-bold underline" : ""
+              }`}
             >
               {link.title}
             </Link>
@@ -242,8 +256,9 @@ const Header = () => {
               key={link.title}
               to={link.path}
               onClick={closeAllMenus}
-              className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""
-                }`}
+              className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline transition ${
+                isActive(link.path) ? "text-blue-900 font-bold underline" : ""
+              }`}
             >
               {link.title}
             </Link>
@@ -253,13 +268,18 @@ const Header = () => {
             <div key={menu.key} className="relative">
               <button
                 onClick={() =>
-                  setActiveDropdown(activeDropdown === menu.key ? null : menu.key)
+                  setActiveDropdown(
+                    activeDropdown === menu.key ? null : menu.key
+                  )
                 }
                 className="block w-full text-left px-4 py-2 text-gray-800 hover:text-blue-900"
               >
                 <span
-                  className={`${activeDropdown === menu.key ? "text-blue-900 font-bold underline" : ""
-                    }`}
+                  className={`${
+                    activeDropdown === menu.key
+                      ? "text-blue-900 font-bold underline"
+                      : ""
+                  }`}
                 >
                   {menu.title}
                 </span>
@@ -311,17 +331,15 @@ const Header = () => {
             </div>
           ))}
 
-
-
-
           {/* Render the rest of the navLinks */}
           {navLinks.slice(2).map((link) => (
             <Link
               key={link.title}
               to={link.path}
               onClick={closeAllMenus}
-              className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""
-                }`}
+              className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline transition ${
+                isActive(link.path) ? "text-blue-900 font-bold underline" : ""
+              }`}
             >
               {link.title}
             </Link>

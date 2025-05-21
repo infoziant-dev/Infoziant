@@ -1,0 +1,581 @@
+
+.career-page {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  overflow-x: hidden;
+  
+  /* Hero Section */
+  .career-hero {
+    position: relative;
+    height: 80vh;
+    background-image: url('../../assests/Images/info-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00ffbbe0, #2600ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(150deg, #15f5b9d0, #002affc4);
+  }
+  
+  /* Container for all sections */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Section Headers */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .section-header.light {
+    color: white;
+  }
+  
+  .section-tag {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #15f5b9d0;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(270deg, #00ffbb, #415afc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    display: inline-block;
+  }
+  
+  /* About Us Section */
+  .about-us-section {
+    padding: 5rem 0;
+    background-color: white;
+  }
+  
+  .about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .about-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(65, 90, 252, 0.1);
+  }
+  
+  .about-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .about-card-icon {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 2rem;
+    background: linear-gradient(150deg, #15f5b9e0, #002affc4);
+    color: white;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #002aff;
+    margin-bottom: 1rem;
+  }
+  
+  .about-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Benefits Section */
+  .benefits-section {
+    position: relative;
+    padding: 5rem 0;
+    background-image: url('../../assests/Images/info-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .benefits-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  .benefits-section .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .benefit-item {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+  
+  .benefit-item:hover {
+    transform: translateY(-8px);
+  }
+  
+  .benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    height: 100%;
+    background: linear-gradient(150deg, #15f5b9e0, #002affc4);
+    color: white;
+    font-size: 1.8rem;
+    padding: 1.5rem;
+  }
+  
+  .benefit-content {
+    padding: 1.5rem;
+  }
+  
+  .benefit-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #002aff;
+    margin-bottom: 0.7rem;
+  }
+  
+  .benefit-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Job Categories Section */
+  .job-categories-section {
+    padding: 5rem 0;
+    background: white;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .category-card {
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 3rem 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(65, 90, 252, 0.1);
+  }
+  
+  .category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .category-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .category-icon {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 2rem;
+    background: linear-gradient(150deg, #15f5b9e0, #002affc4);
+    color: white;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .category-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #002aff;
+    margin-bottom: 1rem;
+  }
+  
+  .category-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+    min-height: 80px;
+  }
+  
+  .category-btn {
+    padding: 0.7rem 1.5rem;
+    background: white;
+    color: #002aff;
+    border: 2px solid #002aff;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .category-btn:hover {
+    background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+    color: white;
+    border-color: transparent;
+  }
+  
+  /* Values Section */
+  .values-section {
+  position: relative;
+  padding: 5rem 2rem;
+  background-image: url('../../assests/Images/info-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.values-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.values-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.value-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.value-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.value-icon {
+  min-width: 100px;
+  min-height: 100px;
+  background: linear-gradient(150deg, #15f5b9e0, #002affc4);
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.value-content h3 {
+  font-size: 1.5rem;
+  color: #002aff;
+  margin-bottom: 0.5rem;
+}
+
+.value-content p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Optional: add vertical connector lines */
+.values-showcase::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(0, 42, 255, 0.2);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+  
+  /* Join Us CTA Section */
+  .join-us-section {
+    position: relative;
+    padding: 5rem 0;
+    background-image: url('../../assests/Images/info-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+  
+  .join-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  .join-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .join-content h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  
+  .join-content p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .primary-btn {
+    padding: 1rem 2.5rem;
+    background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .primary-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(150deg, #15f5b9d0, #002affc4);
+  }
+  
+  /* Media Queries for Responsive Design */
+  
+  /* Tablet View */
+  @media (max-width: 992px) {
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+    
+    .benefits-grid,
+    .categories-grid,
+    .values-showcase {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+  
+  /* Small Tablet View */
+  @media (max-width: 768px) {
+    .career-hero {
+      height: auto;
+      min-height: 80vh;
+      padding: 4rem 0;
+    }
+    
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .tagline {
+      font-size: 1.3rem;
+    }
+    
+    .hero-description {
+      font-size: 1.1rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.2rem;
+    }
+    
+    .benefit-item {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .benefit-icon {
+      min-width: auto;
+      width: 70px;
+      height: 70px;
+      margin: 1.5rem auto 0;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 576px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    
+    .tagline {
+      font-size: 1.1rem;
+    }
+    
+    .hero-description {
+      font-size: 1rem;
+    }
+    
+    .cta-button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .section-header h2 {
+      font-size: 1.8rem;
+    }
+    
+    .about-us-section,
+    .benefits-section,
+    .job-categories-section,
+    .values-section,
+    .join-us-section {
+      padding: 3rem 0;
+    }
+    
+    .about-card,
+    .benefit-item,
+    .category-card,
+    .value-card {
+      padding: 1.5rem;
+    }
+    
+    .join-content h2 {
+      font-size: 2rem;
+    }
+    
+    .join-content p {
+      font-size: 1rem;
+    }
+    
+    .primary-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}

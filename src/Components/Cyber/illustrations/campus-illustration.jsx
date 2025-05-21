@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import { GraduationCap, Briefcase, Award, TrendingUp, Users } from "lucide-react"
+import { GraduationCap, Briefcase, Award, TrendingUp, Users,Building2 } from "lucide-react"
 // import { Button } from "@/components/ui/button"
 
 export function CampusIllustration() {
@@ -81,13 +81,20 @@ export function CampusIllustration() {
 
           {/* Stats Grid with hover effects */}
           <div className="grid grid-cols-2 gap-3 mb-5">
+            <div className="bg-gray-800/50 p-3 rounded-lg border border-transparent hover:border-violet-800 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="text-xs text-gray-400 flex items-center">
+                <Building2 className="h-3 w-3 mr-1 text-violet-400" />
+                Colleges
+              </div>
+              <div className="text-xl font-bold text-white">67+</div>
+            </div>
             {/* Companies */}
             <div className="bg-gray-800/50 p-3 rounded-lg border border-transparent hover:border-violet-800 transition-all duration-300 transform hover:-translate-y-1">
               <div className="text-xs text-gray-400 flex items-center">
                 <Briefcase className="h-3 w-3 mr-1 text-violet-400" />
                 Companies
               </div>
-              <div className="text-xl font-bold text-white">250+</div>
+              <div className="text-xl font-bold text-white">115+</div>
             </div>
 
             {/* Students Placed */}
@@ -96,17 +103,11 @@ export function CampusIllustration() {
                 <Users className="h-3 w-3 mr-1 text-violet-400" />
                 Students Placed
               </div>
-              <div className="text-xl font-bold text-white">5000+</div>
+              <div className="text-xl font-bold text-white">7510+</div>
             </div>
 
             {/* Avg Package */}
-            <div className="bg-gray-800/50 p-3 rounded-lg border border-transparent hover:border-violet-800 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-xs text-gray-400 flex items-center">
-                <Award className="h-3 w-3 mr-1 text-violet-400" />
-                Avg. Package
-              </div>
-              <div className="text-xl font-bold text-white">₹8.5L</div>
-            </div>
+            
 
             {/* Highest Package */}
             <div className="bg-gray-800/50 p-3 rounded-lg border border-transparent hover:border-violet-800 transition-all duration-300 transform hover:-translate-y-1">
@@ -114,7 +115,7 @@ export function CampusIllustration() {
                 <TrendingUp className="h-3 w-3 mr-1 text-violet-400" />
                 Highest Package
               </div>
-              <div className="text-xl font-bold text-white">₹42L</div>
+              <div className="text-xl font-bold text-white"> ₹1.02 Cr </div>
             </div>
           </div>
 
