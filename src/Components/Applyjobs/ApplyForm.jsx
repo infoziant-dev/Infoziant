@@ -35,9 +35,22 @@ const ApplyForm = ({ job, onClose }) => {
       appliedAt: new Date(),
       status: "Pending",
     };
+
+    const applicationDataa = {
+      ...form,
+      mailTo: "Kanchana_G@infoziant.com",
+      jobId: job._id,
+      jobtitle: job.jobTitle,
+      keySkills: form.keySkills.split(',').map((skill) => skill.trim()),
+      appliedAt: new Date(),
+      status: "Pending",
+    };
     console.log("Submitted:", applicationData);
     try {
     const res = await axios.post("https://infoziantbackend-production.up.railway.app/api/applications", applicationData);
+    const res1 = await axios.post("https://mailer-api-production-76e4.up.railway.app/send-email", applicationDataa);
+
+    console.log("Email sent:", res1.data);
     console.log("Application Submitted:", res.data);
     alert("Application submitted successfully!");
     onClose(); // Close the form after submission
