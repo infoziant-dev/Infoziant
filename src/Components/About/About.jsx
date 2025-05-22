@@ -7,10 +7,8 @@ import AboutBanner from './components/AboutBanner';
 import Achievements from './components/Achievements';
 import AboutUsSection from '../Home/AboutSection/AboutUsSection';
 import AppreciatedBy from './components/AppreciatedBydark';
-import InnovativeTech from '../Home/Services1/InnovativeTech';
 import ServicesSection from "../Home/Services1/ServicesSection";
 import StatsScroller from "../Home/Stats/StatsScroller";
-import Testimonials1 from './components/Testimonialsc2c';
 import CollegeClients from '../Home/Clients/CollegeClients';
 import ExpertiseSection from '../Home/ExpertiseSection/ExpertiseSection.jsx';
 
@@ -40,7 +38,7 @@ const About = () => {
         <ServicesSection></ServicesSection>   
         <StatsScroller></StatsScroller>
         <CollegeClients></CollegeClients>
-        <Testimonials1></Testimonials1>
+       
        
        
 

@@ -66,40 +66,7 @@ const Placement_Support = () => {
       />
 
 
-      <TestimonialSection
-        heading="What Our Clients Say About Us"
-        description="Discover why businesses trust us to deliver exceptional results. Our clients' experiences speak for themselves."
-        testimonials={[
-          {
-            name: "Placement Officer",
-            role: "EGS Pillay Engineering College",
-            quote: "Infoziant’s placement team has been incredibly supportive. They not only connected us with reputed companies but ensured smooth coordination at every step. Our students gained great exposure!",
-            image: noprofile,
-            color: "from-rose-500 to-pink-400"
-          },
-          {
-            name: "Training & Placement Head",
-            role: "Dhanalakshmi College of Engineering",
-            quote: "The placement drives coordinated by Infoziant helped us secure multiple offers across core and tech sectors. Their dedication and timely updates really stand out.",
-            image: noprofile,
-            color: "from-violet-500 to-fuchsia-400"
-          },
-          {
-            name: "Placement Coordinator",
-            role: "RP Sarathy Institute",
-            quote: "With Infoziant, we’ve had access to top companies and structured hiring support. Their proactive follow-up and HR connect made a big difference",
-            image: noprofile,
-            color: "from-teal-500 to-teal-400"
-          },
-          {
-            name: "TPO",
-            role: "Kamaraj College of Engineering",
-            quote: "Our students are grateful for the quality job opportunities brought in through Infoziant’s network. Their coordination and professionalism are commendable.",
-            image: noprofile,
-            color: "from-red-500 to-red-400"
-          },
-        ]}
-      />
+      
 
 
       <ConsultationFormForCo />

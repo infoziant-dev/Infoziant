@@ -10,12 +10,12 @@ const BackgroundGlow = () => (
 
 const JoinCoEMovement = () => {
   return (
-    <section className="relative w-full py-20 px-4 sm:px-6 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a365d] text-white overflow-hidden">
+    <section className="relative w-full py-20 px-4 sm:px-6  text-gray overflow-hidden">
       <BackgroundGlow />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Heading */}
-        <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-teal-300 via-teal-500 to-blue-600 bg-clip-text text-transparent mb-4">
+        <h2 className="text-4xl pb-4 sm:text-5xl font-bold bg-gradient-to-r from-teal-300 via-teal-500 to-blue-600 bg-clip-text text-transparent mb-4">
           Join the CoE Movement
         </h2>
 
@@ -23,7 +23,7 @@ const JoinCoEMovement = () => {
         <div className="w-20 h-1 bg-gradient-to-r from-teal-400 via-teal-400 to-blue-500 rounded-full mx-auto mb-6"></div>
 
         {/* Body Text */}
-        <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-8">
+        <p className="text-lg sm:text-xl text-gray-800 leading-relaxed mb-8">
           Let’s shape the future of tech education together. Whether you're an academic institution
           looking to empower your students, or a government/CSR partner aiming to make an impact —
            Infoziant CoEs are your gateway to
@@ -31,11 +31,7 @@ const JoinCoEMovement = () => {
         </p>
 
         {/* Optional CTA Button */}
-        <div>
-          <button className="bg-gradient-to-r from-teal-400 to-blue-600 hover:from-teal-500 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 hover:scale-105">
-            Get Involved
-          </button>
-        </div>
+        
       </div>
     </section>
   );
