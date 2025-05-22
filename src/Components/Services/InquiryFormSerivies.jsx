@@ -113,7 +113,7 @@ export default function InquiryFormSerivies({ closeModal }) {
 
         <form onSubmit={handleSubmit} className="consultation-form-i">
           <div className="form-row-i">
-            <div className="form-left-i">
+            <div className="form-left-i text-gray-800">
               <div className="input-group-i">
                 <input
                   type="text"
