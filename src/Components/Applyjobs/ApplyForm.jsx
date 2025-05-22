@@ -71,11 +71,10 @@ const handleSubmit = async (e) => {
 
     const emailPayload = {
       ...updatedForm,
-      mailTo: "21ita16@karpagamtech.ac.in",
+      mailTo: "recruiter@infoziant.com",
       appliedAt: new Date().toLocaleString(),
     };
 
-    // recruiter@infoziant.com
 
     // Step 4: Send data to backend & email service
     const res = await axios.post("https://infoziantbackend-production.up.railway.app/api/applications", updatedForm);
