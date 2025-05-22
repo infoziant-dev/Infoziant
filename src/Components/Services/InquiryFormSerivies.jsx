@@ -1,10 +1,10 @@
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
-import { FaCircleCheck} from "react-icons/fa6";
+import { FaCircleCheck } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
-import "../css/InquiryForm.css"; 
+import "../css/InquiryForm.css";
 
-export default function InquiryFormSerivies({closeModal} ) {
+export default function InquiryFormSerivies({ closeModal }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,28 +37,32 @@ export default function InquiryFormSerivies({closeModal} ) {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitConfirmation(true)
+
     if (validateForm()) {
-      const emailParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone_number: formData.phone,
-        selected_service: formData.services,
+      const emailPayload = {
+        mailTo: process.env.REACT_APP_MAIL_TO,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        services: formData.services,
         message: formData.message,
+        time: new Date().toLocaleString()
       };
 
-      emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        emailParams,
-        process.env.REACT_APP_EMAILJS_USER_ID
-      )
-      .then((response) => {
-        if (response.status === 200) {
-            setSubmitConfirmation(false)
+      try {
+        const response = await fetch(process.env.REACT_APP_MAIL_API, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(emailPayload)
+        });
+
+        if (response.ok) {
           setSuccessMessage("Your request has been submitted successfully!");
+
           setFormData({
             name: "",
             email: "",
@@ -66,16 +70,18 @@ export default function InquiryFormSerivies({closeModal} ) {
             services: "",
             message: ""
           });
+
           setTimeout(() => {
             setSuccessMessage("");
           }, 5000);
+        } else {
+          console.error("API response not OK:", await response.text());
+          alert("An error occurred while submitting your request. Please try again.");
         }
-      })
-      .catch((err) => {
-        setSubmitConfirmation(false)
+      } catch (err) {
         console.error("Failed to send email. Error:", err);
         alert("An error occurred while submitting your request. Please try again.");
-      });
+      }
     }
   };
 
@@ -96,9 +102,9 @@ export default function InquiryFormSerivies({closeModal} ) {
           <FaTimes />
         </button>
         <h1 className="form-title-i">Get in Touch</h1>
-<p className="form-desc-i">
-  Have a question or need assistance? We're here to help — just drop us a message.
-</p>
+        <p className="form-desc-i">
+          Have a question or need assistance? We're here to help — just drop us a message.
+        </p>
 
         {/* Success message display */}
         <div className="center-container-i">
@@ -151,7 +157,7 @@ export default function InquiryFormSerivies({closeModal} ) {
                   required
                   className="input-field-i"
                 />
-                 
+
                 {errors.services && <p className="error-message-i">{errors.services}</p>}
               </div>
             </div>
@@ -168,7 +174,7 @@ export default function InquiryFormSerivies({closeModal} ) {
           <button type="submit" className="submit-button-i">{submitConfirmation ? "Submitting..." : "Submit"}</button>
         </form>
 
-        
+
       </div>
     </div>
   );

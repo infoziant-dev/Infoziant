@@ -104,7 +104,7 @@ const Intership_Programs = () => {
         description="Discover why businesses trust us to deliver exceptional results. Our clients' experiences speak for themselves."
         testimonials={[
           {
-            name: "Keerthana M., CSE - Final Yea",
+            name: "Keerthana M., CSE - Final Year",
             role: "Karpagam College of Engineering",
             quote: "My internship through Infoziant gave me real-time exposure to the IT industry. I got to work on practical projects that enhanced both my technical and problem-solving skills.",
             image: noprofile,
@@ -118,7 +118,7 @@ const Intership_Programs = () => {
             color: "from-violet-500 to-fuchsia-400"
           },
           {
-            name: "Boopathi R., AI & DS - II Yearr",
+            name: "Boopathi R., AI & DS - II Year",
             role: "RP Sarathy Institute of Technology",
             quote: "The internship I did through Infoziant helped me understand how things work in a real corporate environment. It was a great bridge between college learning and industry expectations",
             image: noprofile,

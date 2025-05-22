@@ -18,7 +18,7 @@ const HowItWorks = ({ steps }) => {
 
 
   return (
-    <section className="w-full py-24 bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900">
+    <section className="w-full pt-24 bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-teal-400 to-blue-500 text-white text-sm font-medium mb-4">
@@ -123,11 +123,13 @@ const HowItWorks = ({ steps }) => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-8 text-center bg-gradient-to-b from-gray-100 to-gray-200 py-8">
-          <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+        
+      </div>
+      <div className="mt-20  text-center bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a365d] py-16">
+          <h3 className="text-3xl font-semibold text-gray-100 mb-4">
             Ready to Make Your Students Placement-Ready?
           </h3>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-gray-400 mb-6">
             Start from scratch. Build expertise. Win careers.
           </p>
           <button
@@ -136,7 +138,6 @@ const HowItWorks = ({ steps }) => {
           >
             Start Learning Today
           </button>
-        </div>
       </div>
 
 

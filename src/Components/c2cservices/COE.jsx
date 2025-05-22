@@ -135,28 +135,6 @@ const COE = () => {
 
             <KeyHighlights heading={highlights} points={points}/>
 
-        <TestimonialSection
-          heading="What Our Clients Say About Us"
-          description="Discover why businesses trust us to deliver exceptional results. Our clients' experiences speak for themselves."
-          testimonials={[
-            {
-              name: "CSE HOD –  PSNA",
-              role: "PSNA College of Engineering and Technology",
-              quote: "The Centre of Excellence established in collaboration with Infoziant has been a game changer for our students. It provides them with exposure to real-world cybersecurity challenges and hands-on tools that are usually available only in top-tier companies. Our students are more confident and industry-ready than ever before.",
-              image: noprofile,
-              color: "from-rose-500 to-pink-400"
-            },
-            {
-              name: "Principal, Kalasalingam University",
-              role: "Kalasalingam Academy of Research and Education",
-              quote: "Partnering with Infoziant to set up a CoE in AI and Cybersecurity has significantly elevated our academic offerings. The customized labs, expert sessions, and project-based learning approach have bridged the gap between academia and industry. We truly value this partnership.",
-              image: noprofile,
-              color: "from-violet-500 to-fuchsia-400"
-            },
-            
-                      // Add more testimonials here
-                    ]}
-          />
 
           <JoinCoEMovement />
 
