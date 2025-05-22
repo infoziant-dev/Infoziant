@@ -4,17 +4,37 @@ import './css/Emailform.css'; // Import the separated CSS
 const EmailForm = ({ closeModal }) => {
     const [email, setEmail] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Notify user about form submission
-        alert('Email submitted successfully!');
+    const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        // Log the submitted email (In practice, you would send this to a server)
-        console.log('Submitted Email:', email);
+    try {
+        const response = await fetch(process.env.REACT_APP_MAIL_API, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                mailTo: process.env.REACT_APP_MAIL_TO,
+                email: email,
+                message: "Requesting free version of DAST Tool",
+                time: new Date().toLocaleString()
+            }),
+        });
 
-        // Close the modal after submission
-        closeModal();
-    };
+        if (response.ok) {
+            alert("Email submitted successfully!");
+            closeModal();
+        } else {
+            const errorText = await response.text();
+            console.error("Server Error:", errorText);
+            alert("Something went wrong. Please try again.");
+        }
+    } catch (error) {
+        console.error("Fetch Error:", error);
+        alert("An error occurred. Please try again.");
+    }
+};
+
 
     return (
         <div className="overlay">

@@ -14,7 +14,7 @@ const ApplyJobs = () => {
       try {
         const res = await fetch(`https://infoziantbackend-production.up.railway.app/api/jobs/${id}`);
         const data = await res.json();
-        console.log('Fetched job data:', data);
+        //console.log('Fetched job data:', data);
         setJob(data);
       } catch (err) {
         console.error('Failed to fetch job details:', err);

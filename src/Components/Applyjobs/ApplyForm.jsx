@@ -38,20 +38,20 @@ const ApplyForm = ({ job, onClose }) => {
 
     const applicationDataa = {
       ...form,
-      mailTo: "Kanchana_G@infoziant.com",
+      mailTo: process.env.REACT_APP_MAIL_TO,
       jobId: job._id,
       jobtitle: job.jobTitle,
       keySkills: form.keySkills.split(',').map((skill) => skill.trim()),
-      appliedAt: new Date(),
+      appliedAt: new Date().toLocaleString(),
       status: "Pending",
     };
-    console.log("Submitted:", applicationData);
+    //console.log("Submitted:", applicationData);
     try {
     const res = await axios.post("https://infoziantbackend-production.up.railway.app/api/applications", applicationData);
-    const res1 = await axios.post("https://mailer-api-production-76e4.up.railway.app/send-email", applicationDataa);
+    const res1 = await axios.post(process.env.REACT_APP_MAIL_API, applicationDataa);
 
     console.log("Email sent:", res1.data);
-    console.log("Application Submitted:", res.data);
+    //console.log("Application Submitted:", res.data);
     alert("Application submitted successfully!");
     onClose(); // Close the form after submission
     
