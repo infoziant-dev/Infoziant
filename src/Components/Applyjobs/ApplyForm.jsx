@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Client, Storage, ID } from 'appwrite';
+
+const client = new Client()
+  .setEndpoint('https://cloud.appwrite.io/v1')
+  .setProject('67b6ce100032bb22257f');
+
+const storage = new Storage(client);
+
+
 const ApplyForm = ({ job, onClose }) => {
   const [form, setForm] = useState({
     applicantName: "",
@@ -25,10 +34,31 @@ const ApplyForm = ({ job, onClose }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit  = async (e) =>{
-    e.preventDefault();
-    const applicationData = {
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+
+  try {
+    // Step 1: Upload the file to Appwrite
+    const uploadedFile = await storage.createFile(
+      '67eb8cd60012787fe46e',  // Replace with your bucket ID
+      ID.unique(),
+      form.resume
+    );
+
+    console.log("File uploaded:", uploadedFile);
+    
+
+    // Step 2: Get the file preview URL
+    const fileUrl = storage.getFileView('67eb8cd60012787fe46e', uploadedFile.$id);
+
+    console.log("File URL:", fileUrl);
+    
+
+    // Step 3: Update form with resume URL
+    const updatedForm = {
       ...form,
+      resume: fileUrl.toString(), // Send this URL in email
       jobId: job._id,
       jobtitle: job.jobTitle,
       keySkills: form.keySkills.split(',').map((skill) => skill.trim()),
@@ -36,30 +66,30 @@ const ApplyForm = ({ job, onClose }) => {
       status: "Pending",
     };
 
-    const applicationDataa = {
-      ...form,
-      mailTo: "recruiter@infoziant.com",
-      jobId: job._id,
-      jobtitle: job.jobTitle,
-      keySkills: form.keySkills.split(',').map((skill) => skill.trim()),
-      appliedAt: new Date().toLocaleString(),
-      status: "Pending",
-    };
-    //console.log("Submitted:", applicationData);
-    try {
-    const res = await axios.post("https://infoziantbackend-production.up.railway.app/api/applications", applicationData);
-    const res1 = await axios.post("https://mailer-api-production-76e4.up.railway.app/send-email", applicationDataa);
-
-    console.log("Email sent:", res1.data);
-    //console.log("Application Submitted:", res.data);
-    alert("Application submitted successfully!");
-    onClose(); // Close the form after submission
+    console.log("Updated form data:", updatedForm);
     
+
+    const emailPayload = {
+      ...updatedForm,
+      mailTo: "21ita16@karpagamtech.ac.in",
+      appliedAt: new Date().toLocaleString(),
+    };
+
+    // recruiter@infoziant.com
+
+    // Step 4: Send data to backend & email service
+    const res = await axios.post("https://infoziantbackend-production.up.railway.app/api/applications", updatedForm);
+    const res1 = await axios.post("https://mailer-api-production-76e4.up.railway.app/send-email", emailPayload);
+
+    console.log("Application submitted & Email sent:", res1.data);
+    alert("Application submitted successfully!");
+    onClose();
   } catch (err) {
     console.error("Submission error:", err);
     alert("Something went wrong!");
   }
-  };
+};
+
 
   return (
     <div className="bg-white text-blue-800 max-h-[80vh] overflow-y-scroll p-2 rounded-lg ">
@@ -85,7 +115,18 @@ const ApplyForm = ({ job, onClose }) => {
           <Input name="currentAddress" label="Current Address" value={form.currentAddress} onChange={handleChange} />
           <Input name="permanentAddress" label="Permanent Address" value={form.permanentAddress} onChange={handleChange} />
           <Input name="zipCode" label="Zip Code" value={form.zipCode} onChange={handleChange} />
-          <Input name="resume" label="Resume Google Drive Link" value={form.resume} onChange={handleChange} />
+          <div>
+  <label className="block text-sm font-medium">Upload Resume (PDF)</label>
+  <input
+    type="file"
+    name="resume"
+    accept=".pdf"
+    onChange={(e) => setForm({ ...form, resume: e.target.files[0] })}
+    className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
+    required
+  />
+</div>
+
         </div>
 
         <div>
