@@ -38,7 +38,7 @@ const ApplyForm = ({ job, onClose }) => {
 
     const applicationDataa = {
       ...form,
-      mailTo: process.env.REACT_APP_MAIL_TO,
+      mailTo: "recruiter@infoziant.com",
       jobId: job._id,
       jobtitle: job.jobTitle,
       keySkills: form.keySkills.split(',').map((skill) => skill.trim()),
@@ -48,7 +48,7 @@ const ApplyForm = ({ job, onClose }) => {
     //console.log("Submitted:", applicationData);
     try {
     const res = await axios.post("https://infoziantbackend-production.up.railway.app/api/applications", applicationData);
-    const res1 = await axios.post(process.env.REACT_APP_MAIL_API, applicationDataa);
+    const res1 = await axios.post("https://mailer-api-production-76e4.up.railway.app/send-email", applicationDataa);
 
     console.log("Email sent:", res1.data);
     //console.log("Application Submitted:", res.data);

@@ -12,8 +12,8 @@ const services = [
   {
     id: 1,
     therla: "Powering Progress",  
-    an: "through",
-    this: "Code and Creativity",
+    an: "through Code",
+    this: "and Creativity",
     head: "Software Development",
     title: "businesses with",
     subtitle: "scalable and robust",
@@ -25,8 +25,8 @@ const services = [
   {
     id: 2,
     therla: "Navigating Threats ",  
-    an: "with",
-    this: " Smart Risk Strategies",
+    an: "with Smart",
+    this: "Risk Strategies",
     head: "Cybersecurity",
     title: "organizations with",
     subtitle: "smarter, stronger",
@@ -122,16 +122,16 @@ export function DynamicHeroSection() {
 
   return (
     <section className="container mx-auto md:py-32">
-      <div className="grid md:grid-cols-2 gap-24 items-center">
+      <div className="grid md:grid-cols-2 gap-20 items-center">
         {/* Left Side - Text Content */}
         <div className="space-y-8">
           <div className={`transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"}`}>
-            <div className="text-5xl md:text-6xl font-bold leading-relaxed space-y-12">
+            <div className="text-3xl sm:text-4xl md:text-6xl font-bold leading-relaxed space-y-8 sm:space-y-12">
               <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
                 {currentService.therla}
               </span>
               <br />
-              <span className="text-gray-100 pt-8">
+              <span className="text-gray-100 pt-4 sm:pt-8">
                 {currentService.an}
               </span>
               <br />
@@ -144,24 +144,26 @@ export function DynamicHeroSection() {
             </div>
           </div>
           <p
-            className={`text-gray-400 text-lg md:text-xl max-w-lg transition-opacity duration-300 leading-relaxed ${fadeState === "out" ? "opacity-0" : "opacity-100"
-              }`}
+            className={`text-gray-400 text-base sm:text-lg md:text-xl max-w-lg transition-opacity duration-300 leading-relaxed ${
+              fadeState === "out" ? "opacity-0" : "opacity-100"
+            }`}
           >
             {currentService.description}
           </p>
           <div
-            className={`flex flex-col sm:flex-row gap-4 transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"
-              }`}
+            className={`flex flex-col sm:flex-row gap-4 transition-opacity duration-300 ${
+              fadeState === "out" ? "opacity-0" : "opacity-100"
+            }`}
           >
             <button
               onClick={() => {
                 const section = document.getElementById("services-section");
                 if (section) section.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`px-4 py-2 rounded-md text-lg bg-gradient-to-r ${currentService.color} hover:opacity-90 text-white flex items-center`}
+              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-md text-base sm:text-lg bg-gradient-to-r ${currentService.color} hover:opacity-90 text-white flex items-center`}
             >
               Explore Solutions
-              <ArrowDown className="ml-2 h-4 w-4" />
+              <ArrowDown className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
             </button>
           </div>
         </div>

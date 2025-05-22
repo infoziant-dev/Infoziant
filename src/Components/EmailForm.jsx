@@ -8,13 +8,13 @@ const EmailForm = ({ closeModal }) => {
     e.preventDefault();
 
     try {
-        const response = await fetch(process.env.REACT_APP_MAIL_API, {
+        const response = await fetch("https://mailer-api-production-76e4.up.railway.app/send-email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                mailTo: process.env.REACT_APP_MAIL_TO,
+                mailTo: "support@infoziant.com",
                 email: email,
                 message: "Requesting free version of DAST Tool",
                 time: new Date().toLocaleString()

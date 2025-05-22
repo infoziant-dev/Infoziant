@@ -50,8 +50,8 @@ export default function InquiryForm() {
       };
 
       try {
-        const response = await fetch(process.env.REACT_APP_MAIL_API, {
-          mailTo: process.env.REACT_APP_MAIL_TO,
+        const response = await fetch("https://mailer-api-production-76e4.up.railway.app/send-email", {
+          mailTo: "support@infoziant.com",
           method: "POST",
           headers: {
             "Content-Type": "application/json"

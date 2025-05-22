@@ -46,7 +46,7 @@ export default function ConsultationForm() {
 
     if (validateForm()) {
       const emailPayload = {
-        mailTo: process.env.REACT_APP_MAIL_TO,
+        mailTo: "support@infoziant.com",
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -56,7 +56,7 @@ export default function ConsultationForm() {
       };
 
       try {
-        const response = await fetch(process.env.REACT_APP_MAIL_API, {
+        const response = await fetch("https://mailer-api-production-76e4.up.railway.app/send-email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
