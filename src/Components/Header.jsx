@@ -107,7 +107,7 @@ const Header = () => {
           ],
         },
         { name: "Cybersecurity Services", path: "/services/cybersecurity" },
-        { name: "Prodcut", path: "/product" },
+        { name: "Product", path: "/product" },
       ],
     },
     {
