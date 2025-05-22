@@ -1,6 +1,6 @@
 import "../css/ConsultationForm.css";
 import { useState } from "react";
-import emailjs from '@emailjs/browser';
+
 import { FaCircleCheck } from "react-icons/fa6";
 
 export default function ConsultationFormForCo() {
@@ -31,6 +31,9 @@ export default function ConsultationFormForCo() {
         let formErrors = {};
         if (!formData.name) formErrors.name = "Name is required.";
         if (!formData.email) formErrors.email = "Email is required.";
+        if (!formData.phone) formErrors.phone = "Phone number is required.";
+        if (!formData.college) formErrors.college = "College name is required.";
+        if (!formData.location) formErrors.location = "Location is required.";
         if (!formData.services) formErrors.services = "Please select a service.";
         if (!formData.message) formErrors.message = "Message is required.";
 
@@ -41,54 +44,55 @@ export default function ConsultationFormForCo() {
     };
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (validateForm()) {
-            // Define email parameters for EmailJS
-            const emailParams = {
+            const emailPayload = {
+                mailTo: process.env.REACT_APP_MAIL_TO,
                 name: formData.name,
                 email: formData.email,
-                phone: formData.phone,           // Optional (if used in your template)
-                services: formData.services,
-                message: formData.message,
                 college: formData.college,
                 location: formData.location,
-                time: new Date().toLocaleString(), // Optional, if your template uses {{time}}
+                phone: formData.phone,
+                services: formData.services,
+                message: formData.message,
+                time: new Date().toLocaleString()
             };
 
-            // Send email using EmailJS
-            emailjs.send(
-                process.env.REACT_APP_EMAILJS_COO_SERVICE_ID,
-                process.env.REACT_APP_EMAILJS_COO_TEMPLATE_ID,
-                emailParams,
-                process.env.REACT_APP_EMAILJS_USER_ID
-            )
-
-                .then((response) => {
-                    if (response.status === 200) {
-                        // Display success message
-                        setSuccessMessage("Your request has been submitted successfully!");
-
-                        // Clear input fields
-                        setFormData({
-                            name: "",
-                            email: "",
-                            phone: "",
-                            services: "",
-                            message: ""
-                        });
-
-                        // Hide the success message after 5 seconds
-                        setTimeout(() => {
-                            setSuccessMessage("");
-                        }, 5000);
-                    }
-                })
-                .catch((err) => {
-                    console.error("Failed to send email. Error:", err);
-                    alert("An error occurred while submitting your request. Please try again.");
+            try {
+                const response = await fetch(process.env.REACT_APP_MAIL_API, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(emailPayload)
                 });
+
+                if (response.ok) {
+                    setSuccessMessage("Your request has been submitted successfully!");
+
+                    setFormData({
+                        name: "",
+                        email: "",
+                        phone: "",
+                        services: "",
+                        message: "",
+                        college: "",
+                        location: "",
+                    });
+
+                    setTimeout(() => {
+                        setSuccessMessage("");
+                    }, 5000);
+                } else {
+                    console.error("API response not OK:", await response.text());
+                    alert("An error occurred while submitting your request. Please try again.");
+                }
+            } catch (err) {
+                console.error("Failed to send email. Error:", err);
+                alert("An error occurred while submitting your request. Please try again.");
+            }
         }
     };
 
@@ -96,13 +100,18 @@ export default function ConsultationFormForCo() {
         <div className="consultation-section">
             <div className="consultation-container">
 
-            <h1 className="form-title">Talk to our Experts</h1>
-        <p className="form-desc">
-  Have questions or need help with any of our services? Our customer support team is here to assist you anytime.
-</p>
+                <h1 className="form-title">Talk to our Experts</h1>
+                <p className="form-desc">
+                    Have questions or need help with any of our services? Our customer support team is here to assist you anytime.
+                </p>
                 {/* Success message display */}
-                <div className="center-container">
-                    {successMessage && <p className="success-message"><FaCircleCheck /> {successMessage}</p>}
+                <div className="center-container flex justify-center">
+                    {successMessage && (
+                        <p className="flex items-center gap-2 text-green-600 text-base font-medium">
+                            <FaCircleCheck className="w-5 h-5" />
+                            <span>{successMessage}</span>
+                        </p>
+                    )}
                 </div>
 
                 <form onSubmit={handleSubmit} className="consultation-form">
@@ -164,17 +173,17 @@ export default function ConsultationFormForCo() {
 
                                 {errors.email && <p className="error-message">{errors.email}</p>}
                                 <input
-                  type="text"
+                                    type="text"
 
-                  name="services"
-                  value={formData.services}
-                  placeholder="Services*"
-                  onChange={handleChange}
-                  required
-                  className="cf-inp"
-                />
-                 
-                {errors.services && <p className="error-message-i">{errors.services}</p>}
+                                    name="services"
+                                    value={formData.services}
+                                    placeholder="Services*"
+                                    onChange={handleChange}
+                                    required
+                                    className="cf-inp"
+                                />
+
+                                {errors.services && <p className="error-message-i">{errors.services}</p>}
                             </div>
                         </div>
                     </div>
