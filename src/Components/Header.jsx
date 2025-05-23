@@ -95,6 +95,7 @@ const Header = () => {
       title: "Cybersecurity",
       key: "cyber",
       items: [
+        { name: "Cybersecurity Services", path: "/services/cybersecurity" },
         {
           name: "VAPT",
           path: "/services/vapt",
@@ -106,7 +107,7 @@ const Header = () => {
             { name: "SIEM & Threat Intelligence", path: "/services/siem" },
           ],
         },
-        { name: "Cybersecurity Services", path: "/services/cybersecurity" },
+        
         { name: "Product", path: "/product" },
       ],
     },

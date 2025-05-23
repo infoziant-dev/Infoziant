@@ -32,7 +32,7 @@ const testimonials = [
   {
     name: "Mr. Bharat Saoji",
     role: "Vice President IT  |  Keenan & Associates",
-    quote: "Coming from an MCA background in arts, stepping into the tech world felt overwhelming. CodeChef provided a clear learning path with structured practice and real-time coding challenges. The competitive environment pushed me to improve, and the interview preparation resources were invaluable. Thanks to this, I successfully secured placements at EY Global!.",
+    quote: "Infoziant is been associated with Keenan &amp; Associates for more than 5 years and the security testing services provided by them makes our application free from security threats. Tony and team is very supportive as they respond to us any time round the clock.",
     image: image4,
     color: "from-orange-500 to-amber-400"
   },
