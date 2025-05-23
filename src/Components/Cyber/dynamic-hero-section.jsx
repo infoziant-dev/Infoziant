@@ -126,7 +126,7 @@ export function DynamicHeroSection() {
         {/* Left Side - Text Content */}
         <div className="space-y-8">
           <div className={`transition-opacity duration-300 ${fadeState === "out" ? "opacity-0" : "opacity-100"}`}>
-            <div className="text-3xl sm:text-4xl md:text-6xl font-bold leading-relaxed space-y-8 sm:space-y-12">
+            <div className="text-3xl sm:text-4xl md:text-6xl font-bold leading-relaxed lg:leading-[1.3] space-y-8 sm:space-y-12">
               <span className={`bg-clip-text text-transparent bg-gradient-to-r ${currentService.color}`}>
                 {currentService.therla}
               </span>
