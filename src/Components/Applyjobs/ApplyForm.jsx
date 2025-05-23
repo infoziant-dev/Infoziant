@@ -53,6 +53,8 @@ const handleSubmit = async (e) => {
     const fileUrl = storage.getFileView('67eb8cd60012787fe46e', uploadedFile.$id);
 
     console.log("File URL:", fileUrl);
+
+    
     
 
     // Step 3: Update form with resume URL

@@ -90,40 +90,46 @@ const App = () => {
           <Route path="/services/genai" element={<GenAI />} />
 
           <Route
-            path="/aiml"
+            path="/aimlinternship"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633e" />
             }
           />
           <Route
-            path="/webdev"
+            path="/webdevinternship"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef8626340" />
             }
           />
           <Route
-            path="/cybersec"
+            path="/cybersecinternship"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633f" />
             }
           />
 
           <Route
-            path="/aimlinternship"
+            path="/aiml"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8b" />
             }
           />
           <Route
-            path="/webdevinternship"
+            path="/webdev"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8d" />
             }
           />
           <Route
-            path="/cybersecinternship"
+            path="/cybersec"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8c" />
+            }
+          />
+          <Route
+            path="/techcamp"
+            element={
+              <Redirect link="" />
             }
           />
           <Route
