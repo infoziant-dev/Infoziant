@@ -46,15 +46,13 @@ const handleSubmit = async (e) => {
       form.resume
     );
 
-    console.log("File uploaded:", uploadedFile);
+    //console.log("File uploaded:", uploadedFile);
     
 
     // Step 2: Get the file preview URL
     const fileUrl = storage.getFileView('67eb8cd60012787fe46e', uploadedFile.$id);
 
-    console.log("File URL:", fileUrl);
-
-    
+    //console.log("File URL:", fileUrl);
     
 
     // Step 3: Update form with resume URL
@@ -68,7 +66,7 @@ const handleSubmit = async (e) => {
       status: "Pending",
     };
 
-    console.log("Updated form data:", updatedForm);
+    //console.log("Updated form data:", updatedForm);
     
 
     const emailPayload = {
@@ -82,7 +80,7 @@ const handleSubmit = async (e) => {
     const res = await axios.post("https://infoziantbackend-production.up.railway.app/api/applications", updatedForm);
     const res1 = await axios.post("https://mailer-api-production-76e4.up.railway.app/send-email", emailPayload);
 
-    console.log("Application submitted & Email sent:", res1.data);
+    //console.log("Application submitted & Email sent:", res1.data);
     alert("Application submitted successfully!");
     onClose();
   } catch (err) {

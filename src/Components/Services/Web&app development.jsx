@@ -40,7 +40,7 @@ const WebandApp = () => {
       <InnovativeTech />
 
 
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <ConsultationForm />
       {/* <ContactSection /> */}
       {/* <Footer /> */}
