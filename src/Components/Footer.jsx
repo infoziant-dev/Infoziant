@@ -18,10 +18,7 @@ export default function Footer() {
           {/* Left: Company Info */}
           <div className="w-full md:w-[40%] space-y-4 md:ml-8 text-center md:text-left">
             <img src="/Logo.png" alt="Infoziant Logo" className="w-40 mx-auto sm:w-60 md:w-60 mx-auto md:mx-0" />
-            <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
-              <FaPhoneAlt className="mt-1" />
-              <span>+1 (314) 732 0300, +91 96000 85988</span>
-            </div>
+            
             <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
               <FaEnvelope className="mt-1" />
               <span>support@infoziant.com</span>

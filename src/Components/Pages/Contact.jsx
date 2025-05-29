@@ -72,16 +72,7 @@ const Contact = () => {
 
         {/* Two-column layout for Phone and Email */}
         <div className="contact-row">
-          <div className="contact-column">
-            <div className="contact-item contact-phone">
-              <FaPhoneAlt className="contact-icon" /> {/* Phone Icon */}
-              <div className="contact-info">
-                <div className="contact-info-title">Phone</div>
-                <div className="contact-desc">+91 96000 85988</div>
-                <div className="contact-desc">1 (314) 732 0300</div>
-              </div>
-            </div>
-          </div>
+          
 
           <div className="contact-column">
             <div className="contact-item contact-email">
