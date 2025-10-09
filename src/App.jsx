@@ -90,19 +90,19 @@ const App = () => {
           <Route path="/services/genai" element={<GenAI />} />
 
           <Route
-            path="/aimlinternship"
+            path="/aiml15"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633e" />
             }
           />
           <Route
-            path="/webdevinternship"
+            path="/webdev15"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef8626340" />
             }
           />
           <Route
-            path="/cybersecinternship"
+            path="/cybersec30"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633f" />
             }
@@ -129,7 +129,7 @@ const App = () => {
           <Route
             path="/techcamp"
             element={
-              <Redirect link="" />
+              <Redirect link="https://aicl.infoziant.com/courses/683048add177c19178d55b56" />
             }
           />
           <Route
