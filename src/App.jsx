@@ -90,13 +90,13 @@ const App = () => {
           <Route path="/services/genai" element={<GenAI />} />
 
           <Route
-            path="/web"
+            path="/webfs"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef8626340" />
             }
           />
           <Route
-            path="/webFS"
+            path="/web1"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8d" />
             }
@@ -108,7 +108,7 @@ const App = () => {
             }
           />
           <Route
-            path="/aiml30"
+            path="/aiml1"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8b" />
             }
@@ -120,7 +120,7 @@ const App = () => {
             }
           />
           <Route
-            path="/cs30"
+            path="/cs1"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633f" />
             }
