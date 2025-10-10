@@ -10,6 +10,7 @@ import OurProducts from './OurProducts/OurProducts';
 import HallofFames from '../Pages/HallofFames';
 import HomeBanner from "../Cyber/HomeBannermain"
 import InnovativeTech from './Services1/InnovativeTech';
+import PopupAd from './PopupAd';
 
 
 
@@ -25,20 +26,20 @@ const Home = () => {
   }, [location]);
   return (
     <>
-       
-        <HomeBanner />
-        <InnovativeTech />
-        <WhyInfoziant />
-        <Partnership />
-        <Accreditation />
-        <OurProducts />
-        <div ref={portfolioRef}>
+      <PopupAd />
+      <HomeBanner />
+      <InnovativeTech />
+      <WhyInfoziant />
+      <Partnership />
+      <Accreditation />
+      <OurProducts />
+      <div ref={portfolioRef}>
         <Portfolio />
-        </div>
-        <HallofFames />
-        <TestimonialSection />
-      
-      
+      </div>
+      <HallofFames />
+      <TestimonialSection />
+
+
     </>
   )
 }
