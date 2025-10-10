@@ -90,28 +90,9 @@ const App = () => {
           <Route path="/services/genai" element={<GenAI />} />
 
           <Route
-            path="/aiml"
-            element={
-              <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633e" />
-            }
-          />
-          <Route
             path="/web"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef8626340" />
-            }
-          />
-          <Route
-            path="/cybersecFS"
-            element={
-              <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633f" />
-            }
-          />
-
-          <Route
-            path="/aimlFS"
-            element={
-              <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8b" />
             }
           />
           <Route
@@ -121,9 +102,27 @@ const App = () => {
             }
           />
           <Route
-            path="/cybersec"
+            path="/aiml"
+            element={
+              <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633e" />
+            }
+          />
+          <Route
+            path="/aiml30"
+            element={
+              <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8b" />
+            }
+          />
+          <Route
+            path="/cs"
             element={
               <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8c" />
+            }
+          />
+          <Route
+            path="/cs30"
+            element={
+              <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633f" />
             }
           />
           <Route
