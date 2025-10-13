@@ -188,43 +188,43 @@ const App = () => {
           <Route
             path="/webfs"
             element={
-              <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef8626340" />
+              <Redirect link="https://infoziant.com/vta/courses/680a024024dff2cef8626340" />
             }
           />
           <Route
             path="/web1"
             element={
-              <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8d" />
+              <Redirect link="https://infoziant.com/vta/courses/68234801248526e958dd4d8d" />
             }
           />
           <Route
             path="/aiml"
             element={
-              <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633e" />
+              <Redirect link="https://infoziant.com/vta/courses/680a024024dff2cef862633e" />
             }
           />
           <Route
             path="/aiml1"
             element={
-              <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8b" />
+              <Redirect link="https://infoziant.com/vta/courses/68234801248526e958dd4d8b" />
             }
           />
           <Route
             path="/cs"
             element={
-              <Redirect link="https://aicl.infoziant.com/courses/68234801248526e958dd4d8c" />
+              <Redirect link="https://infoziant.com/vta/courses/68234801248526e958dd4d8c" />
             }
           />
           <Route
             path="/cs1"
             element={
-              <Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633f" />
+              <Redirect link="https://infoziant.com/vta/courses/680a024024dff2cef862633f" />
             }
           />
           <Route
             path="/techcamp"
             element={
-              <Redirect link="https://aicl.infoziant.com/courses/683048add177c19178d55b56" />
+              <Redirect link="https://infoziant.com/vta/courses/683048add177c19178d55b56" />
             }
           />
           <Route path="/job/:title" element={<ApplyJobs />} />
