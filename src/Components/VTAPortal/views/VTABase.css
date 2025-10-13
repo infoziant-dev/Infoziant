@@ -1,0 +1,2492 @@
+:root {
+  --primary-color: #0069b4;
+  --secondary-color: #00bfb3;
+  --accent-color: #06d6a0;
+  --primary-color-light: rgba(0, 105, 180, 0.1);
+  --dark-bg: #121c2e;
+  --light-bg: #f5f7fa;
+  --text-dark: #333;
+  --text-light: #fff;
+  --gray-text: #6c757d;
+  --border-color: #e0e0e0;
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --primary-gradient: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  --accent-gradient: linear-gradient(45deg, #00bfb3, #06d6a0);
+  --button-gradient: linear-gradient(45deg, #0069b4, #00bfb3);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.vta_portal * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body .vta_portal  {
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.vta_portal .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.vta_portal .main-content {
+  flex: 1;
+  padding: 0;
+  width: 100%;
+}
+
+.vta_portal .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  overflow-x: hidden;
+}
+
+.vta_portal .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.vta_portal .btn-primary {
+  background: var(--button-gradient);
+  color: var(--text-light);
+}
+
+.vta_portal .btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.vta_portal .btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.vta_portal .btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.vta_portal .card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.vta_portal .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.vta_portal .section {
+  padding: 4rem 0;
+}
+
+.vta_portal .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.vta_portal .section-title:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 60px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+.vta_portal .text-center {
+  text-align: center;
+}
+
+.vta_portal .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: var(--transition);
+  color: var(--text-dark);
+  background-color: #fff;
+}
+
+.vta_portal .form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 105, 180, 0.2);
+  color: var(--text-dark);
+}
+
+.vta_portal .form-control::placeholder {
+  color: rgba(108, 117, 125, 0.7);
+}
+
+.vta_portal .error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.vta_portal .success-message {
+  color: var(--success-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.vta_portal .grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.vta_portal .grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .vta_portal .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vta_portal .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .vta_portal .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.vta_portal .flex {
+  display: flex;
+}
+
+.vta_portal .flex-col {
+  flex-direction: column;
+}
+
+.vta_portal .items-center {
+  align-items: center;
+}
+
+.vta_portal .justify-between {
+  justify-content: space-between;
+}
+
+.vta_portal .hero-section {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  padding: 5rem 0;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.vta_portal .hero-content {
+  max-width: 600px;
+}
+
+.vta_portal .hero-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vta_portal .hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Stats Section Styles */
+.vta_portal .stats-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.vta_portal .stat-item {
+  text-align: center;
+}
+
+.vta_portal .stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.vta_portal .stat-label {
+  font-size: 1rem;
+  color: var(--gray-text);
+}
+
+/* Icon styles */
+.vta_portal .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+/* Auth forms */
+.vta_portal .auth-container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.vta_portal .auth-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.vta_portal .auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--gray-text);
+}
+
+.vta_portal .auth-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Dashboard */
+.vta_portal .dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.vta_portal .sidebar {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  height: fit-content;
+}
+
+.vta_portal .user-info {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vta_portal .user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border: 3px solid var(--primary-color-light);
+}
+
+.vta_portal .user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vta_portal .user-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-dark);
+}
+
+.vta_portal .user-email {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+  margin-bottom: 0;
+}
+
+.vta_portal .sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.vta_portal .sidebar-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+}
+
+.vta_portal .sidebar-link i {
+  margin-right: 0.5rem;
+  width: 20px;
+  text-align: center;
+}
+
+.vta_portal .sidebar-link:hover,
+.vta_portal .sidebar-link.active {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.vta_portal .dashboard-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+}
+
+.vta_portal .welcome-message {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vta_portal .welcome-message h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.vta_portal .welcome-message p {
+  color: var(--gray-text);
+  margin-bottom: 0;
+}
+
+.vta_portal .dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.vta_portal .stat-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vta_portal .stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vta_portal .stat-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.vta_portal .stat-icon i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.vta_portal .stat-info {
+  flex: 1;
+}
+
+.vta_portal .stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--text-dark);
+}
+
+.vta_portal .stat-label {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+  margin: 0;
+}
+
+.vta_portal .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .section-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.vta_portal .view-all {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.vta_portal .view-all:hover {
+  text-decoration: underline;
+}
+
+.vta_portal .recent-courses {
+  margin-top: 2rem;
+}
+
+.vta_portal .courses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vta_portal .course-item {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vta_portal .course-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vta_portal .course-thumbnail {
+  width: 120px;
+  height: 80px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.vta_portal .course-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vta_portal .course-info {
+  flex: 1;
+}
+
+.vta_portal .course-info .course-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.vta_portal .course-info .course-title a {
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.vta_portal .course-info .course-title a:hover {
+  color: var(--primary-color);
+}
+
+.vta_portal .course-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vta_portal .instructor {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+}
+
+.vta_portal .progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.vta_portal .progress-bar {
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.vta_portal .progress-fill {
+  height: 100%;
+  background: var(--primary-gradient);
+  border-radius: 3px;
+}
+
+.vta_portal .progress-text {
+  font-size: 0.75rem;
+  color: var(--gray-text);
+}
+
+.vta_portal .btn-continue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  align-self: center;
+}
+
+.vta_portal .btn-continue i {
+  margin-left: 0.35rem;
+  font-size: 0.75rem;
+}
+
+.vta_portal .btn-continue:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.vta_portal .no-courses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.vta_portal .no-courses p {
+  margin-bottom: 1rem;
+  color: var(--gray-text);
+}
+
+.vta_portal .dashboard-page {
+  padding: 2rem 0;
+}
+
+.vta_portal .page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+@media (max-width: 992px) {
+  .vta_portal .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vta_portal .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .vta_portal .course-item {
+    flex-direction: column;
+  }
+  
+  .vta_portal .course-thumbnail {
+    width: 100%;
+    height: 150px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .vta_portal .btn-continue {
+    margin-top: 1rem;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .vta_portal .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .dashboard-content {
+    padding: 1.5rem;
+  }
+  
+  .vta_portal .stat-card {
+    padding: 1rem;
+  }
+}
+
+/* Navbar */
+.vta-navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.vta-navbar .navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.vta-navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.vta-navbar .logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.vta-navbar .logo img {
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.vta-navbar .nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vta-navbar .nav-links li {
+  margin-left: 1.5rem;
+}
+
+.vta-navbar .nav-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.vta-navbar .nav-links a:hover,
+.vta-navbar .nav-links a.active {
+  color: var(--primary-color);
+}
+
+.vta-navbar .nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-gradient);
+  border-radius: 1px;
+}
+
+.vta-navbar .btn-logout {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.vta-navbar .btn-logout:hover {
+  color: var(--error-color);
+}
+
+.vta-navbar .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.vta-navbar .hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  margin-bottom: 4px;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Footer */
+.vta-footer {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  padding: 4rem 0 2rem;
+}
+
+.vta-footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.vta-footer .footer-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.vta-footer .footer-description {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.vta-footer .footer-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.vta-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vta-footer .footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.vta-footer .footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.vta-footer .footer-links a:hover {
+  color: var(--text-light);
+}
+
+.vta-footer .contact-info p {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.vta-footer .contact-info i {
+  margin-right: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.vta-footer .social-icons {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.vta-footer .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  transition: var(--transition);
+}
+
+.vta-footer .social-icons a:hover {
+  background: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.vta-footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vta-footer .copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: small;
+}
+
+.vta-footer .payment-methods img {
+  height: 30px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .vta-navbar .hamburger {
+    display: flex;
+  }
+  
+  .vta-navbar .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 99;
+  }
+  
+  .vta-navbar .nav-links.active {
+    transform: translateY(0);
+  }
+  
+  .vta-navbar .nav-links ul {
+    flex-direction: column;
+  }
+  
+  .vta-navbar .nav-links li {
+    margin: 0.5rem 0;
+  }
+  
+  .vta-navbar .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .vta-footer .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta-footer .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .vta-footer .payment-methods {
+    margin-top: 1rem;
+  }
+}
+
+/* Course styles */
+.vta_portal .course-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.vta_portal .course-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.vta_portal .course-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vta_portal .course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+}
+
+.vta_portal .course-instructor {
+  color: var(--gray-text);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.vta_portal .course-description {
+  color: var(--gray-text);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.vta_portal .course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.vta_portal .course-rating {
+  display: flex;
+  align-items: center;
+  color: #ffc107;
+}
+
+.vta_portal .course-price {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+.vta_portal .courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Fix for mobile navbar */
+.vta_portal .navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.vta_portal .nav-links {
+  transition: all 0.3s ease;
+}
+
+.vta_portal .hamburger span:nth-child(1) {
+  transition: transform 0.3s ease;
+}
+
+.vta_portal .hamburger span:nth-child(2) {
+  transition: opacity 0.3s ease;
+}
+
+.vta_portal .hamburger span:nth-child(3) {
+  transition: transform 0.3s ease;
+}
+
+.vta_portal .hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.vta_portal .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.vta_portal .hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Course Details Page Improvements */
+.vta_portal .course-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  color: var(--text-dark);
+}
+
+.vta_portal .course-details-page {
+  padding: 2rem 0;
+  background-color: var(--light-bg);
+}
+
+.vta_portal .course-details-main {
+  padding: 2rem;
+  flex: 1;
+}
+
+.vta_portal .course-details-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.vta_portal .course-details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--gray-text);
+}
+
+.vta_portal .course-details-meta div {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.vta_portal .course-details-meta i {
+  margin-right: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.vta_portal .course-details-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .course-tabs {
+  margin-top: 2rem;
+}
+
+.vta_portal .tabs-header {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .tab-btn {
+  padding: 0.75rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--gray-text);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.vta_portal .tab-btn.active {
+  color: var(--primary-color);
+}
+
+.vta_portal .tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--secondary-color);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.vta_portal .tabs-content {
+  padding: 1rem 0;
+}
+
+.vta_portal .tab-pane {
+  min-height: 200px;
+}
+
+.vta_portal .course-sidebar {
+  background-color: #08273d;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.vta_portal .course-sidebar-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.vta_portal .enroll-button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.vta_portal .btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.vta_portal .money-back {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.vta_portal .money-back i {
+  margin-right: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .vta_portal .course-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .course-sidebar {
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vta_portal .course-details-title {
+    font-size: 1.8rem;
+  }
+  
+  .vta_portal .course-details-meta {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .vta_portal .tabs-header {
+    flex-wrap: wrap;
+  }
+  
+  .vta_portal .tab-btn {
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Ensure images don't overflow */
+.vta_portal img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for the hero section on small screens */
+@media (max-width: 576px) {
+  .vta_portal .hero-section {
+    padding: 3rem 0;
+  }
+}
+
+/* Testimonials */
+.vta_portal .testimonial-item {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.vta_portal .testimonial-content {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: var(--gray-text);
+}
+
+.vta_portal .testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.vta_portal .testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.vta_portal .testimonial-info h4 {
+  margin: 0 0 0.25rem;
+  color: var(--text-dark);
+}
+
+.vta_portal .testimonial-info p {
+  margin: 0;
+  color: var(--gray-text);
+  font-size: 0.875rem;
+}
+
+/* CTA Section */
+.vta_portal .cta-section {
+  background: var(--primary-gradient);
+  color: var(--text-light);
+  padding: 4rem 0;
+}
+
+.vta_portal .cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.vta_portal .cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.vta_portal .cta-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Loading spinner */
+.vta_portal .loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--gray-text);
+  font-size: 1.25rem;
+}
+
+.vta_portal .loading i {
+  margin-right: 0.5rem;
+}
+
+/* Feature items */
+.vta_portal .feature-item {
+  padding: 1.5rem;
+}
+
+.vta_portal .feature-item h3 {
+  margin: 1rem 0 0.5rem;
+  color: var(--text-dark);
+  font-size: 1.25rem;
+}
+
+.vta_portal .feature-item p {
+  color: var(--gray-text);
+}
+
+/* Filter section */
+.vta_portal .filters-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+}
+
+.vta_portal .search-filter {
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.vta_portal .filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.vta_portal .filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--gray-text);
+  font-size: 0.875rem;
+}
+
+/* Enrollment count */
+.vta_portal .enrollment-count {
+  font-size: 0.875rem;
+  color: var(--gray-text);
+  margin-left: 0.5rem;
+}
+
+/* Course footer improvements */
+.vta_portal .course-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  margin: 1rem 0;
+  color: var(--gray-text);
+  font-size: 0.875rem;
+}
+
+.vta_portal .course-footer i {
+  margin-right: 0.25rem;
+}
+
+/* Stats container at mobile */
+@media (max-width: 768px) {
+  .vta_portal .stats-container {
+    margin-top: -1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .vta_portal .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .vta_portal .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .vta_portal .filter-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .vta_portal .filter-group {
+    width: 100%;
+  }
+  
+  .vta_portal .testimonial-item {
+    padding: 1rem;
+  }
+}
+
+/* Fix for the courses grid at different screen sizes */
+.vta_portal .courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 576px) {
+  .vta_portal .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .grid-cols-2,
+  .vta_portal .grid-cols-3,
+  .vta_portal .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mock Payment Modal */
+.vta_portal .mock-payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.vta_portal .mock-payment-modal {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.vta_portal .mock-payment-header {
+  padding: 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vta_portal .mock-payment-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.vta_portal .close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.vta_portal .mock-payment-body {
+  padding: 1.5rem;
+}
+
+.vta_portal .order-details {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vta_portal .order-amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.vta_portal .order-id {
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.vta_portal .payment-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.vta_portal .payment-button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+}
+
+.vta_portal .mock-payment-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  color: var(--gray-text);
+  text-align: center;
+}
+
+.vta_portal .secure-badge {
+  color: var(--success-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.vta_portal .secure-badge i {
+  margin-right: 0.5rem;
+}
+
+/* Fix for courses grid on all screen sizes */
+.vta_portal .courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.vta_portal .stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Additional responsive fixes */
+@media (max-width: 992px) {
+  .vta_portal .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .vta_portal .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .vta_portal .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .vta_portal .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vta_portal .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .vta_portal .section-title {
+    font-size: 2rem;
+  }
+  
+  .vta_portal .course-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .vta_portal .stats-container {
+    margin-top: -1.5rem;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .vta_portal .stat-value {
+    font-size: 1.8rem;
+  }
+  
+  .vta_portal .stat-label {
+    font-size: 0.9rem;
+  }
+  
+  .vta_portal .payment-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+/* Course card improvements */
+.vta_portal .course-card {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vta_portal .course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.vta_portal .course-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.vta_portal .course-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.vta_portal .course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.vta_portal .course-title a {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.vta_portal .course-title a:hover {
+  color: var(--primary-color);
+}
+
+.vta_portal .course-instructor {
+  color: var(--gray-text);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.vta_portal .course-instructor i {
+  margin-right: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.vta_portal .course-description {
+  color: var(--gray-text);
+  margin-bottom: 1rem;
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.vta_portal .course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+.vta_portal .course-rating {
+  display: flex;
+  align-items: center;
+  color: #ffc107;
+  font-weight: 500;
+}
+
+.vta_portal .course-rating i {
+  margin-right: 0.25rem;
+}
+
+.vta_portal .enrollment-count {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
+.vta_portal .course-price {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+.vta_portal .course-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  color: var(--gray-text);
+  font-size: 0.875rem;
+}
+
+.vta_portal .course-level i, .vta_portal .course-duration i {
+  margin-right: 0.25rem;
+  color: var(--primary-color);
+}
+
+/* Fix for testimonials */
+.vta_portal .testimonial-item {
+  height: calc(100% - 2rem);
+  margin-bottom: 2rem;
+}
+
+/* Fix container padding for all pages */
+.vta_portal .container {
+  padding: 0 1.5rem;
+}
+
+/* Fix footer on small screens */
+@media (max-width: 576px) {
+  .vta_portal .footer {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .vta_portal .footer-title {
+    font-size: 1.3rem;
+  }
+  
+  .vta_portal .footer-description {
+    font-size: 0.9rem;
+  }
+  
+  .vta_portal .hero-section {
+    padding: 3rem 0;
+  }
+  
+  .vta_portal .footer-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Money-back guarantee */
+.vta_portal .money-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  color: var(--gray-text);
+  font-size: 0.875rem;
+}
+
+.vta_portal .money-back i {
+  margin-right: 0.5rem;
+  color: var(--success-color);
+}
+
+/* Course curriculum styles */
+.vta_portal .curriculum-section {
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.vta_portal .curriculum-section .section-title {
+  padding: 1rem;
+  margin: 0;
+  background-color: var(--light-bg);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.1rem;
+}
+
+.vta_portal .lessons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vta_portal .lesson-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vta_portal .lesson-item:last-child {
+  border-bottom: none;
+}
+
+.vta_portal .lesson-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vta_portal .lesson-title {
+  display: flex;
+  align-items: center;
+}
+
+.vta_portal .lesson-title i {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+.vta_portal .lesson-duration {
+  color: var(--gray-text);
+  font-size: 0.875rem;
+}
+
+/* Topics list */
+.vta_portal .topics-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.75rem 2rem;
+}
+
+.vta_portal .topics-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.vta_portal .topics-list i {
+  color: var(--success-color);
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Instructor profile */
+.vta_portal .instructor-profile {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.vta_portal .instructor-image {
+  margin-right: 1.5rem;
+}
+
+.vta_portal .instructor-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.vta_portal .instructor-info h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+}
+
+.vta_portal .instructor-info p {
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+/* Form row improvements */
+.vta_portal .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+.vta_portal .form-row > .form-group {
+  flex: 1 0 50%;
+  padding: 0.5rem;
+  min-width: 200px;
+}
+
+/* Fixed layout issues on small screens */
+@media (max-width: 576px) {
+  .vta_portal .course-details-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .vta_portal .course-details-meta div {
+    margin-bottom: 0.5rem;
+  }
+  
+  .vta_portal .topics-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .instructor-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .vta_portal .instructor-image {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Fix for footer at the bottom on short pages */
+.vta_portal .app {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+.vta_portal .main-content {
+  flex: 1;
+}
+
+.vta_portal .footer {
+  margin-top: auto;
+}
+
+/* Payment History Page */
+.vta_portal .payment-history-page {
+  padding: 2rem 0;
+}
+
+.vta_portal .dashboard-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.vta_portal .payment-table-container {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.vta_portal .payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.vta_portal .payment-table th {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.vta_portal .payment-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-dark);
+}
+
+.vta_portal .payment-table tr:last-child td {
+  border-bottom: none;
+}
+
+.vta_portal .payment-table tr:hover {
+  background-color: var(--primary-color-light);
+}
+
+.vta_portal .course-info {
+  display: flex;
+  align-items: center;
+}
+
+.vta_portal .course-thumbnail {
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.vta_portal .course-name a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.vta_portal .course-name a:hover {
+  text-decoration: underline;
+}
+
+.vta_portal .amount {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.vta_portal .date {
+  color: var(--gray-text);
+}
+
+.vta_portal .status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.vta_portal .status.completed .status-badge {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--success-color);
+}
+
+.vta_portal .status.pending .status-badge {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+}
+
+.vta_portal .status.failed .status-badge {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--error-color);
+}
+
+.vta_portal .transaction-id {
+  font-family: monospace;
+  color: var(--gray-text);
+}
+
+.vta_portal .no-payments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.vta_portal .no-payments p {
+  margin-bottom: 1.5rem;
+  color: var(--gray-text);
+  font-size: 1.1rem;
+}
+
+/* Enrolled Courses Page */
+.vta_portal .enrolled-courses-page {
+  padding: 2rem 0;
+}
+
+.vta_portal .enrolled-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.vta_portal .course-progress {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vta_portal .progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--gray-text);
+}
+
+.vta_portal .course-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.vta_portal .course-level {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .vta_portal .enrolled-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vta_portal .enrolled-courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vta_portal .payment-table th,
+  .vta_portal .payment-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .vta_portal .payment-table th:nth-child(3),
+  .vta_portal .payment-table td:nth-child(3),
+  .vta_portal .payment-table th:nth-child(5),
+  .vta_portal .payment-table td:nth-child(5) {
+    display: none;
+  }
+  
+  .vta_portal .course-thumbnail {
+    width: 40px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .vta_portal .payment-table th:nth-child(2),
+  .vta_portal .payment-table td:nth-child(2) {
+    display: none;
+  }
+  
+  .vta_portal .payment-table-container {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+}
+
+/* Auth components - additional styles */
+.vta_portal .auth-subtitle {
+  text-align: center;
+  color: var(--gray-text);
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .forgot-password {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.vta_portal .forgot-password:hover {
+  text-decoration: underline;
+}
+
+.vta_portal .text-right {
+  text-align: right;
+}
+
+.vta_portal .mt-1 {
+  margin-top: 0.25rem;
+}
+
+.vta_portal .mt-2 {
+  margin-top: 0.5rem;
+}
+
+.vta_portal .mt-4 {
+  margin-top: 1.5rem;
+}
+
+.vta_portal .mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .ml-2 {
+  margin-left: 0.5rem;
+}
+
+.vta_portal .text-center {
+  text-align: center;
+}
+
+.vta_portal .buttons-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.vta_portal .success-message, .vta_portal .error-message {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.vta_portal .success-message {
+  color: var(--success-color);
+}
+
+.vta_portal .success-message h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.vta_portal .error-message {
+  color: var(--error-color);
+}
+
+.vta_portal .error-message h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.vta_portal .d-flex {
+  display: flex;
+}
+
+.vta_portal .justify-content-center {
+  justify-content: center;
+}
+
+.vta_portal .gap-3 {
+  gap: 0.75rem;
+}
+
+/* Form validation styles */
+.vta_portal .is-invalid {
+  border-color: var(--error-color) !important;
+}
+
+/* Fix form layout on mobile */
+@media (max-width: 576px) {
+  .vta_portal .buttons-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .vta_portal .buttons-group .btn {
+    width: 100%;
+  }
+}
+
+/* Modal styling */
+.vta_portal .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.vta_portal .modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.vta_portal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.vta_portal .modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.vta_portal .modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.vta_portal .modal-close:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.vta_portal .inquiry-form {
+  padding: 1.5rem;
+}
+
+.vta_portal .inquiry-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.vta_portal .inquiry-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.vta_portal .inquiry-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.vta_portal .inquiry-form input:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.vta_portal .inquiry-form input.error {
+  border-color: #ff4d4f;
+}
+
+.vta_portal .error-message {
+  color: #ff4d4f;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.vta_portal .course-info-summary {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+.vta_portal .course-info-summary p {
+  margin: 0.5rem 0;
+}
+
+.vta_portal .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.vta_portal .btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.vta_portal .btn-primary {
+  background-color: #4361ee;
+  color: white;
+}
+
+.vta_portal .btn-primary:hover {
+  background-color: #3a56d4;
+}
+
+.vta_portal .btn-primary:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.vta_portal .btn-secondary {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.vta_portal .btn-secondary:hover {
+  background-color: #eaecef;
+}
+
+/* Razorpay payment button container styles */
+.vta_portal .razorpay-container {
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.vta_portal .razorpay-payment-button {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.vta_portal .razorpay-payment-button:hover {
+  background-color: #0055a5 !important;
+  transform: translateY(-2px) !important;
+}
+
+.vta_portal .payment-section {
+  padding: 1.5rem;
+}
+
+.vta_portal .payment-info {
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .payment-info p {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.vta_portal .payment-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Ensure the Razorpay form fits well inside the modal */
+.vta_portal .razorpay-container form {
+  width: 100%;
+}
+
+/* Payment Success Page Styles */
+.vta_portal .payment-success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  min-height: 60vh;
+}
+
+.vta_portal .payment-status-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 2.5rem;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.vta_portal .payment-verifying h2,
+.vta_portal .payment-success h2,
+.vta_portal .payment-failed h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.vta_portal .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 105, 180, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  margin: 1.5rem auto;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vta_portal .success-icon,
+.vta_portal .failed-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.vta_portal .success-icon {
+  color: var(--success-color);
+}
+
+.vta_portal .failed-icon {
+  color: var(--error-color);
+}
+
+.vta_portal .payment-actions {
+  margin-top: 2rem;
+}

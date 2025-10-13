@@ -1,0 +1,347 @@
+/* CourseDetails.css */
+.vta_portal .course-details-page {
+  padding: 2rem 0;
+}
+
+.vta_portal .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.vta_portal .course-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Mobile Header (visible only on small screens) */
+.vta_portal .mobile-course-header {
+  display: none;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .mobile-course-header .course-sidebar-price {
+  color: rgb(5, 7, 36);
+}
+
+.vta_portal .course-details-main {
+  flex: 1;
+  min-width: 300px;
+}
+
+.vta_portal .course-details-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.vta_portal .course-details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .course-details-meta div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.vta_portal .course-details-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+}
+
+.vta_portal .course-details-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.vta_portal .tab-pane h3 {
+  font-size: 1.5rem;
+}
+
+/* Tabs */
+.vta_portal .course-tabs {
+  margin-top: 2rem;
+}
+
+.vta_portal .tabs-header {
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.vta_portal .tab-btn {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.vta_portal .tab-btn.active {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
+
+.vta_portal .tab-pane {
+  padding: 1rem 0;
+}
+
+.vta_portal .topics-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vta_portal .topics-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.vta_portal .topics-list li i {
+  color: #28a745;
+}
+
+/* Curriculum */
+.vta_portal .curriculum-section {
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vta_portal .section-title {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.vta_portal .lessons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vta_portal .lesson-item {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.vta_portal .lesson-item:last-child {
+  border-bottom: none;
+}
+
+.vta_portal .lesson-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vta_portal .lesson-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Instructor */
+.vta_portal .instructor-profile {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.vta_portal .instructor-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.vta_portal .instructor-info {
+  flex: 1;
+}
+
+/* Sidebar */
+.vta_portal .course-sidebar {
+  width: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.vta_portal .course-sidebar-price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #e6e6e6;
+
+}
+
+
+
+.vta_portal .course-features {
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .course-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.vta_portal .course-feature i {
+  color: #007bff;
+}
+
+.vta_portal .enroll-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vta_portal .money-back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .vta_portal .course-details {
+    flex-direction: column;
+  }
+
+  .vta_portal .course-sidebar-price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .vta_portal .course-sidebar {
+    width: 100%;
+    margin-top: 2rem;
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .vta_portal .course-details-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .vta_portal .mobile-course-header {
+    display: block;
+  }
+  
+  .vta_portal .instructor-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .vta_portal .instructor-image {
+    margin-bottom: 1rem;
+  }
+  
+  .vta_portal .tab-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .vta_portal .course-details-page {
+    padding: 1rem 0;
+  }
+  
+  .vta_portal .container {
+    padding: 0 0.75rem;
+  }
+  
+  .vta_portal .course-details-title {
+    font-size: 1.5rem;
+  }
+  
+  .vta_portal .lesson-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .vta_portal .tabs-header {
+    padding-bottom: 0.5rem;
+  }
+  
+  .vta_portal .tab-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .vta_portal .course-sidebar {
+    padding: 1rem;
+  }
+  
+  .vta_portal .course-sidebar-price {
+    font-size: 1.5rem;
+  }
+  
+  .vta_portal .course-feature {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .vta_portal .course-details-title {
+    font-size: 1.3rem;
+  }
+  
+  .vta_portal .course-details-meta div {
+    font-size: 0.8rem;
+  }
+  
+  .vta_portal .tab-btn {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .vta_portal .tab-pane h3 {
+    font-size: 1.2rem;
+  }
+  
+  .vta_portal .course-sidebar-price {
+    font-size: 1.3rem;
+  }
+  
+  .vta_portal .course-feature {
+    font-size: 0.85rem;
+  }
+  
+  .vta_portal .enroll-button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+} 

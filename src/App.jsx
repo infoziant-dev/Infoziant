@@ -1,5 +1,8 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect, Fragment } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { Toaster } from 'react-hot-toast';
+
+import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home/Home";
@@ -42,7 +45,68 @@ import BlogDetail from "./Components/c2cservices/Blog/BlogDetail.jsx";
 import Redirect from "./Components/Redirect.jsx";
 import ApplyJobs from "./Components/Applyjobs/ApplyJobs.jsx";
 
+// VTA Portal
+import VTANavBar from "./Components/VTAPortal/components/VTANavbar.jsx";
+import VTAHome from './Components/VTAPortal/views/Home.jsx';
+import VTACourses from "./Components/VTAPortal/views/Courses.jsx";
+import VTALogin from "./Components/VTAPortal/views/Login.jsx";
+import VTARegister from "./Components/VTAPortal/views/Register.jsx";
+import VTACourseDetails from "./Components/VTAPortal/views/CourseDetails.jsx";
+import VTAPaymentSuccess from "./Components/VTAPortal/views/PaymentSuccess.jsx";
+import VTAForgotPassword from "./Components/VTAPortal/views/ForgotPassword.jsx";
+import VTAResetPassword from "./Components/VTAPortal/views/ResetPassword.jsx";
+import VTAVerifyEmail from "./Components/VTAPortal/views/VerifyEmail.jsx";
+import VTAResendVerification from "./Components/VTAPortal/views/ResendVerification.jsx";
+
+import VTADashboard from "./Components/VTAPortal/views/Dashboard.jsx";
+import VTAProfile from "./Components/VTAPortal/views/Profile.jsx";
+import VTAEnrolledCourses from "./Components/VTAPortal/views/EnrolledCourses.jsx";
+import VTAPaymentHistory from "./Components/VTAPortal/views/PaymentHistory.jsx";
+import VTAInquiries from "./Components/VTAPortal/views/Inquiries.jsx";
+import VTANotFound from "./Components/VTAPortal/views/NotFound.jsx";
+import VTAInquiryPage from "./Components/VTAPortal/views/InquiryPage.jsx";
+
+import VTAFooter from "./Components/VTAPortal/components/VTAFooter.jsx";
+
+function VTALayout() {
+  return <div className="vta_portal"><Outlet /></div>;
+}
+
 const App = () => {
+
+  const location = useLocation();
+  const isVtaRoute = location.pathname.startsWith("/vta");
+
+  // ! This piece of code is copied from VTA Portal. Please make sure to update in both places if any changes are made.
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Check for both user and token
+    const storedUser = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    if (storedUser && token) {
+      setUser(JSON.parse(storedUser));
+    } else {
+      // Clear both if either is missing
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+      setUser(null);
+    }
+  }, []);
+
+  const handleLogin = (userData) => {
+    setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
+    // Note: token is already saved in the loginUser function in api.js
+  };
+
+  const handleLoguot = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+  };
+
   const fetchData = async () => {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -50,12 +114,16 @@ const App = () => {
       }, 1500);
     });
   };
+
   return (
-    <Router>
+    <Fragment>
       <ScrollToTop />
+      <Toaster position="top-center" />
 
       <Loader fetchData={fetchData}>
-        <Header />
+        {
+          (isVtaRoute) ?  <VTANavBar /> : <Header />
+        }
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -88,6 +156,34 @@ const App = () => {
           <Route path="/services/siem" element={<Siem />} />
           <Route path="/services/llm" element={<LLM />} />
           <Route path="/services/genai" element={<GenAI />} />
+
+          {/* VTA Portal */}
+          <Route path="/vta/" element={<VTALayout />}>
+            <Route index path="/vta/" element={<VTAHome />} />
+            <Route path="/vta/courses" element={<VTACourses />} />
+            <Route path="/vta/courses/:id" element={<VTACourseDetails user={user} />} />
+
+            <Route path="/vta/success" element={<VTAPaymentSuccess />} />
+
+            {/* Auth Routes */}
+            <Route path="/vta/login" element={<VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/vta/register" element={<VTARegister handleLogin={handleLogin} user={user} />} />
+            <Route path="/vta/forgot-password" element={<VTAForgotPassword />} />
+            <Route path="/vta/reset-password/:token" element={<VTAResetPassword />} />
+            <Route path="/vta/verify-email/:token" element={<VTAVerifyEmail />} />
+            <Route path="/vta/resend-verification" element={<VTAResendVerification />} />
+
+            {/* Protected Routes */}
+            <Route path="/vta/dashboard" element={user ? <VTADashboard user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/vta/profile" element={user ? <VTAProfile user={user} setUser={setUser} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/vta/enrolled-courses" element={user ? <VTAEnrolledCourses user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/vta/payment-history" element={user ? <VTAPaymentHistory user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/vta/inquiries" element={user ? <VTAInquiries user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="*" element={<VTANotFound />} />
+
+            <Route path="/vta/payment" element={<VTAInquiryPage />} />
+
+          </Route>
 
           <Route
             path="/webfs"
@@ -131,16 +227,15 @@ const App = () => {
               <Redirect link="https://aicl.infoziant.com/courses/683048add177c19178d55b56" />
             }
           />
-          <Route
-            path="/job/:title"
-            element={<ApplyJobs />}
-          />
+          <Route path="/job/:title" element={<ApplyJobs />} />
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
+        {
+          (isVtaRoute) ?  <VTAFooter /> : <Footer />
+        }
       </Loader>
-    </Router>
+    </Fragment>
   );
 };
 

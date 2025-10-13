@@ -1,0 +1,184 @@
+/* InquiryModal.css */
+.vta_portal .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.vta_portal .modal-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.vta_portal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.vta_portal .modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.vta_portal .modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.vta_portal .inquiry-form {
+  padding: 1.5rem;
+}
+
+.vta_portal .form-group {
+  margin-bottom: 1rem;
+}
+
+.vta_portal .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.vta_portal .form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.vta_portal .form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.vta_portal .form-group input.error {
+  border-color: #dc3545;
+}
+
+.vta_portal .error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.vta_portal .course-info-summary {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.vta_portal .course-info-summary p {
+  margin: 0.5rem 0;
+}
+
+.vta_portal .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.vta_portal .payment-section {
+  padding: 1.5rem;
+}
+
+.vta_portal .payment-info {
+  margin-bottom: 1.5rem;
+}
+
+.vta_portal .razorpay-container {
+  margin: 1.5rem auto;
+}
+
+.vta_portal .form-group input::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+
+.vta_portal .payment-alert {
+  margin: 1.5rem 0;
+}
+
+.vta_portal .alert {
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.vta_portal .alert i {
+  margin-top: 0.2rem;
+}
+
+.vta_portal .alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border-left: 4px solid #ffc107;
+}
+
+.vta_portal .alert strong {
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .vta_portal .modal-content {
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+  
+  .vta_portal .modal-header {
+    padding: 1rem;
+  }
+  
+  .vta_portal .modal-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .inquiry-form,
+  .vta_portal .payment-section {
+    padding: 1rem;
+  }
+  
+  .vta_portal .form-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .vta_portal .form-actions button {
+    width: 100%;
+  }
+  
+  .vta_portal .course-info-summary {
+    padding: 0.75rem;
+    margin: 1rem 0;
+  }
+} 
