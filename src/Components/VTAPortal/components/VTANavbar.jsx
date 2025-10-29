@@ -25,7 +25,7 @@ const VTANavbar = ({ user, handleLogout }) => {
         <div className="navbar-content">
           <div className="logo">
             <Link to="https://www.infoziant.com" target="_blank" rel="noopener noreferrer">
-              <img src="/logo.png" alt="Infoziant" />
+              <img src="/Logo.png" alt="Infoziant" />
               
             </Link>
           </div>
