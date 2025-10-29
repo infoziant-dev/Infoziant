@@ -36,7 +36,7 @@ export default function Footer() {
               <span>
                 <strong>United States:</strong> 1401, 21st ST STE 6310,
                 <br />Sacramento, CA 95811, USA
-                <br />+1 (940) 290 7007
+                <br /><a href="tel:+19402907007">+1 (940) 290 7007</a>
               </span>
             </div>
             <div className="flex gap-4 pt-4 justify-center md:justify-start">

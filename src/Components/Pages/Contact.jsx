@@ -55,7 +55,7 @@ const Contact = () => {
                 </div>
                 <div>
                 <p> <strong>U.S. Office: </strong>
-                  1401, 21st ST STE 6310, Sacramento, CA 95811, USA.</p>
+                  1401, 21st ST STE 6310, Sacramento, CA 95811, USA. <a href="tel:+19402907007">+1 (940) 290 7007</a></p>
                 </div>
                 <div>
                 <p> <strong>Singapore Office: </strong>
