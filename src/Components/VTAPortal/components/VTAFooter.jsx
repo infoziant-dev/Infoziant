@@ -8,7 +8,7 @@ const VTAFooter = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col">
-            <img src="/logo.png" alt="Infoziant" />
+            <img src="/Logo.png" alt="Infoziant" />
             <p className="footer-description">
               Empowering students with high-quality courses to master in-demand skills and advance their careers.
             </p>
