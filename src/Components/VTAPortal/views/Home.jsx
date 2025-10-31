@@ -85,7 +85,7 @@ const VTAHome = () => {
           )}
           
           <div className="text-center" style={{ marginTop: '2rem' }}>
-            <Link to="/vta/courses" className="btn btn-secondary">
+            <Link to="/tech/courses" className="btn btn-secondary">
               View All Courses
             </Link>
           </div>
@@ -166,7 +166,7 @@ const VTAHome = () => {
           <div className="cta-content text-center">
             <h2>Ready to Start Learning?</h2>
             <p>Join thousands of students already learning on Infoziant</p>
-            <Link to="/vta/courses" className="btn btn-primary">View Courses</Link>
+            <Link to="/tech/courses" className="btn btn-primary">View Courses</Link>
           </div>
         </div>
       </section>

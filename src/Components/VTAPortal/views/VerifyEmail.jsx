@@ -60,7 +60,7 @@ const VerifyEmail = () => {
                 <p className="mb-4">
                   Your email has been successfully verified. You can now log in to your account.
                 </p>
-                <Link to="/vta/login" className="btn btn-primary">
+                <Link to="/tech/login" className="btn btn-primary">
                   Go to Login
                 </Link>
               </div>
@@ -74,7 +74,7 @@ const VerifyEmail = () => {
                   {error || 'The verification link may be invalid or expired.'}
                 </p>
                 <div className="d-flex justify-content-center gap-3">
-                  <Link to="/vta/login" className="btn btn-secondary">
+                  <Link to="/tech/login" className="btn btn-secondary">
                     Go to Login
                   </Link>
                   <button 

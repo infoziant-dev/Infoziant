@@ -18,7 +18,7 @@ const Register = ({ handleLogin, user }) => {
   useEffect(() => {
     // Redirect if user is already logged in
     if (user) {
-      navigate('/vta/dashboard');
+      navigate('/tech/dashboard');
     }
   }, [user, navigate]);
   
@@ -78,7 +78,7 @@ const Register = ({ handleLogin, user }) => {
           if (userData && userData.token) {
             handleLogin(userData);
             toast.success('Registration successful!');
-            navigate('/vta/dashboard');
+            navigate('/tech/dashboard');
           } else {
             toast.error('Registration failed: Invalid response from server');
           }
@@ -110,10 +110,10 @@ const Register = ({ handleLogin, user }) => {
                 Please check your inbox and click on the verification link to activate your account.
               </p>
               <div className="buttons-group">
-                <Link to="/vta/login" className="btn btn-secondary">
+                <Link to="/tech/login" className="btn btn-secondary">
                   Go to Login
                 </Link>
-                <Link to="/vta/resend-verification" className="btn btn-primary ml-2" state={{ email: formData.email }}>
+                <Link to="/tech/resend-verification" className="btn btn-primary ml-2" state={{ email: formData.email }}>
                   Resend Verification Email
                 </Link>
               </div>
@@ -197,7 +197,7 @@ const Register = ({ handleLogin, user }) => {
           </form>
           
           <div className="auth-footer">
-            Already have an account? <Link to="/vta/login">Login</Link>
+            Already have an account? <Link to="/tech/login">Login</Link>
           </div>
         </div>
       </div>

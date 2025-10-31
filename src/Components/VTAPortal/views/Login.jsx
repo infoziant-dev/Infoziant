@@ -150,7 +150,7 @@ const VTALogin = ({ handleLogin, user }) => {
               />
               {errors.password && <div className="error-message">{errors.password}</div>}
               <div className="text-right mt-1">
-                <Link to="/vta/forgot-password" className="forgot-password">
+                <Link to="/tech/forgot-password" className="forgot-password">
                   Forgot Password?
                 </Link>
               </div>
@@ -178,9 +178,9 @@ const VTALogin = ({ handleLogin, user }) => {
           </form>
           
           <div className="auth-footer">
-            <div>Don't have an account? <Link to="/vta/register">Sign up</Link></div>
+            <div>Don't have an account? <Link to="/tech/register">Sign up</Link></div>
             <div className="mt-2">
-              <Link to="/vta/resend-verification">Resend verification email</Link>
+              <Link to="/tech/resend-verification">Resend verification email</Link>
             </div>
           </div>
         </div>

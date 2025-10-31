@@ -17,8 +17,8 @@ const VTAFooter = () => {
           <div className="footer-col">
             <h4 className="footer-subtitle">Quick Links</h4>
             <ul className="footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/courses">Courses</Link></li>
+              <li><Link to="/tech">Home</Link></li>
+              <li><Link to="/tech/courses">Courses</Link></li>
               {/* <li><Link to="/login">Login</Link></li>
               <li><Link to="/register">Sign Up</Link></li> */}
             </ul>
@@ -38,7 +38,7 @@ const VTAFooter = () => {
             <h4 className="footer-subtitle">Contact</h4>
             <div className="contact-info">
               <p><i className="fas fa-map-marker-alt"></i>Akshaya HQ, Rajiv Gandhi Salai, Kazhipattur, Tamil Nadu, Chennai - 603103, India </p>
-              <p><i className="fas fa-envelope"></i> support@Infoziant.com</p>
+              <p><i className="fas fa-envelope"></i> <a href="mailto:support@infoziant.com">support@infoziant.com</a></p>
               {/* <p><i className="fas fa-phone"></i>  +1 (314) 732 0300, +91 96000 85988</p> */}
             </div>
             <div className="social-icons">

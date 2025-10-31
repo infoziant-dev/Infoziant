@@ -190,16 +190,16 @@ const Profile = ({ user, setUser }) => {
             </div>
             
             <nav className="sidebar-nav">
-              <Link to="/vta/dashboard" className="sidebar-link">
+              <Link to="/tech/dashboard" className="sidebar-link">
                 <i className="fas fa-tachometer-alt"></i> Dashboard
               </Link>
-              <Link to="/vta/enrolled-courses" className="sidebar-link">
+              <Link to="/tech/enrolled-courses" className="sidebar-link">
                 <i className="fas fa-book"></i> My Courses
               </Link>
-              <Link to="/vta/payment-history" className="sidebar-link">
+              <Link to="/tech/payment-history" className="sidebar-link">
                 <i className="fas fa-history"></i> Payment History
               </Link>
-              <Link to="/vta/profile" className="sidebar-link active">
+              <Link to="/tech/profile" className="sidebar-link active">
                 <i className="fas fa-user"></i> Profile Settings
               </Link>
             </nav>

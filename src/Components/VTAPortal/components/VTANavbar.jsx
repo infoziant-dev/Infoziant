@@ -40,16 +40,16 @@ const VTANavbar = ({ user, handleLogout }) => {
             <ul>
               <li>
                 <Link 
-                  to="/vta" 
-                  className={location.pathname === '/vta' ? 'active' : ''}
+                  to="/tech" 
+                  className={location.pathname === '/tech' ? 'active' : ''}
                 >
                   Home
                 </Link>
               </li>
               <li>
                 <Link 
-                  to="/vta/courses" 
-                  className={location.pathname === '/vta/courses' ? 'active' : ''}
+                  to="/tech/courses" 
+                  className={location.pathname === '/tech/courses' ? 'active' : ''}
                 >
                   Courses
                 </Link>

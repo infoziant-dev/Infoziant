@@ -106,12 +106,12 @@ const ResetPassword = () => {
               </p>
             </div>
             <div className="text-center">
-              <Link to="/vta/forgot-password" className="btn btn-primary">
+              <Link to="/tech/forgot-password" className="btn btn-primary">
                 Request New Link
               </Link>
             </div>
             <div className="auth-footer">
-              <Link to="/vta/login">Back to Login</Link>
+              <Link to="/tech/login">Back to Login</Link>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ const ResetPassword = () => {
           </form>
           
           <div className="auth-footer">
-            <Link to="/vta/login">Back to Login</Link>
+            <Link to="/tech/login">Back to Login</Link>
           </div>
         </div>
       </div>
