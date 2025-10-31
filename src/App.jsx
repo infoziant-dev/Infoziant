@@ -75,7 +75,7 @@ function VTALayout() {
 const App = () => {
 
   const location = useLocation();
-  const isVtaRoute = location.pathname.startsWith("/vta");
+  const isVtaRoute = location.pathname.startsWith("/tech");
 
   // ! This piece of code is copied from VTA Portal. Please make sure to update in both places if any changes are made.
   const [user, setUser] = useState(null);
@@ -158,73 +158,73 @@ const App = () => {
           <Route path="/services/genai" element={<GenAI />} />
 
           {/* VTA Portal */}
-          <Route path="/vta/" element={<VTALayout />}>
-            <Route index path="/vta/" element={<VTAHome />} />
-            <Route path="/vta/courses" element={<VTACourses />} />
-            <Route path="/vta/courses/:id" element={<VTACourseDetails user={user} />} />
+          <Route path="/tech/" element={<VTALayout />}>
+            <Route index path="/tech/" element={<VTAHome />} />
+            <Route path="/tech/courses" element={<VTACourses />} />
+            <Route path="/tech/courses/:id" element={<VTACourseDetails user={user} />} />
 
-            <Route path="/vta/success" element={<VTAPaymentSuccess />} />
+            <Route path="/tech/success" element={<VTAPaymentSuccess />} />
 
             {/* Auth Routes */}
-            <Route path="/vta/login" element={<VTALogin handleLogin={handleLogin} user={user} />} />
-            <Route path="/vta/register" element={<VTARegister handleLogin={handleLogin} user={user} />} />
-            <Route path="/vta/forgot-password" element={<VTAForgotPassword />} />
-            <Route path="/vta/reset-password/:token" element={<VTAResetPassword />} />
-            <Route path="/vta/verify-email/:token" element={<VTAVerifyEmail />} />
-            <Route path="/vta/resend-verification" element={<VTAResendVerification />} />
+            <Route path="/tech/login" element={<VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/tech/register" element={<VTARegister handleLogin={handleLogin} user={user} />} />
+            <Route path="/tech/forgot-password" element={<VTAForgotPassword />} />
+            <Route path="/tech/reset-password/:token" element={<VTAResetPassword />} />
+            <Route path="/tech/verify-email/:token" element={<VTAVerifyEmail />} />
+            <Route path="/tech/resend-verification" element={<VTAResendVerification />} />
 
             {/* Protected Routes */}
-            <Route path="/vta/dashboard" element={user ? <VTADashboard user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
-            <Route path="/vta/profile" element={user ? <VTAProfile user={user} setUser={setUser} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
-            <Route path="/vta/enrolled-courses" element={user ? <VTAEnrolledCourses user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
-            <Route path="/vta/payment-history" element={user ? <VTAPaymentHistory user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
-            <Route path="/vta/inquiries" element={user ? <VTAInquiries user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/tech/dashboard" element={user ? <VTADashboard user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/tech/profile" element={user ? <VTAProfile user={user} setUser={setUser} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/tech/enrolled-courses" element={user ? <VTAEnrolledCourses user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/tech/payment-history" element={user ? <VTAPaymentHistory user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
+            <Route path="/tech/inquiries" element={user ? <VTAInquiries user={user} /> : <VTALogin handleLogin={handleLogin} user={user} />} />
             <Route path="*" element={<VTANotFound />} />
 
-            <Route path="/vta/payment" element={<VTAInquiryPage />} />
+            <Route path="/tech/payment" element={<VTAInquiryPage />} />
 
           </Route>
 
           <Route
             path="/webfs"
             element={
-              <Redirect link="https://infoziant.com/vta/courses/680a024024dff2cef8626340" />
+              <Redirect link="https://infoziant.com/tech/courses/680a024024dff2cef8626340" />
             }
           />
           <Route
             path="/web1"
             element={
-              <Redirect link="https://infoziant.com/vta/courses/68234801248526e958dd4d8d" />
+              <Redirect link="https://infoziant.com/tech/courses/68234801248526e958dd4d8d" />
             }
           />
           <Route
             path="/aiml"
             element={
-              <Redirect link="https://infoziant.com/vta/courses/680a024024dff2cef862633e" />
+              <Redirect link="https://infoziant.com/tech/courses/680a024024dff2cef862633e" />
             }
           />
           <Route
             path="/aiml1"
             element={
-              <Redirect link="https://infoziant.com/vta/courses/68234801248526e958dd4d8b" />
+              <Redirect link="https://infoziant.com/tech/courses/68234801248526e958dd4d8b" />
             }
           />
           <Route
             path="/cs"
             element={
-              <Redirect link="https://infoziant.com/vta/courses/68234801248526e958dd4d8c" />
+              <Redirect link="https://infoziant.com/tech/courses/68234801248526e958dd4d8c" />
             }
           />
           <Route
             path="/cs1"
             element={
-              <Redirect link="https://infoziant.com/vta/courses/680a024024dff2cef862633f" />
+              <Redirect link="https://infoziant.com/tech/courses/680a024024dff2cef862633f" />
             }
           />
           <Route
             path="/techcamp"
             element={
-              <Redirect link="https://infoziant.com/vta/courses/683048add177c19178d55b56" />
+              <Redirect link="https://infoziant.com/tech/courses/683048add177c19178d55b56" />
             }
           />
           <Route path="/job/:title" element={<ApplyJobs />} />

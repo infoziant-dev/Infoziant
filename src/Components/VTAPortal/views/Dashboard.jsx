@@ -54,16 +54,16 @@ const Dashboard = ({ user }) => {
             </div>
             
             <nav className="sidebar-nav">
-              <Link to="/vta/dashboard" className="sidebar-link active">
+              <Link to="/tech/dashboard" className="sidebar-link active">
                 <i className="fas fa-tachometer-alt"></i> Dashboard
               </Link>
-              <Link to="/vta/enrolled-courses" className="sidebar-link">
+              <Link to="/tech/enrolled-courses" className="sidebar-link">
                 <i className="fas fa-book"></i> My Courses
               </Link>
-              <Link to="/vta/payment-history" className="sidebar-link">
+              <Link to="/tech/payment-history" className="sidebar-link">
                 <i className="fas fa-history"></i> Payment History
               </Link>
-              <Link to="/vta/profile" className="sidebar-link">
+              <Link to="/tech/profile" className="sidebar-link">
                 <i className="fas fa-user"></i> Profile Settings
               </Link>
             </nav>
@@ -114,13 +114,13 @@ const Dashboard = ({ user }) => {
             <div className="recent-courses">
               <div className="section-header">
                 <h3>Your Recent Courses</h3>
-                <Link to="/vta/enrolled-courses" className="view-all">View All</Link>
+                <Link to="/tech/enrolled-courses" className="view-all">View All</Link>
               </div>
               
               {enrolledCourses.length === 0 ? (
                 <div className="no-courses">
                   <p>You haven't enrolled in any courses yet.</p>
-                  <Link to="/vta/courses" className="btn btn-primary">
+                  <Link to="/tech/courses" className="btn btn-primary">
                     Browse Courses
                   </Link>
                 </div>

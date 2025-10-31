@@ -38,7 +38,7 @@ const VTAHome = () => {
             <p className="hero-subtitle">
               Discover world-class courses taught by industry experts to help you master in-demand skills and advance your career.
             </p>
-            <Link to="/vta/courses" className="btn btn-primary">
+            <Link to="/tech/courses" className="btn btn-primary">
               Explore Courses
             </Link>
           </div>

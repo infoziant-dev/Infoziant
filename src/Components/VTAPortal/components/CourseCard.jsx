@@ -9,7 +9,7 @@ const CourseCard = ({ course }) => {
   };
   
   const handleEnterCourse = () => {
-    navigate(`/vta/courses/${course._id}`);
+    navigate(`/tech/courses/${course._id}`);
   };
 
   return (
