@@ -222,7 +222,16 @@ export default function Footer() {
             </a>
             <span>|</span>
             <a
-              href="https://infoziant.com/terms.html"
+              href="https://infoziant.com/privacy.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-teal-300 transition-colors duration-200"
+            >
+              Shipping & Delivery
+            </a>
+            <span>|</span>
+            <a
+              href="https://infoziant.com/shipping.html"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-300 transition-colors duration-200"
