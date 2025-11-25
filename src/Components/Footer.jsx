@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Left: Company Info */}
           <div className="w-full md:w-[40%] space-y-4 md:ml-8 text-center md:text-left">
             <img src="/Logo.png" alt="Infoziant Logo" className="w-40 mx-auto sm:w-60 md:w-60 mx-auto md:mx-0" />
-            
+
             <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
               <FaEnvelope className="mt-1" />
               <span>support@infoziant.com</span>
@@ -175,7 +175,7 @@ export default function Footer() {
                       <Link to="/services/coe">Industry-Academia Collaboration (CoE)</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to ="/services/codechef">CodeChef Training</Link>
+                      <Link to="/services/codechef">CodeChef Training</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
                       <Link to="/services/edutech">Edutech Solutions</Link>
@@ -200,10 +200,44 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="text-center text-xs sm:text-sm text-gray-400 border-t border-gray-700 pt-4 mt-8 -mb-8">
-          © 2025 Infoziant IT Solutions Inc. All rights reserved.
-          A SOC 2 | ISO 27001:2022 Certified Company
+        <div className="text-center text-xs sm:text-sm text-gray-400 border-t border-gray-700 pt-4 mt-8 -mb-8 space-y-2">
+          {/* ✅ Policy Links */}
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
+            <a
+              href="https://infoziant.com/refund.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-teal-300 transition-colors duration-200"
+            >
+              Refund Policy
+            </a>
+            <span>|</span>
+            <a
+              href="https://infoziant.com/privacy.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-teal-300 transition-colors duration-200"
+            >
+              Privacy Policy
+            </a>
+            <span>|</span>
+            <a
+              href="https://infoziant.com/terms.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-teal-300 transition-colors duration-200"
+            >
+              Terms & Conditions
+            </a>
+          </div>
+
+          {/* © Infoziant */}
+          <p>
+            © 2025 Infoziant IT Solutions Inc. All rights reserved.<br />
+            A SOC 2 | ISO 27001:2022 Certified Company
+          </p>
         </div>
+
       </div>
     </footer>
   );
