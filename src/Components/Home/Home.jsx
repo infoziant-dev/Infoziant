@@ -26,7 +26,7 @@ const Home = () => {
   }, [location]);
   return (
     <>
-      <PopupAd />
+      {/* <PopupAd /> */}
       <HomeBanner />
       <InnovativeTech />
       <WhyInfoziant />
