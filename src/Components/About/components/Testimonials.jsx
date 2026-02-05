@@ -9,27 +9,21 @@ const Testimonials = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      });
-    });
+useEffect(() => {
+  const node = sectionRef.current;
+  if (!node) return;
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+  const observer = new IntersectionObserver((entries) => {
+    setIsVisible(entries[0].isIntersecting);
+  });
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  observer.observe(node);
+
+  return () => {
+    observer.unobserve(node);
+    observer.disconnect();
+  };
+}, []);
 
   const testimonials = [
     {

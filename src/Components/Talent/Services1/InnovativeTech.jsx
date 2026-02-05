@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import {  ChevronDown } from "lucide-react";
 import {
   MdAccountBalance,
   MdGavel,

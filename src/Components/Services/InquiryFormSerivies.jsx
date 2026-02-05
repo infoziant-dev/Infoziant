@@ -1,5 +1,4 @@
 import { useState } from "react";
-import emailjs from '@emailjs/browser';
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import "../css/InquiryForm.css";
@@ -62,6 +61,7 @@ export default function InquiryFormSerivies({ closeModal }) {
 
         if (response.ok) {
           setSuccessMessage("Your request has been submitted successfully!");
+          setSubmitConfirmation(false);
 
           setFormData({
             name: "",

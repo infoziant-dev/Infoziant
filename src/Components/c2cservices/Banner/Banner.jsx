@@ -15,6 +15,7 @@ const Banner = ({
 }) => {
   const [isGifVisible, setIsGifVisible] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  console.log(isGifVisible)
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });

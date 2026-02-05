@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, CheckCircle, Laptop, Cpu, Award, Repeat, Sparkles, Trophy, Users, Globe, FileText, Banknote, Briefcase, Building2 } from "lucide-react";
 import cybersecurity from "./cybersecurity.png"
 import webandapp from "./webandapp.png"

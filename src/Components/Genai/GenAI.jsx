@@ -5,7 +5,6 @@ import Aimodels from './Aimodels/Aimodels';
 import CapabilitySection from './CapabilitySection/CapabilitySection';
 import OurApproach from './OurApproach/OurApproach';
 import OurProcess from './processSteps/processSteps';
-import CaseStudies from './CaseStudies/CaseStudies';
 import WhyChooseUs from './WhyChoose';
 import FAQSection from './FAQSection/FAQSection';
 import ConsultationForm from '../VAPT/ConsultationForm';

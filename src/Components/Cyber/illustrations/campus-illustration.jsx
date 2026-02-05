@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import { GraduationCap, Briefcase, Award, TrendingUp, Users,Building2 } from "lucide-react"
+import { GraduationCap, Briefcase, TrendingUp, Users,Building2 } from "lucide-react"
 // import { Button } from "@/components/ui/button"
 
 export function CampusIllustration() {

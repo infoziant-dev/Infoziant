@@ -12,24 +12,26 @@ const AboutBanner = () => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible({ content: true });
-        }
-      });
-    });
+  const node = contentRef.current; // capture once
 
-    if (contentRef.current) {
-      observer.observe(contentRef.current);
-    }
+  if (!node) return;
 
-    return () => {
-      if (contentRef.current) {
-        observer.unobserve(contentRef.current);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setIsVisible({ content: true });
       }
-    };
-  }, []);
+    });
+  });
+
+  observer.observe(node);
+
+  return () => {
+    observer.unobserve(node);
+    observer.disconnect();
+  };
+}, []);
+
 
   return (
     <section className="about-banner-section">

@@ -64,28 +64,25 @@ export default function Services() {
         setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : serviceItems.length - 1));
     };
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (entries[0].isIntersecting) {
-                    setIsInView(true);
-                } else {
-                    setIsInView(false);
-                }
-            },
-            { threshold: 0.2 }
-        );
+   useEffect(() => {
+  const node = servicesRef.current;
+  if (!node) return;
 
-        if (servicesRef.current) {
-            observer.observe(servicesRef.current);
-        }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      setIsInView(entries[0].isIntersecting);
+    },
+    { threshold: 0.2 }
+  );
 
-        return () => {
-            if (servicesRef.current) {
-                observer.unobserve(servicesRef.current);
-            }
-        };
-    }, []);
+  observer.observe(node);
+
+  return () => {
+    observer.unobserve(node);
+    observer.disconnect();
+  };
+}, []);
+
     const fontSize = window.innerWidth <= 768 ? '25px' : '50px';
 
     return (

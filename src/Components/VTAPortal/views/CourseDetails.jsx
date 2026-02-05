@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { getCourseById } from '../utils/api';
 import toast from 'react-hot-toast';
 import InquiryModal from '../components/InquiryModal';
@@ -7,7 +7,6 @@ import './CourseDetails.css'; // Make sure to create this CSS file next
 
 const CourseDetails = ({ user }) => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [course, setCourse] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isEnrolled, setIsEnrolled] = useState(false);

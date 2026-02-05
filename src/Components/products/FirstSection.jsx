@@ -8,7 +8,7 @@ import qrScanIcon from '../../assests/SVG/qr-scan.svg';
 const FirstSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-
+ 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -25,24 +25,21 @@ const FirstSection = () => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      });
-    });
+  const node = sectionRef.current;
+  if (!node) return;
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+  const observer = new IntersectionObserver((entries) => {
+    setIsVisible(entries[0].isIntersecting);
+  });
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  observer.observe(node);
+
+  return () => {
+    observer.unobserve(node);
+    observer.disconnect();
+  };
+}, []);
+
 
   return (
     <section className="first-section" ref={sectionRef}>

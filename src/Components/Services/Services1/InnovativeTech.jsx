@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { useInView } from "framer-motion";
+
 import  healtcare from "../../../assests/Images/Ourservice/webdev/healthcare.png"
 import ecommerce from "../../../assests/Images/Ourservice/webdev/ecommerce.png";
 import banking from "../../../assests/Images/Ourservice/webdev/banking.png";

@@ -8,11 +8,9 @@ import {
   UsersRound,
   BrainCog,
   Check,
-  CheckCircle2,
-  ChevronRight,
+  
   ArrowRight,
-  Circle,
-  Sparkles,
+  
   BadgeCheck
 } from "lucide-react";
 import Images1 from "./Images/cybersecurity.jpg";

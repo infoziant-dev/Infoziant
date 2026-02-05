@@ -110,6 +110,7 @@ const CardSlider = () => {
     };
 
     return (
+        <div className="vta_portal">
         <section className="portfolio-slider-section">
            
             <h1 className="portfolio-title">Our <span>Case Studies</span></h1>
@@ -156,6 +157,7 @@ const CardSlider = () => {
 
 
         </section>
+        </div>
     );
 };
 

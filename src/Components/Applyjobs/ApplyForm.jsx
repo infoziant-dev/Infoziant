@@ -79,6 +79,8 @@ const handleSubmit = async (e) => {
     // Step 4: Send data to backend & email service
     const res = await axios.post("https://infoziantbackend-production.up.railway.app/api/applications", updatedForm);
     const res1 = await axios.post("https://mailer-api-production-76e4.up.railway.app/send-email", emailPayload);
+    console.log("Application submitted:", res.data);
+    console.log("Email sent:", res1.data);
 
     //console.log("Application submitted & Email sent:", res1.data);
     alert("Application submitted successfully!");
