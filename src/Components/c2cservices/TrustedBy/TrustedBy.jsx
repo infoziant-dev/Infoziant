@@ -142,7 +142,7 @@ const CollegeClients = () => {
                         <div className="w-full h-full overflow-hidden flex items-center justify-center bg-blue-950 rounded-lg">
                           <img
                             src={client.src}
-                            alt={`College  ${index + 1}`}
+                            alt={`College  ${index + 1}`} 
                             className={`h-full w-full object-cover transition-all duration-700 ${
                               index === centerIndex ? "scale-110" : "scale-100"
                             }`}
