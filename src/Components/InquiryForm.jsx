@@ -61,6 +61,7 @@ export default function InquiryForm() {
 
         if (response.ok) {
           setSuccessMessage("Your request has been submitted successfully!");
+          setSubmitConfirmation(false);
 
           setFormData({
             name: "",

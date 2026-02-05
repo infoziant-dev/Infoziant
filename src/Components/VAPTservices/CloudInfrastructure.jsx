@@ -5,12 +5,13 @@ import {
   BsGraphUp,
   BsFillCheckCircleFill,
 } from "react-icons/bs";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+
 import { motion } from "framer-motion";
 import ConsultationForm from "../VAPT/ConsultationForm";
 import ServiceCards from "./ServiceCards";
 import { Helmet } from "react-helmet";
-
+ 
 const serviceListData = [
   {
     id: 1,
@@ -74,7 +75,8 @@ export default function CloudInfrastructure() {
   const [isInView, setIsInView] = useState(false);
   const servicesRef = useRef(null);
 
-  const handleScroll = (event) => {
+ const handleScroll = useCallback(
+  (event) => {
     if (!isInView) return;
 
     if (event.deltaY > 0) {
@@ -90,42 +92,43 @@ export default function CloudInfrastructure() {
         setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
       }
     }
+  },
+  [isInView, currentIndex]
+);
+
+
+  useEffect(() => {
+  const node = servicesRef.current;
+  if (!node) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      setIsInView(entries[0].isIntersecting);
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(node);
+
+  return () => {
+    observer.unobserve(node);
+    observer.disconnect();
   };
+}, []);
+
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsInView(true);
-        } else {
-          setIsInView(false);
-        }
-      },
-      { threshold: 0.2 }
-    );
+  if (isInView) {
+    window.addEventListener("wheel", handleScroll, { passive: false });
+  } else {
+    window.removeEventListener("wheel", handleScroll);
+  }
 
-    if (servicesRef.current) {
-      observer.observe(servicesRef.current);
-    }
+  return () => {
+    window.removeEventListener("wheel", handleScroll);
+  };
+}, [isInView, handleScroll]);
 
-    return () => {
-      if (servicesRef.current) {
-        observer.unobserve(servicesRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isInView) {
-      window.addEventListener("wheel", handleScroll, { passive: false });
-    } else {
-      window.removeEventListener("wheel", handleScroll);
-    }
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, [isInView, currentIndex]);
 
   return (
     <>

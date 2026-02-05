@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+
 
 // TestimonialCard Component to handle individual testimonials
 const TestimonialCard = ({ name, role, quote, image, color }) => {
@@ -37,30 +38,33 @@ const TestimonialSection = ({ heading, description, testimonials }) => {
   const maxIndex = testimonials.length - 2;
   const intervalRef = useRef(null);
 
-  const nextTestimonial = () => {
-    setActiveIndex(prevIndex =>
-      prevIndex >= maxIndex ? 0 : prevIndex + 2
-    );
-  };
+  const nextTestimonial = useCallback(() => {
+  setActiveIndex((prevIndex) =>
+    prevIndex >= maxIndex ? 0 : prevIndex + 2
+  );
+}, [maxIndex]);
 
-  const prevTestimonial = () => {
-    setActiveIndex(prevIndex =>
-      prevIndex <= 0 ? maxIndex : prevIndex - 2
-    );
-  };
+const prevTestimonial = useCallback(() => {
+  setActiveIndex((prevIndex) =>
+    prevIndex <= 0 ? maxIndex : prevIndex - 2
+  );
+}, [maxIndex]);
+
 
   const goToTestimonial = (index) => {
     setActiveIndex(index);
   };
 
   useEffect(() => {
-    if (!isPaused) {
-      intervalRef.current = setInterval(() => {
-        nextTestimonial();
-      }, 2000);
-    }
-    return () => clearInterval(intervalRef.current);
-  }, [isPaused, activeIndex]);
+  if (!isPaused) {
+    intervalRef.current = setInterval(() => {
+      nextTestimonial();
+    }, 2000);
+  }
+
+  return () => clearInterval(intervalRef.current);
+}, [isPaused, nextTestimonial]);
+
 
   const pauseAutoplay = () => setIsPaused(true);
   const resumeAutoplay = () => setIsPaused(false);

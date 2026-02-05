@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getInquiry } from '../utils/api';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Papa from 'papaparse';
 import * as XLSX from 'xlsx';
@@ -134,9 +134,6 @@ const Inquiries = ({ user }) => {
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
-  const isPaymentPending = (status) => {
-    return status === 'pending';
-  };
   
   // Pagination logic
 

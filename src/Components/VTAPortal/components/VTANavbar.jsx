@@ -14,10 +14,7 @@ const VTANavbar = ({ user, handleLogout }) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   
-  const handleNavLogout = () => {
-    handleLogout();
-    setIsMobileMenuOpen(false);
-  };
+  
   
   return (
     <header className="vta-navbar">

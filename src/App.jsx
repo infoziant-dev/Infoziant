@@ -8,8 +8,8 @@ import Footer from "./Components/Footer";
 import Home from "./Components/Home/Home";
 import WebandApp from "./Components/Services/Web&app development";
 import Talent from "./Components/Talent/Talent";
-import Placement_Support from "./Components/c2cservices/Placement_Support";
-import Internship_Programs from "./Components/c2cservices/Intership_Programs";
+import PlacementSupport from "./Components/c2cservices/Placement_Support";
+import InternshipPrograms from "./Components/c2cservices/Intership_Programs";
 import COE from "./Components/c2cservices/COE";
 import Testing from "./Components/Testing/Testing";
 import CodeChef from "./Components/c2cservices/CodeChef";
@@ -18,7 +18,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import Loader from "./Components/Loader";
 import Layout from "./Components/Cyber/Layout";
 import Products from "./Components/products/Product";
-import Edutech_Platform from "./Components/c2cservices/Edutech";
+import EdutechPlatform from "./Components/c2cservices/Edutech";
 import Blog from "./Components/c2cservices/Blog/Blog";
 import LLM from "./Components/AI/LLM/LLM.jsx";
 
@@ -101,11 +101,7 @@ const App = () => {
     // Note: token is already saved in the loginUser function in api.js
   };
 
-  const handleLoguot = () => {
-    setUser(null);
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-  };
+
 
   const fetchData = async () => {
     return new Promise((resolve) => {
@@ -133,14 +129,14 @@ const App = () => {
           <Route path="/awards" element={<Awards />} />
           <Route path="/career" element={<Career />} />
           <Route path="/career/openings" element={<Openings />} />
-          <Route path="/services/placement" element={<Placement_Support />} />
+          <Route path="/services/placement" element={<PlacementSupport />} />
           <Route
             path="/services/internship"
-            element={<Internship_Programs />}
+            element={<InternshipPrograms />}
           />
           <Route path="/services/training" element={<RedirectAicl />} />
           <Route path="/services/coe" element={<COE />} />
-          <Route path="/services/edutech" element={<Edutech_Platform />} />
+          <Route path="/services/edutech" element={<EdutechPlatform />} />
           <Route path="/services/codechef" element={<CodeChef />} />
           <Route path="/services/techtalent" element={<Talent />} />
           <Route path="/services/cybersecurity" element={<Layout />} />

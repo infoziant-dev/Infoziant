@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import "../css/HomeBanner.css";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { useNavigate } from "react-router-dom";
+
 
 
 // import Services from "./Services";
@@ -28,13 +28,22 @@ import img8 from "../../assests/Images/Cyber/vulnerability_detectors.png";
 import img9 from "../../assests/Images/Cyber/audit_report.png";
 import ConsultationForm from "../Pages/ConsultationForm";
 import InquiryForm from "../InquiryForm";
+  const WORDS = ["Cybersecurity...", "Scanning...", "Vulnerabilities..."];
+
+const IMG_WORDS = [
+  "1.Discover & Crawl",
+  "2.Assess",
+  "3.Detect Risk",
+  "4.Resolve",
+  "5.Continuously secure"
+];
 
 
 
 
 export default function HomeBanner() {
   // intersection observer start
-  const navigate = useNavigate();
+ 
 
   const { ref: ref5, inView: inView5 } = useInView({
     triggerOnce: false,
@@ -48,8 +57,12 @@ export default function HomeBanner() {
   };
   // intersection observer end
 
-  const words = ["Cybersecurity...", "Scanning...", "Vulnerabilities..."];
-  const imgWords = ["1.Discover & Crawl", "2.Assess", "3.Detect Risk", "4.Resolve", "5.Continuously secure"];
+const words = WORDS;
+const imgWords = IMG_WORDS;
+
+
+  // const words = ["Cybersecurity...", "Scanning...", "Vulnerabilities..."];
+  // const imgWords = ["1.Discover & Crawl", "2.Assess", "3.Detect Risk", "4.Resolve", "5.Continuously secure"];
   const images = [img1, img2, img3, img4, img5];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -92,7 +105,7 @@ export default function HomeBanner() {
     const typingTimeout = setTimeout(handleTyping, typingSpeed);
 
     return () => clearTimeout(typingTimeout);
-  }, [displayedText, isDeleting, typingSpeed, currentWordIndex]);
+  }, [displayedText, isDeleting, typingSpeed, currentWordIndex,words,]);
 
   //  image scanning
   useEffect(() => {
@@ -113,7 +126,7 @@ export default function HomeBanner() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [imgWords.length]);
 
   return (
     <div className="cybarhomeBanner">

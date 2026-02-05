@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -40,12 +40,24 @@ export default function Footer() {
               </span>
             </div>
             <div className="flex gap-4 pt-4 justify-center md:justify-start">
-              <a href="https://www.linkedin.com" target="_blank" className="text-white text-2xl hover:text-gray-300">
-                <FiLinkedin />
-              </a>
-              <a href="https://www.instagram.com" target="_blank" className="text-white text-2xl hover:text-gray-300">
-                <FiInstagram />
-              </a>
+              <a
+  href="https://www.linkedin.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-white text-2xl hover:text-gray-300"
+>
+  <FiLinkedin />
+</a>
+
+<a
+  href="https://www.instagram.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-white text-2xl hover:text-gray-300"
+>
+  <FiInstagram />
+</a>
+
             </div>
           </div>
 

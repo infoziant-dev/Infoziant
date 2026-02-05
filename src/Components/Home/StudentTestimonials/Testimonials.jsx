@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 import image3 from "../../../assests/Images/Testimonials/Krishna.jpeg";
 import image1 from "../../../assests/Images/testimonial-1.jpg";
@@ -42,39 +42,40 @@ const testimonials = [
 
 const TestimonialSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const maxIndex = testimonials.length - 2;
-  const intervalRef = useRef(null);
+const [isPaused, setIsPaused] = useState(false);
+const intervalRef = useRef(null);
 
-  const nextTestimonial = () => {
-    setActiveIndex(prevIndex =>
-      prevIndex >= maxIndex ? 0 : prevIndex + 2
-    );
-  };
+const maxIndex = testimonials.length - 2;
 
-  const prevTestimonial = () => {
-    setActiveIndex(prevIndex =>
-      prevIndex <= 0 ? maxIndex : prevIndex - 2
-    );
-  };
+const nextTestimonial = useCallback(() => {
+  setActiveIndex((prevIndex) =>
+    prevIndex >= maxIndex ? 0 : prevIndex + 2
+  );
+}, [maxIndex]);
 
-  const goToTestimonial = (index) => {
-    setActiveIndex(index);
-  };
+const prevTestimonial = useCallback(() => {
+  setActiveIndex((prevIndex) =>
+    prevIndex <= 0 ? maxIndex : prevIndex - 2
+  );
+}, [maxIndex]);
 
-  useEffect(() => {
-    if (!isPaused) {
-      intervalRef.current = setInterval(() => {
-        nextTestimonial();
-      }, 2000);
-    }
-    return () => clearInterval(intervalRef.current);
-  }, [isPaused, activeIndex]);
+const goToTestimonial = (index) => {
+  setActiveIndex(index);
+};
 
-  const pauseAutoplay = () => setIsPaused(true);
-  const resumeAutoplay = () => setIsPaused(false);
+useEffect(() => {
+  if (!isPaused) {
+    intervalRef.current = setInterval(nextTestimonial, 2000);
+  }
 
-  const visibleTestimonials = testimonials.slice(activeIndex, activeIndex + 2);
+  return () => clearInterval(intervalRef.current);
+}, [isPaused, nextTestimonial]);
+
+const pauseAutoplay = () => setIsPaused(true);
+const resumeAutoplay = () => setIsPaused(false);
+
+const visibleTestimonials = testimonials.slice(activeIndex, activeIndex + 2);
+
 
   return (
     <section className="py-12 sm:py-24 px-4 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">

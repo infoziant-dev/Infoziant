@@ -41,24 +41,25 @@ const companies = [
     };
   
     useEffect(() => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      });
-  
-      if (contentRef.current) {
-        observer.observe(contentRef.current);
+  const node = contentRef.current; // capture once
+  if (!node) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
       }
-  
-      return () => {
-        if (contentRef.current) {
-          observer.unobserve(contentRef.current);
-        }
-      };
-    }, []);
+    });
+  });
+
+  observer.observe(node);
+
+  return () => {
+    observer.unobserve(node);
+    observer.disconnect();
+  };
+}, []);
+
   
     return (
       <section className=' relative py-20 overflow-hidden bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d] text-white appreciated-by' ref={contentRef}>

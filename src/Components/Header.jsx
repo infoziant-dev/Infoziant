@@ -25,7 +25,7 @@ const DropdownContent = ({
     <div className="absolute top-full left-0 mt-6 w-[320px] bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50">
       <div className="flex flex-col gap-2">
         {menu.items.map((item, idx) => (
-          <div
+          <div 
             key={idx}
             className="relative group"
             onMouseEnter={() => handleMouseEnter(item.name)}
@@ -80,14 +80,13 @@ const Header = () => {
   const location = useLocation();
   const [hoveredItem, setHoveredItem] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [expandedMobileItem, setExpandedMobileItem] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null); // "tech" or "edu"
 
   const closeAllMenus = () => {
     setHoveredItem(null);
     setActiveDropdown(null);
     setMobileMenuOpen(false);
-    setExpandedMobileItem(null);
+    
   };
 
   const dropdownMenu = [

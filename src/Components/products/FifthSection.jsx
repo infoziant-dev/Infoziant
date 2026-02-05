@@ -8,7 +8,7 @@ const FifthSection = () => {
     hidden: { opacity: 0, y: 20, scale: 0.8 }, // Scale down for hidden state
     visible: { opacity: 1, y: 0, scale: 1 },  // Scale to normal size when visible
   };
-
+  
   return (
     <section className="fifth-section">
       <h1>Infoziant DAST Pro and Free Versions</h1>

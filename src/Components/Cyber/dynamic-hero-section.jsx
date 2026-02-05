@@ -1,6 +1,5 @@
-
-import { useState, useEffect } from "react"
-import { ArrowDown, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect, useCallback } from "react";
+import { ArrowDown, ChevronLeft, ChevronRight } from "lucide-react"
 import { CodeIllustration } from "./illustrations/code-illustration"
 import { SecurityIllustration } from "./illustrations/security-illustration"
 import { AssessmentIllustration } from "./illustrations/assessment-illustration"
@@ -82,43 +81,48 @@ export function DynamicHeroSection() {
   const [fadeState, setFadeState] = useState("in")
   const currentService = services[currentIndex]
 
-  const goToSlide = (index) => {
-    if (isAnimating) return
-    setIsAnimating(true)
+  const goToSlide = useCallback(
+  (index) => {
+    if (isAnimating) return;
 
-    // Start fade out
-    setFadeState("out")
+    setIsAnimating(true);
+    setFadeState("out");
 
-    // Change slide after fade out
     setTimeout(() => {
-      setCurrentIndex(index)
-      setFadeState("in")
-    }, 300)
+      setCurrentIndex(index);
+      setFadeState("in");
+    }, 300);
 
-    // Reset animation lock after complete transition
     setTimeout(() => {
-      setIsAnimating(false)
-    }, 600)
-  }
+      setIsAnimating(false);
+    }, 600);
+  },
+  [isAnimating]
+);
 
-  const goToPrevious = () => {
-    if (isAnimating) return
-    const newIndex = currentIndex === 0 ? services.length - 1 : currentIndex - 1
-    goToSlide(newIndex)
-  }
 
-  const goToNext = () => {
-    if (isAnimating) return
-    const newIndex = currentIndex === services.length - 1 ? 0 : currentIndex + 1
-    goToSlide(newIndex)
-  }
+ const goToPrevious = useCallback(() => {
+  const newIndex =
+    currentIndex === 0 ? services.length - 1 : currentIndex - 1;
+
+  goToSlide(newIndex);
+}, [currentIndex, goToSlide]);
+
+
+  const goToNext = useCallback(() => {
+  const newIndex =
+    currentIndex === services.length - 1 ? 0 : currentIndex + 1;
+
+  goToSlide(newIndex);
+}, [currentIndex, goToSlide]);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       goToNext()
     }, 5000)
     return () => clearInterval(interval)
-  }, [currentIndex, isAnimating])
+  }, [currentIndex, isAnimating, goToNext])
 
   return (
     <section className="container mx-auto md:py-32">

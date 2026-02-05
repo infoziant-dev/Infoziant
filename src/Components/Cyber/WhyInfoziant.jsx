@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import {  useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import "../css/WhyInfoziant.css";
 
@@ -33,7 +33,7 @@ export default function WhyInfoziant() {
     transition: { type: "spring", stiffness: 300, damping: 10 },
   };
 
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  
 
   return (
     <motion.section
@@ -56,8 +56,7 @@ export default function WhyInfoziant() {
         {data.map((item, index) => (
           <motion.div
             key={item.id}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
+          
             whileHover={hoverAnimation}
             variants={cardAnimation}
                 className="infoCard"
