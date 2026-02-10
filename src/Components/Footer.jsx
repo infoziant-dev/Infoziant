@@ -215,41 +215,33 @@ export default function Footer() {
         <div className="text-center text-xs sm:text-sm text-gray-400 border-t border-gray-700 pt-4 mt-8 -mb-8 space-y-2">
           {/* ✅ Policy Links */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
-            <a
-              href="https://infoziant.com/refund.html"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/refund"
               className="hover:text-teal-300 transition-colors duration-200"
             >
               Refund Policy
-            </a>
+            </Link>
             <span>|</span>
-            <a
-              href="https://infoziant.com/privacy.html"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/privacy"
               className="hover:text-teal-300 transition-colors duration-200"
             >
               Privacy Policy
-            </a>
+            </Link>
             <span>|</span>
-            <a
-              href="https://infoziant.com/privacy.html"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/shipping"
               className="hover:text-teal-300 transition-colors duration-200"
             >
               Shipping & Delivery
-            </a>
+            </Link>
             <span>|</span>
-            <a
-              href="https://infoziant.com/shipping.html"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/terms"
               className="hover:text-teal-300 transition-colors duration-200"
             >
               Terms & Conditions
-            </a>
+            </Link>
           </div>
 
           {/* © Infoziant */}

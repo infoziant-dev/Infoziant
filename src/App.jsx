@@ -31,6 +31,10 @@ import "./Components/css/ServicesList.css";
 import About from "./Components/About/About";
 import Awards from "./Components/Pages/Awards";
 import Contact from "./Components/Pages/Contact";
+import Privacy from "./Components/Pages/Privacy";
+import Refund from "./Components/Pages/Refund";
+import Terms from "./Components/Pages/Terms";
+import Shipping from "./Components/Pages/Shipping";
 import Career from "./Components/Career/Career.jsx";
 import Openings from "./Components/Career/Openings.jsx";
 import Vapt from "./Components/VAPT/Vapt";
@@ -127,6 +131,10 @@ const App = () => {
           <Route path="/product" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/awards" element={<Awards />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/refund" element={<Refund />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/shipping" element={<Shipping />} />
           <Route path="/career" element={<Career />} />
           <Route path="/career/openings" element={<Openings />} />
           <Route path="/services/placement" element={<PlacementSupport />} />
